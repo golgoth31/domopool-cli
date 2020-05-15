@@ -5,6 +5,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Dashboard from './components/Dashboard';
 import theme from './theme';
 
+declare global {
+  interface Window {
+    DOMOPOOL_IP: string;
+    DOMOPOOL_PORT: string;
+    DOMOPOOL_SCHEME: string;
+  }
+}
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

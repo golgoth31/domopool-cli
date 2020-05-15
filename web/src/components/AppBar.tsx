@@ -44,13 +44,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
 export default function TopAppBar() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
+  console.log(window.DOMOPOOL_IP)
 
   return (
     <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
