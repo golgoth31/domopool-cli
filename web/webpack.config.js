@@ -4,15 +4,19 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   mode: "production",
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'js/bundle.js'
+    filename: 'js/bundle.js',
+    // filename: '[name].bundle.js',
+    // chunkFilename: '[name].bundle.js',
   },
   // Enable sourcemaps for debugging webpack's output.
-  devtool: "source-map",
+  // devtool: "source-map",
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
@@ -56,14 +60,28 @@ module.exports = {
     ]
   },
 
-  // When importing a module whose path matches one of the following, just
-  // assume a corresponding global variable exists and use that instead.
-  // This is important because it allows us to avoid bundling all of our
-  // dependencies, which allows browsers to cache those libraries between builds.
-  // externals: {
-  //   react: "React",
-  //   "react-dom": "ReactDOM"
-  // },
+  optimization: {
+    // splitChunks: {
+    //   chunks: 'all',
+    //   maxSize: 100000
+    // },
+    // runtimeChunk: {
+    //   name: 'runtime'
+    // },
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        sourceMap: false,
+        terserOptions: {
+          output: {
+            comments: false
+          }
+        }
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
   plugins: [
     new ProgressBarPlugin({ incomplete: '-' }),
     new CleanWebpackPlugin(),
