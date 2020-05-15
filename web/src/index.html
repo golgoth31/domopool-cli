@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <title>Ardipool</title>
     <script>
-      window.DOMOPOOL_IP = '{{ DomopoolBoxIP }}';
-      window.DOMOPOOL_PORT = '{{ DomopoolBoxPort }}';
-      window.DOMOPOOL_SCHEME = '{{ DomopoolBoxScheme }}';
+      window.DOMOPOOL_HOST = '{{ .DomopoolBoxHost }}';
+      window.DOMOPOOL_PORT = '{{ .DomopoolBoxPort }}';
+      window.DOMOPOOL_SCHEME = '{{ .DomopoolBoxScheme }}';
     </script>
   </head>
   <body>

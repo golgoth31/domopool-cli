@@ -7,7 +7,7 @@ import theme from './theme';
 
 declare global {
   interface Window {
-    DOMOPOOL_IP: string;
+    DOMOPOOL_HOST: string;
     DOMOPOOL_PORT: string;
     DOMOPOOL_SCHEME: string;
   }

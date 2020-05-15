@@ -1,12 +1,12 @@
 package internal
 
 type Aconfig struct {
-	NetConfig  Network `json:"network"`
-	Global     Global  `json:"global"`
-	SensConfig Sensors `json:"sensors"`
-	Time       Time    `json:"time"`
-	Pump       Pump    `json:"pump"`
-	Data       Data    `json:"data"`
+	Network Network `json:"network"`
+	Global  Global  `json:"global"`
+	Sensors Sensors `json:"sensors"`
+	Time    Time    `json:"time"`
+	Pump    Pump    `json:"pump"`
+	Data    Data    `json:"data"`
 }
 
 type Network struct {

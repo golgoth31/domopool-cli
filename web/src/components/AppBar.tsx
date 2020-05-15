@@ -50,7 +50,6 @@ export default function TopAppBar() {
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-  console.log(window.DOMOPOOL_IP)
 
   return (
     <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>

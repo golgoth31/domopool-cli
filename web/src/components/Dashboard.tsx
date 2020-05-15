@@ -117,14 +117,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
@@ -151,7 +150,7 @@ export default function Dashboard() {
         </Toolbar>
       </AppBar>
       <Drawer
-        variant="permanent"
+        // variant="permanent"
         classes={{
           paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
         }}
@@ -168,15 +167,10 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              {/* <Paper className={fixedHeightPaper}> */}
-              <Paper className={classes.paper}>
-                <ConfigForm />
-              </Paper>
-            </Grid>
-          </Grid>
+          <Paper className={classes.paper}>
+            <ConfigForm />
+          </Paper>
+
           <Box pt={4}>
             <Copyright />
           </Box>

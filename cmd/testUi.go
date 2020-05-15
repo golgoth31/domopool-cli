@@ -17,11 +17,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package cmd
 
 import (
+	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/golgoth31/domopool-cli/internal"
 
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/spf13/cobra"
 )
 
@@ -38,25 +41,38 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		e := echo.New()
+		e.Use(middleware.Logger())
+		e.Use(middleware.Recover())
+		e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+			AllowOrigins: []string{"*"},
+			AllowMethods: []string{
+				http.MethodGet,
+				http.MethodHead,
+				http.MethodPut,
+				http.MethodPatch,
+				http.MethodPost,
+				http.MethodDelete,
+			},
+		}))
 		e.GET("/config", func(c echo.Context) error {
 			resp := internal.Example
 			return c.JSON(http.StatusOK, resp)
 		})
-
-		e.Logger.Fatal(e.Start(":8080"))
+		e.POST("/config", func(c echo.Context) error {
+			u := internal.Aconfig{}
+			if err := c.Bind(u); err != nil {
+				return err
+			}
+			log.Printf("%+v", u)
+			e.Logger.Info(u)
+			return c.JSON(http.StatusOK, u)
+		})
+		port, _ := cmd.Flags().GetInt("port")
+		e.Logger.Fatal(e.Start(fmt.Sprintf(":%d", port)))
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(testUiCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// testUiCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// testUiCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	testUiCmd.Flags().IntP("port", "p", 8080, "port to listen on")
 }

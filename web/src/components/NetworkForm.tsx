@@ -8,6 +8,7 @@ import {
 } from 'formik-material-ui';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import isIp from 'is-ip';
+import { Grid } from "@material-ui/core";
 
 // export const ConfigForm: React.SFC = () => {
 export default class NetworkFields extends React.Component {
@@ -49,38 +50,48 @@ export default class NetworkFields extends React.Component {
           labelPlacement="start"
         />
         <br />
-        <Field
-          component={TextField}
-          name="network.ip"
-          type="text"
-          label="IP address"
-          validate={this.validateIP}
-          disabled={this.state.ipDisabled}
-        />
-        <Field
-          component={TextField}
-          name="network.netmask"
-          type="text"
-          label="Netmask"
-          validate={this.validateIP}
-          disabled={this.state.ipDisabled}
-        />
-        <Field
-          component={TextField}
-          name="network.gateway"
-          type="text"
-          label="Gateway"
-          validate={this.validateIP}
-          disabled={this.state.ipDisabled}
-        />
-        <Field
-          component={TextField}
-          name="network.dns"
-          type="text"
-          label="DNS server IP"
-          validate={this.validateIP}
-          disabled={this.state.ipDisabled}
-        />
+        <Grid container spacing={2}>
+          <Grid item>
+            <Field
+              component={TextField}
+              name="network.ip"
+              type="text"
+              label="IP address"
+              validate={this.validateIP}
+              disabled={this.state.ipDisabled}
+            />
+          </Grid>
+          <Grid item>
+            <Field
+              component={TextField}
+              name="network.netmask"
+              type="text"
+              label="Netmask"
+              validate={this.validateIP}
+              disabled={this.state.ipDisabled}
+            />
+          </Grid>
+          <Grid item>
+            <Field
+              component={TextField}
+              name="network.gateway"
+              type="text"
+              label="Gateway"
+              validate={this.validateIP}
+              disabled={this.state.ipDisabled}
+            />
+          </Grid>
+          <Grid item>
+            <Field
+              component={TextField}
+              name="network.dns"
+              type="text"
+              label="DNS server IP"
+              validate={this.validateIP}
+              disabled={this.state.ipDisabled}
+            />
+          </Grid>
+        </Grid>
       </div >
     )
   };

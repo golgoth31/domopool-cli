@@ -41,16 +41,16 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		port, _ := cmd.Flags().GetInt("port")
 		e := echo.New()
-		indexBox, err := rice.FindBox("../../build")
+		uiBox, err := rice.FindBox("../web/build")
 		if err != nil {
 			log.Fatal(err)
 		}
-		jsBox, err := rice.FindBox("../../build/bundle")
-		if err != nil {
-			log.Fatal(err)
-		}
+		// jsBox, err := rice.FindBox("../../build/bundle")
+		// if err != nil {
+		// 	log.Fatal(err)
+		// }
 
-		templateString, err := indexBox.String("index.html")
+		templateString, err := uiBox.String("index.html")
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -59,7 +59,7 @@ to quickly create a Cobra application.`,
 		// if err != nil {
 		// 	log.Fatal(err)
 		// }
-		box_ip, err := cmd.Flags().GetIP("box-ip")
+		box_host, err := cmd.Flags().GetIP("box-host")
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -67,9 +67,14 @@ to quickly create a Cobra application.`,
 		if err != nil {
 			log.Fatal(err)
 		}
+		box_scheme, err := cmd.Flags().GetString("box-scheme")
+		if err != nil {
+			log.Fatal(err)
+		}
 		box := &IndexTemplate{
-			DomopoolIP:   box_ip.String(),
-			DomopoolPort: box_port,
+			DomopoolBoxHost:   box_host.String(),
+			DomopoolBoxPort:   box_port,
+			DomopoolBoxScheme: box_scheme,
 		}
 		t := &Template{
 			templates: template.Must(template.New("index").Parse(templateString)),
@@ -81,13 +86,18 @@ to quickly create a Cobra application.`,
 		// }
 		// fmt.Println(bundle)
 		e.GET(
-			"/bundle/*",
+			"/js/*",
 			echo.WrapHandler(
-				http.StripPrefix("/bundle/",
-					http.FileServer(
-						jsBox.HTTPBox(),
-					),
+
+				http.FileServer(
+					uiBox.HTTPBox(),
 				),
+
+				// http.StripPrefix("/js/",
+				// 	http.FileServer(
+				// 		uiBox.HTTPBox(),
+				// 	),
+				// ),
 			),
 		)
 		e.GET(
@@ -106,8 +116,9 @@ to quickly create a Cobra application.`,
 }
 
 type IndexTemplate struct {
-	DomopoolIP   string
-	DomopoolPort int
+	DomopoolBoxHost   string
+	DomopoolBoxPort   int
+	DomopoolBoxScheme string
 }
 type Template struct {
 	templates *template.Template
@@ -122,6 +133,7 @@ func init() {
 
 	defaultIp := net.ParseIP("127.0.0.1")
 	serveUiCmd.Flags().IntP("port", "p", 8080, "port to listen on")
-	serveUiCmd.Flags().IPP("box-ip", "i", defaultIp, "ip of the domopool box")
+	serveUiCmd.Flags().IP("box-host", defaultIp, "ip of the domopool box")
 	serveUiCmd.Flags().Int("box-port", 80, "port of the domopool box")
+	serveUiCmd.Flags().String("box-scheme", "http", "port of the domopool box")
 }
