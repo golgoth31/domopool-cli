@@ -24,7 +24,13 @@ export default class ConfigForm extends React.Component {
   }
 
   componentDidMount() {
-    dataprovider.get(`config`)
+    dataprovider.get(`config`, {
+      // headers: {
+      //   'Access-Control-Allow-Origin': '*',
+      //   'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+      //   'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+      // }
+    })
       .then(res => {
         const resp = res.data;
         this.setState({ config: resp });

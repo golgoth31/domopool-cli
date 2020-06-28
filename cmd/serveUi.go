@@ -86,14 +86,14 @@ to quickly create a Cobra application.`,
 		// }
 		// fmt.Println(bundle)
 		e.GET(
-			"/js/*",
+			"/*",
 			echo.WrapHandler(
 
 				http.FileServer(
 					uiBox.HTTPBox(),
 				),
 
-				// http.StripPrefix("/js/",
+				// http.StripPrefix("/",
 				// 	http.FileServer(
 				// 		uiBox.HTTPBox(),
 				// 	),

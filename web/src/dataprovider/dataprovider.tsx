@@ -8,6 +8,12 @@ if (window.DOMOPOOL_HOST != '{{ .DomopoolBoxHost }}') {
 else {
   boxURL = window.location.protocol + '//' + window.location.host;
 }
-export default axios.create({
+
+const instance = axios.create({
   baseURL: boxURL
 });
+
+// Alter defaults after instance has been created
+instance.defaults.headers.common['Access-Control-Allow-Origin'] = "*";
+
+export default instance;
