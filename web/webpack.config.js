@@ -6,12 +6,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   mode: "production",
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'ui/bundle.js',
+    filename: 'bundle.js',
     // filename: '[name].bundle.js',
     // chunkFilename: '[name].bundle.js',
   },
@@ -89,5 +90,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
+    new FaviconsWebpackPlugin({
+      logo: './src/favicon.png',
+      prefix: '/',
+    })
   ],
 };
