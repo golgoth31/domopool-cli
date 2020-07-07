@@ -11,7 +11,7 @@ module.exports = {
   mode: "production",
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: 'ui/bundle.js',
     // filename: '[name].bundle.js',
     // chunkFilename: '[name].bundle.js',
   },
