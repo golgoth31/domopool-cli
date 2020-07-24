@@ -6,6 +6,7 @@ import {
   TextField,
   Checkbox,
 } from 'formik-material-ui';
+import { Grid } from "@material-ui/core";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import isIp from 'is-ip';
 
@@ -27,13 +28,61 @@ export default class GlobalFields extends React.Component {
     return (
       <div>
         <h3>Global values</h3>
-        <Field
-          component={TextField}
-          name="global.lcdbacklightduration"
-          type="text"
-          label="lcdBacklightDuration"
-          validate={this.validateNumber}
-        />
+        <Grid container spacing={2}>
+          <Grid item>
+            <Field
+              component={TextField}
+              name="global.lcdBacklightDuration"
+              type="text"
+              label="lcdBacklightDuration"
+              validate={this.validateNumber}
+            />
+          </Grid>
+          <Grid item>
+            <Field
+              component={TextField}
+              name="global.ackDuration"
+              type="text"
+              label="ackDuration"
+              validate={this.validateNumber}
+            />
+          </Grid>
+          <Grid item>
+            <Field
+              component={TextField}
+              name="global.ackTone"
+              type="text"
+              label="ackTone"
+              validate={this.validateNumber}
+            />
+          </Grid>
+          <Grid item>
+            <FormControlLabel
+              control={<Field
+                component={Checkbox}
+                name="global.serialOut"
+                type="checkbox"
+                color="primary"
+              // onClick={this.handleDHCPClick}
+              />}
+              label="Print to Serial"
+              labelPlacement="start"
+            />
+          </Grid>
+          <Grid item>
+            <FormControlLabel
+              control={<Field
+                component={Checkbox}
+                name="global.displayStartup"
+                type="checkbox"
+                color="primary"
+              // onClick={this.handleDHCPClick}
+              />}
+              label="Display startup data"
+              labelPlacement="start"
+            />
+          </Grid>
+        </Grid>
       </div >
     )
   };

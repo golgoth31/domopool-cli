@@ -20,10 +20,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/golang/protobuf/proto"
+	"github.com/go-resty/resty/v2"
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
-	"gopkg.in/resty.v1"
 )
 
 // configCmd represents the config command
@@ -63,8 +62,6 @@ to quickly create a Cobra application.`,
 		case "mqtt":
 			fmt.Println(config.Network.GetMqtt())
 		}
-		proto.Unmarshal(resp.Body(), config)
-
 	},
 }
 
