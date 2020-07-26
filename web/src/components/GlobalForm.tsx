@@ -32,7 +32,7 @@ export default class GlobalFields extends React.Component {
           <Grid item>
             <Field
               component={TextField}
-              name="global.lcdBacklightDuration"
+              name="global.lcdbacklightduration"
               type="text"
               label="lcdBacklightDuration"
               validate={this.validateNumber}
@@ -41,7 +41,7 @@ export default class GlobalFields extends React.Component {
           <Grid item>
             <Field
               component={TextField}
-              name="global.ackDuration"
+              name="global.ackduration"
               type="text"
               label="ackDuration"
               validate={this.validateNumber}
@@ -50,7 +50,7 @@ export default class GlobalFields extends React.Component {
           <Grid item>
             <Field
               component={TextField}
-              name="global.ackTone"
+              name="global.acktone"
               type="text"
               label="ackTone"
               validate={this.validateNumber}
@@ -60,7 +60,7 @@ export default class GlobalFields extends React.Component {
             <FormControlLabel
               control={<Field
                 component={Checkbox}
-                name="global.serialOut"
+                name="global.serialout"
                 type="checkbox"
                 color="primary"
               // onClick={this.handleDHCPClick}
@@ -73,7 +73,7 @@ export default class GlobalFields extends React.Component {
             <FormControlLabel
               control={<Field
                 component={Checkbox}
-                name="global.displayStartup"
+                name="global.displaystartup"
                 type="checkbox"
                 color="primary"
               // onClick={this.handleDHCPClick}

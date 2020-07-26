@@ -30,7 +30,7 @@ module.exports = {
     port: 8000,
     proxy: {
       '/': {
-        target: 'http://localhost:8080',
+        target: 'http://192.168.11.183',
         secure: false,
         changeOrigin: true
       }
@@ -47,6 +47,11 @@ module.exports = {
             loader: "ts-loader"
           }
         ]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       {

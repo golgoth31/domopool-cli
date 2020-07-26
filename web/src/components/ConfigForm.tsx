@@ -13,6 +13,9 @@ import TwinFields from './TwinForm';
 import TambFields from './TambForm';
 import { Grid } from "@material-ui/core";
 
+var domopool_pb = require('./../proto/domopool_pb');
+// import { } from './../proto/domopool_pb';
+
 export default class ConfigForm extends React.Component {
   constructor(
     private conf: any
@@ -25,6 +28,7 @@ export default class ConfigForm extends React.Component {
 
   componentDidMount() {
     dataprovider.get(`/api/v1/config`, {
+      responseType: 'arraybuffer'
       // headers: {
       //   'Access-Control-Allow-Origin': '*',
       //   'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
@@ -33,7 +37,7 @@ export default class ConfigForm extends React.Component {
     })
       .then(res => {
         const resp = res.data;
-        this.setState({ config: resp });
+        this.setState({ config: domopool_pb.Config.deserializeBinary(resp).toObject() });
       })
   }
 
