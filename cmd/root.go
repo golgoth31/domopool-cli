@@ -19,8 +19,12 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"time"
 
+	"github.com/go-resty/resty/v2"
+	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
+	"google.golang.org/protobuf/proto"
 
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
@@ -40,7 +44,27 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
-	//	Run: func(cmd *cobra.Command, args []string) { },
+	Run: func(cmd *cobra.Command, args []string) {
+		scheme := "http"
+		domoClient := resty.New()
+		infos := &domopool_proto.Infos{}
+
+		domoClient.HostURL = scheme + "://192.168.11.183"
+		domoClient.SetRetryCount(3)
+		domoClient.SetRetryWaitTime(5 * time.Second)
+		resp, err := domoClient.R().Get("/")
+		if err != nil {
+			fmt.Println(err)
+		}
+		// err = json.Unmarshal(resp.Body(), config)
+		// fmt.Println(resp.String())
+		err = proto.Unmarshal(resp.Body(), infos)
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		fmt.Println(infos)
+	},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
