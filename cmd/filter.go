@@ -25,9 +25,9 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-// configCmd represents the config command
-var configCmd = &cobra.Command{
-	Use:   "config",
+// filterCmd represents the filter command
+var filterCmd = &cobra.Command{
+	Use:   "filter",
 	Short: "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
@@ -36,44 +36,62 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		getConfig, _ := cmd.Flags().GetString("get")
+		setState, _ := cmd.Flags().GetString("state")
 		scheme := "http"
 		domoClient := resty.New()
-		config := &domopool_proto.Config{}
+		filter := &domopool_proto.Filter{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
-		resp, err := domoClient.R().Get("/api/v1/config")
-		if err != nil {
-			fmt.Println(err)
-		}
-		// err = json.Unmarshal(resp.Body(), config)
-		// fmt.Println(resp.String())
-		err = proto.Unmarshal(resp.Body(), config)
-		if err != nil {
-			fmt.Println(err)
-		}
 
-		switch getConfig {
-		case "", "all":
-			fmt.Println(config)
-		case "mqtt":
-			fmt.Println(config.Network.GetMqtt())
+		if setState == "" {
+			resp, err := domoClient.R().Get("/api/v1/filter")
+			if err != nil {
+				fmt.Println(err)
+			}
+			// err = json.Unmarshal(resp.Body(), config)
+			// fmt.Println(resp.String())
+			err = proto.Unmarshal(resp.Body(), filter)
+			if err != nil {
+				fmt.Println(err)
+			}
+
+			fmt.Println(filter)
+		} else {
+			filter.Duration, _ = cmd.Flags().GetUint32("duration")
+			switch setState {
+			case "auto":
+				filter.State = domopool_proto.FilterStates_auto
+			case "start":
+				filter.State = domopool_proto.FilterStates_start
+			case "stop":
+				filter.State = domopool_proto.FilterStates_stop
+			}
+			body, _ := proto.Marshal(filter)
+			_, err := domoClient.
+				R().
+				SetBody(body).
+				Post("/api/v1/filter")
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(configCmd)
+	rootCmd.AddCommand(filterCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// configCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// filterCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	configCmd.Flags().StringP("get", "g", "", "get config")
+	// filterCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	filterCmd.Flags().StringP("state", "s", "", "Help message for toggle")
+	filterCmd.Flags().Uint32P("duration", "d", 0, "Help message for toggle")
 }

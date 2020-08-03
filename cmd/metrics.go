@@ -42,7 +42,6 @@ to quickly create a Cobra application.`,
 		metrics := &domopool_proto.Metrics{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetHeader("Content-Type", "application/json")
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 		resp, err := domoClient.R().Get("/metrics")

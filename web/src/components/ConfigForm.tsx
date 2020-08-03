@@ -38,6 +38,7 @@ export default class ConfigForm extends React.Component {
       .then(res => {
         const resp = res.data;
         this.setState({ config: domopool_pb.Config.deserializeBinary(resp).toObject() });
+        console.log(this.state.config);
       })
   }
 
@@ -53,6 +54,9 @@ export default class ConfigForm extends React.Component {
 
   render() {
     if (this.state.config.global != undefined) {
+      if (this.state.config.global.displayStartup == undefined) {
+        this.state.config.global.displayStartup = false;
+      }
       this.state.ipDisabled = this.state.config.network.dhcp;
       return (
         <Formik
