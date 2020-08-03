@@ -68,9 +68,16 @@ export default class ConfigForm extends React.Component {
           }
           }
           onSubmit={(values, actions) => {
-            dataprovider.post('config')
-              .then(res => {
-                console.log(res.data)
+            dataprovider.post(this.state.config.toArrayBuffer(),
+              {
+                responseType: 'arraybuffer',
+                headers: { 'Content-Type': 'application/octet-stream' }
+              }
+            ).then(function (response) {
+              console.log(response)
+            })
+              .catch(function (response) {
+                console.log(response)
               })
           }}
         >
