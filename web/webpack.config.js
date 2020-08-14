@@ -1,12 +1,11 @@
 const path = require('path');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = {
   mode: "production",
@@ -42,6 +41,7 @@ module.exports = {
       {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
+        include: path.resolve(__dirname, 'src'),
         use: [
           {
             loader: "ts-loader"
@@ -51,16 +51,19 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        include: path.resolve(__dirname, 'src'),
         loader: 'babel-loader'
       },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       {
         enforce: "pre",
         test: /\.js$/,
+        include: path.resolve(__dirname, 'src'),
         loader: "source-map-loader"
       },
       {
         test: /\.html$/,
+        include: path.resolve(__dirname, 'src'),
         loader: 'html-loader'
       }
     ]
@@ -89,7 +92,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new ProgressBarPlugin({ incomplete: '-' }),
     new CleanWebpackPlugin(),
     new DashboardPlugin(),
     new HtmlWebpackPlugin({
@@ -98,6 +100,7 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: './src/favicon.png',
       prefix: '/',
-    })
+    }),
+    new HardSourceWebpackPlugin()
   ],
 };
