@@ -19,12 +19,10 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
 	"time"
 
 	"github.com/go-resty/resty/v2"
-	"github.com/golgoth31/domopool-cli/internal"
 
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/labstack/echo/v4"
@@ -85,15 +83,15 @@ to quickly create a Cobra application.`,
 			// }
 			return c.JSON(http.StatusOK, config)
 		})
-		e.POST("/config", func(c echo.Context) error {
-			u := internal.Aconfig{}
-			if err := c.Bind(u); err != nil {
-				return err
-			}
-			log.Printf("%+v", u)
-			e.Logger.Info(u)
-			return c.JSON(http.StatusOK, u)
-		})
+		// e.POST("/config", func(c echo.Context) error {
+		// 	u := internal.Aconfig{}
+		// 	if err := c.Bind(u); err != nil {
+		// 		return err
+		// 	}
+		// 	log.Printf("%+v", u)
+		// 	e.Logger.Info(u)
+		// 	return c.JSON(http.StatusOK, u)
+		// })
 		port, _ := cmd.Flags().GetInt("port")
 		e.Logger.Fatal(e.Start(fmt.Sprintf(":%d", port)))
 	},

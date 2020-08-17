@@ -16,10 +16,21 @@ limitations under the License.
 package cmd
 
 import (
+	"bytes"
 	"fmt"
+	"log"
+	"os"
+	"time"
 
+	rice "github.com/GeertJohan/go.rice"
+	"github.com/go-resty/resty/v2"
 	"github.com/spf13/cobra"
 )
+
+type uploadFile struct {
+	filename string
+	data     []byte
+}
 
 // uploadUiCmd represents the uploadUi command
 var uploadUiCmd = &cobra.Command{
@@ -32,7 +43,58 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("uploadUi called")
+		scheme := "http"
+		domoClient := resty.New()
+
+		domoClient.HostURL = scheme + "://192.168.11.183"
+		domoClient.SetRetryCount(3)
+		domoClient.SetRetryWaitTime(5 * time.Second)
+
+		uiBox, err := rice.FindBox("../web/build")
+		if err != nil {
+			log.Fatal(err)
+		}
+		index, err := uiBox.Bytes("index.html")
+		if err != nil {
+			fmt.Println("can't read index file")
+			os.Exit(1)
+		}
+		bundle, err := uiBox.Bytes("bundle.js")
+		if err != nil {
+			fmt.Println("can't read index file")
+			os.Exit(1)
+		}
+
+		fmt.Println("uploading index")
+		resp, err := domoClient.
+			R().
+			SetFileReader("", "index.html", bytes.NewReader(index)).
+			SetFormData(map[string]string{
+				"filename": "index.html",
+			}).
+			SetContentLength(true).
+			Post("/ui/upload")
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		if resp.StatusCode() == 200 {
+			fmt.Println("uploading bundle")
+			resp, err := domoClient.
+				R().
+				SetFileReader("", "bundle.js", bytes.NewReader(bundle)).
+				SetFormData(map[string]string{
+					"filename": "bundle.js",
+				}).
+				SetContentLength(true).
+				Post("/ui/upload")
+			if err != nil {
+				fmt.Println(err)
+			}
+			if resp.StatusCode() == 200 {
+				fmt.Println("upload ok")
+			}
+		}
 	},
 }
 

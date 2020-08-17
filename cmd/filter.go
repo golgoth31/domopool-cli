@@ -69,12 +69,27 @@ to quickly create a Cobra application.`,
 				filter.State = domopool_proto.FilterStates_stop
 			}
 			body, _ := proto.Marshal(filter)
-			_, err := domoClient.
+			resp, err := domoClient.
 				R().
 				SetBody(body).
 				Post("/api/v1/filter")
 			if err != nil {
 				fmt.Println(err)
+			}
+			if resp.StatusCode() == 200 {
+				time.Sleep(2 * time.Second)
+				response, err := domoClient.R().Get("/api/v1/filter")
+				if err != nil {
+					fmt.Println(err)
+				}
+				// err = json.Unmarshal(resp.Body(), config)
+				// fmt.Println(resp.String())
+				err = proto.Unmarshal(response.Body(), filter)
+				if err != nil {
+					fmt.Println(err)
+				}
+
+				fmt.Println(filter)
 			}
 		}
 	},
