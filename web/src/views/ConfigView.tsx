@@ -4,19 +4,19 @@ import {
   Formik,
   Form,
 } from 'formik';
-import SubmitButton from "./SubmitButton";
+import SubmitButton from "../components/SubmitButton";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import NetworkFields from './NetworkForm';
-import GlobalFields from './GlobalForm';
-import TwoutFields from './TwoutForm';
-import TwinFields from './TwinForm';
-import TambFields from './TambForm';
+import NetworkFields from '../components/NetworkForm';
+import GlobalFields from '../components/GlobalForm';
+import TwoutFields from '../components/TwoutForm';
+import TwinFields from '../components/TwinForm';
+import TambFields from '../components/TambForm';
 import { Grid } from "@material-ui/core";
 
-var domopool_pb = require('./../proto/domopool_pb');
+var domopool_pb = require('../proto/domopool_pb');
 // import { } from './../proto/domopool_pb';
 
-export default class ConfigForm extends React.Component {
+export default class ConfigView extends React.Component {
   constructor(
     private conf: any
   ) { super(conf); };

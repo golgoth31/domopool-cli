@@ -8,7 +8,6 @@ import {
 } from 'formik-material-ui';
 import { Grid } from "@material-ui/core";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import isIp from 'is-ip';
 
 // export const ConfigForm: React.SFC = () => {
 export default class GlobalFields extends React.Component {

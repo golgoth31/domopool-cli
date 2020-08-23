@@ -1,9 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Dashboard from './components/Dashboard';
+import Dashboard from './layouts/Dashboard';
 import theme from './theme';
+// import routes from './routes';
 
 declare global {
   interface Window {
@@ -14,9 +16,11 @@ declare global {
 }
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    < CssBaseline />
-    <Dashboard />
-  </ThemeProvider>,
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      < CssBaseline />
+      <Dashboard />
+    </ThemeProvider>
+  </BrowserRouter>,
   document.querySelector('#root'),
 );

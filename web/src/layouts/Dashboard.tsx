@@ -1,4 +1,8 @@
 import * as React from "react";
+// import { Outlet } from 'react-router-dom';
+import {
+  Route
+} from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,15 +15,15 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import List from '@material-ui/core/List';
-import Grid from '@material-ui/core/Grid';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems } from './Menu';
-import ConfigForm from './ConfigForm';
+import MainListItems from './Menu';
+import ConfigView from '../views/ConfigView';
+import MetricsView from '../views/MetricsView';
 
 function Copyright() {
   return (
@@ -139,6 +143,9 @@ export default function Dashboard() {
           >
             <MenuIcon />
           </IconButton>
+          {/* <RouterLink to="/">
+            <Logo />
+          </RouterLink> */}
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Dashboard
           </Typography>
@@ -162,13 +169,17 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+        <List><MainListItems /></List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Paper className={classes.paper}>
-            <ConfigForm />
+            {/* <ConfigForm /> */}
+            <Route path="/" component={MetricsView} />
+            <Route path="/config" component={ConfigView} />
+            {/* <Route path="/messages" component={Messages} />
+            <Route path="/about" component={About} /> */}
           </Paper>
 
           <Box pt={4}>
