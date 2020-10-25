@@ -39,7 +39,7 @@ goog.exportSymbol('proto.domopool.Versions', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.NTP = function (opt_data) {
+proto.domopool.NTP = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.NTP, jspb.Message);
@@ -60,7 +60,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Mqtt = function (opt_data) {
+proto.domopool.Mqtt = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Mqtt, jspb.Message);
@@ -81,7 +81,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Network = function (opt_data) {
+proto.domopool.Network = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Network, jspb.Message);
@@ -102,7 +102,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Temp = function (opt_data) {
+proto.domopool.Temp = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.domopool.Temp.repeatedFields_, null);
 };
 goog.inherits(proto.domopool.Temp, jspb.Message);
@@ -123,7 +123,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.AnalogSensor = function (opt_data) {
+proto.domopool.AnalogSensor = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.AnalogSensor, jspb.Message);
@@ -144,7 +144,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Sensors = function (opt_data) {
+proto.domopool.Sensors = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Sensors, jspb.Message);
@@ -165,7 +165,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Global = function (opt_data) {
+proto.domopool.Global = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Global, jspb.Message);
@@ -186,7 +186,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Pump = function (opt_data) {
+proto.domopool.Pump = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Pump, jspb.Message);
@@ -207,7 +207,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Alarms = function (opt_data) {
+proto.domopool.Alarms = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Alarms, jspb.Message);
@@ -228,7 +228,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Tests = function (opt_data) {
+proto.domopool.Tests = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Tests, jspb.Message);
@@ -249,7 +249,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Metrics = function (opt_data) {
+proto.domopool.Metrics = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Metrics, jspb.Message);
@@ -270,7 +270,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.States = function (opt_data) {
+proto.domopool.States = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.States, jspb.Message);
@@ -291,7 +291,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Infos = function (opt_data) {
+proto.domopool.Infos = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Infos, jspb.Message);
@@ -312,7 +312,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Versions = function (opt_data) {
+proto.domopool.Versions = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Versions, jspb.Message);
@@ -333,7 +333,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Config = function (opt_data) {
+proto.domopool.Config = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Config, jspb.Message);
@@ -354,7 +354,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.domopool.Filter = function (opt_data) {
+proto.domopool.Filter = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Filter, jspb.Message);
@@ -369,44 +369,44 @@ if (goog.DEBUG && !COMPILED) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.NTP.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.NTP.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.NTP.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.NTP.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.NTP} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.NTP.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    dayLight: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    server: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    timezone: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.NTP} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.NTP.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      dayLight: jspb.Message.getFieldWithDefault(msg, 1, 0),
-      server: jspb.Message.getFieldWithDefault(msg, 2, ""),
-      timezone: jspb.Message.getFieldWithDefault(msg, 3, 0)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -415,7 +415,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.NTP}
  */
-proto.domopool.NTP.deserializeBinary = function (bytes) {
+proto.domopool.NTP.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.NTP;
   return proto.domopool.NTP.deserializeBinaryFromReader(msg, reader);
@@ -429,28 +429,28 @@ proto.domopool.NTP.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.NTP}
  */
-proto.domopool.NTP.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.NTP.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setDayLight(value);
-        break;
-      case 2:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setServer(value);
-        break;
-      case 3:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setTimezone(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setDayLight(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setServer(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTimezone(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -461,7 +461,7 @@ proto.domopool.NTP.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.NTP.prototype.serializeBinary = function () {
+proto.domopool.NTP.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.NTP.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -475,7 +475,7 @@ proto.domopool.NTP.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.NTP.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.NTP.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDayLight();
   if (f !== 0) {
@@ -505,7 +505,7 @@ proto.domopool.NTP.serializeBinaryToWriter = function (message, writer) {
  * optional uint32 day_light = 1;
  * @return {number}
  */
-proto.domopool.NTP.prototype.getDayLight = function () {
+proto.domopool.NTP.prototype.getDayLight = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -514,7 +514,7 @@ proto.domopool.NTP.prototype.getDayLight = function () {
  * @param {number} value
  * @return {!proto.domopool.NTP} returns this
  */
-proto.domopool.NTP.prototype.setDayLight = function (value) {
+proto.domopool.NTP.prototype.setDayLight = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -523,7 +523,7 @@ proto.domopool.NTP.prototype.setDayLight = function (value) {
  * optional string server = 2;
  * @return {string}
  */
-proto.domopool.NTP.prototype.getServer = function () {
+proto.domopool.NTP.prototype.getServer = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -532,7 +532,7 @@ proto.domopool.NTP.prototype.getServer = function () {
  * @param {string} value
  * @return {!proto.domopool.NTP} returns this
  */
-proto.domopool.NTP.prototype.setServer = function (value) {
+proto.domopool.NTP.prototype.setServer = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -541,7 +541,7 @@ proto.domopool.NTP.prototype.setServer = function (value) {
  * optional uint32 timezone = 3;
  * @return {number}
  */
-proto.domopool.NTP.prototype.getTimezone = function () {
+proto.domopool.NTP.prototype.getTimezone = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -550,7 +550,7 @@ proto.domopool.NTP.prototype.getTimezone = function () {
  * @param {number} value
  * @return {!proto.domopool.NTP} returns this
  */
-proto.domopool.NTP.prototype.setTimezone = function (value) {
+proto.domopool.NTP.prototype.setTimezone = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
@@ -559,43 +559,43 @@ proto.domopool.NTP.prototype.setTimezone = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Mqtt.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Mqtt.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Mqtt.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Mqtt.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Mqtt} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Mqtt.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    server: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Mqtt} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Mqtt.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-      server: jspb.Message.getFieldWithDefault(msg, 2, "")
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -604,7 +604,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Mqtt}
  */
-proto.domopool.Mqtt.deserializeBinary = function (bytes) {
+proto.domopool.Mqtt.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Mqtt;
   return proto.domopool.Mqtt.deserializeBinaryFromReader(msg, reader);
@@ -618,24 +618,24 @@ proto.domopool.Mqtt.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Mqtt}
  */
-proto.domopool.Mqtt.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Mqtt.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setEnabled(value);
-        break;
-      case 2:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setServer(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setServer(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -646,7 +646,7 @@ proto.domopool.Mqtt.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Mqtt.prototype.serializeBinary = function () {
+proto.domopool.Mqtt.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Mqtt.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -660,7 +660,7 @@ proto.domopool.Mqtt.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Mqtt.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Mqtt.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getEnabled();
   if (f) {
@@ -683,7 +683,7 @@ proto.domopool.Mqtt.serializeBinaryToWriter = function (message, writer) {
  * optional bool enabled = 1;
  * @return {boolean}
  */
-proto.domopool.Mqtt.prototype.getEnabled = function () {
+proto.domopool.Mqtt.prototype.getEnabled = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -692,7 +692,7 @@ proto.domopool.Mqtt.prototype.getEnabled = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Mqtt} returns this
  */
-proto.domopool.Mqtt.prototype.setEnabled = function (value) {
+proto.domopool.Mqtt.prototype.setEnabled = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -701,7 +701,7 @@ proto.domopool.Mqtt.prototype.setEnabled = function (value) {
  * optional string server = 2;
  * @return {string}
  */
-proto.domopool.Mqtt.prototype.getServer = function () {
+proto.domopool.Mqtt.prototype.getServer = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -710,7 +710,7 @@ proto.domopool.Mqtt.prototype.getServer = function () {
  * @param {string} value
  * @return {!proto.domopool.Mqtt} returns this
  */
-proto.domopool.Mqtt.prototype.setServer = function (value) {
+proto.domopool.Mqtt.prototype.setServer = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -719,49 +719,49 @@ proto.domopool.Mqtt.prototype.setServer = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Network.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Network.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Network.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Network.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Network} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Network.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    dhcp: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    ip: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    netmask: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    gateway: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    dns: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    allowPost: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    mqtt: (f = msg.getMqtt()) && proto.domopool.Mqtt.toObject(includeInstance, f),
+    ntp: (f = msg.getNtp()) && proto.domopool.NTP.toObject(includeInstance, f)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Network} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Network.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      dhcp: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-      ip: jspb.Message.getFieldWithDefault(msg, 2, ""),
-      netmask: jspb.Message.getFieldWithDefault(msg, 3, ""),
-      gateway: jspb.Message.getFieldWithDefault(msg, 4, ""),
-      dns: jspb.Message.getFieldWithDefault(msg, 5, ""),
-      allowPost: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-      mqtt: (f = msg.getMqtt()) && proto.domopool.Mqtt.toObject(includeInstance, f),
-      ntp: (f = msg.getNtp()) && proto.domopool.NTP.toObject(includeInstance, f)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -770,7 +770,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Network}
  */
-proto.domopool.Network.deserializeBinary = function (bytes) {
+proto.domopool.Network.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Network;
   return proto.domopool.Network.deserializeBinaryFromReader(msg, reader);
@@ -784,50 +784,50 @@ proto.domopool.Network.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Network}
  */
-proto.domopool.Network.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Network.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setDhcp(value);
-        break;
-      case 2:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setIp(value);
-        break;
-      case 3:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setNetmask(value);
-        break;
-      case 4:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setGateway(value);
-        break;
-      case 5:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setDns(value);
-        break;
-      case 6:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setAllowPost(value);
-        break;
-      case 7:
-        var value = new proto.domopool.Mqtt;
-        reader.readMessage(value, proto.domopool.Mqtt.deserializeBinaryFromReader);
-        msg.setMqtt(value);
-        break;
-      case 8:
-        var value = new proto.domopool.NTP;
-        reader.readMessage(value, proto.domopool.NTP.deserializeBinaryFromReader);
-        msg.setNtp(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDhcp(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIp(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNetmask(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGateway(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDns(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAllowPost(value);
+      break;
+    case 7:
+      var value = new proto.domopool.Mqtt;
+      reader.readMessage(value,proto.domopool.Mqtt.deserializeBinaryFromReader);
+      msg.setMqtt(value);
+      break;
+    case 8:
+      var value = new proto.domopool.NTP;
+      reader.readMessage(value,proto.domopool.NTP.deserializeBinaryFromReader);
+      msg.setNtp(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -838,7 +838,7 @@ proto.domopool.Network.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Network.prototype.serializeBinary = function () {
+proto.domopool.Network.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Network.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -852,7 +852,7 @@ proto.domopool.Network.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Network.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Network.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDhcp();
   if (f) {
@@ -919,7 +919,7 @@ proto.domopool.Network.serializeBinaryToWriter = function (message, writer) {
  * optional bool dhcp = 1;
  * @return {boolean}
  */
-proto.domopool.Network.prototype.getDhcp = function () {
+proto.domopool.Network.prototype.getDhcp = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -928,7 +928,7 @@ proto.domopool.Network.prototype.getDhcp = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Network} returns this
  */
-proto.domopool.Network.prototype.setDhcp = function (value) {
+proto.domopool.Network.prototype.setDhcp = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -937,7 +937,7 @@ proto.domopool.Network.prototype.setDhcp = function (value) {
  * optional string ip = 2;
  * @return {string}
  */
-proto.domopool.Network.prototype.getIp = function () {
+proto.domopool.Network.prototype.getIp = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -946,7 +946,7 @@ proto.domopool.Network.prototype.getIp = function () {
  * @param {string} value
  * @return {!proto.domopool.Network} returns this
  */
-proto.domopool.Network.prototype.setIp = function (value) {
+proto.domopool.Network.prototype.setIp = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -955,7 +955,7 @@ proto.domopool.Network.prototype.setIp = function (value) {
  * optional string netmask = 3;
  * @return {string}
  */
-proto.domopool.Network.prototype.getNetmask = function () {
+proto.domopool.Network.prototype.getNetmask = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -964,7 +964,7 @@ proto.domopool.Network.prototype.getNetmask = function () {
  * @param {string} value
  * @return {!proto.domopool.Network} returns this
  */
-proto.domopool.Network.prototype.setNetmask = function (value) {
+proto.domopool.Network.prototype.setNetmask = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -973,7 +973,7 @@ proto.domopool.Network.prototype.setNetmask = function (value) {
  * optional string gateway = 4;
  * @return {string}
  */
-proto.domopool.Network.prototype.getGateway = function () {
+proto.domopool.Network.prototype.getGateway = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -982,7 +982,7 @@ proto.domopool.Network.prototype.getGateway = function () {
  * @param {string} value
  * @return {!proto.domopool.Network} returns this
  */
-proto.domopool.Network.prototype.setGateway = function (value) {
+proto.domopool.Network.prototype.setGateway = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -991,7 +991,7 @@ proto.domopool.Network.prototype.setGateway = function (value) {
  * optional string dns = 5;
  * @return {string}
  */
-proto.domopool.Network.prototype.getDns = function () {
+proto.domopool.Network.prototype.getDns = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1000,7 +1000,7 @@ proto.domopool.Network.prototype.getDns = function () {
  * @param {string} value
  * @return {!proto.domopool.Network} returns this
  */
-proto.domopool.Network.prototype.setDns = function (value) {
+proto.domopool.Network.prototype.setDns = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -1009,7 +1009,7 @@ proto.domopool.Network.prototype.setDns = function (value) {
  * optional bool allow_post = 6;
  * @return {boolean}
  */
-proto.domopool.Network.prototype.getAllowPost = function () {
+proto.domopool.Network.prototype.getAllowPost = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -1018,7 +1018,7 @@ proto.domopool.Network.prototype.getAllowPost = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Network} returns this
  */
-proto.domopool.Network.prototype.setAllowPost = function (value) {
+proto.domopool.Network.prototype.setAllowPost = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
@@ -1027,7 +1027,7 @@ proto.domopool.Network.prototype.setAllowPost = function (value) {
  * optional Mqtt mqtt = 7;
  * @return {?proto.domopool.Mqtt}
  */
-proto.domopool.Network.prototype.getMqtt = function () {
+proto.domopool.Network.prototype.getMqtt = function() {
   return /** @type{?proto.domopool.Mqtt} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Mqtt, 7));
 };
@@ -1037,7 +1037,7 @@ proto.domopool.Network.prototype.getMqtt = function () {
  * @param {?proto.domopool.Mqtt|undefined} value
  * @return {!proto.domopool.Network} returns this
 */
-proto.domopool.Network.prototype.setMqtt = function (value) {
+proto.domopool.Network.prototype.setMqtt = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -1046,7 +1046,7 @@ proto.domopool.Network.prototype.setMqtt = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Network} returns this
  */
-proto.domopool.Network.prototype.clearMqtt = function () {
+proto.domopool.Network.prototype.clearMqtt = function() {
   return this.setMqtt(undefined);
 };
 
@@ -1055,7 +1055,7 @@ proto.domopool.Network.prototype.clearMqtt = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Network.prototype.hasMqtt = function () {
+proto.domopool.Network.prototype.hasMqtt = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -1064,7 +1064,7 @@ proto.domopool.Network.prototype.hasMqtt = function () {
  * optional NTP ntp = 8;
  * @return {?proto.domopool.NTP}
  */
-proto.domopool.Network.prototype.getNtp = function () {
+proto.domopool.Network.prototype.getNtp = function() {
   return /** @type{?proto.domopool.NTP} */ (
     jspb.Message.getWrapperField(this, proto.domopool.NTP, 8));
 };
@@ -1074,7 +1074,7 @@ proto.domopool.Network.prototype.getNtp = function () {
  * @param {?proto.domopool.NTP|undefined} value
  * @return {!proto.domopool.Network} returns this
 */
-proto.domopool.Network.prototype.setNtp = function (value) {
+proto.domopool.Network.prototype.setNtp = function(value) {
   return jspb.Message.setWrapperField(this, 8, value);
 };
 
@@ -1083,7 +1083,7 @@ proto.domopool.Network.prototype.setNtp = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Network} returns this
  */
-proto.domopool.Network.prototype.clearNtp = function () {
+proto.domopool.Network.prototype.clearNtp = function() {
   return this.setNtp(undefined);
 };
 
@@ -1092,7 +1092,7 @@ proto.domopool.Network.prototype.clearNtp = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Network.prototype.hasNtp = function () {
+proto.domopool.Network.prototype.hasNtp = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -1108,44 +1108,44 @@ proto.domopool.Temp.repeatedFields_ = [3];
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Temp.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Temp.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Temp.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Temp.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Temp} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Temp.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    init: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    addrList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Temp} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Temp.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-      init: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-      addrList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -1154,7 +1154,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Temp}
  */
-proto.domopool.Temp.deserializeBinary = function (bytes) {
+proto.domopool.Temp.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Temp;
   return proto.domopool.Temp.deserializeBinaryFromReader(msg, reader);
@@ -1168,28 +1168,28 @@ proto.domopool.Temp.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Temp}
  */
-proto.domopool.Temp.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Temp.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setEnabled(value);
-        break;
-      case 2:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setInit(value);
-        break;
-      case 3:
-        var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
-        msg.setAddrList(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setInit(value);
+      break;
+    case 3:
+      var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
+      msg.setAddrList(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -1200,7 +1200,7 @@ proto.domopool.Temp.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Temp.prototype.serializeBinary = function () {
+proto.domopool.Temp.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Temp.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -1214,7 +1214,7 @@ proto.domopool.Temp.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Temp.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Temp.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getEnabled();
   if (f) {
@@ -1244,7 +1244,7 @@ proto.domopool.Temp.serializeBinaryToWriter = function (message, writer) {
  * optional bool enabled = 1;
  * @return {boolean}
  */
-proto.domopool.Temp.prototype.getEnabled = function () {
+proto.domopool.Temp.prototype.getEnabled = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -1253,7 +1253,7 @@ proto.domopool.Temp.prototype.getEnabled = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Temp} returns this
  */
-proto.domopool.Temp.prototype.setEnabled = function (value) {
+proto.domopool.Temp.prototype.setEnabled = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -1262,7 +1262,7 @@ proto.domopool.Temp.prototype.setEnabled = function (value) {
  * optional bool init = 2;
  * @return {boolean}
  */
-proto.domopool.Temp.prototype.getInit = function () {
+proto.domopool.Temp.prototype.getInit = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
@@ -1271,7 +1271,7 @@ proto.domopool.Temp.prototype.getInit = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Temp} returns this
  */
-proto.domopool.Temp.prototype.setInit = function (value) {
+proto.domopool.Temp.prototype.setInit = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
@@ -1280,7 +1280,7 @@ proto.domopool.Temp.prototype.setInit = function (value) {
  * repeated uint32 addr = 3;
  * @return {!Array<number>}
  */
-proto.domopool.Temp.prototype.getAddrList = function () {
+proto.domopool.Temp.prototype.getAddrList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
@@ -1289,7 +1289,7 @@ proto.domopool.Temp.prototype.getAddrList = function () {
  * @param {!Array<number>} value
  * @return {!proto.domopool.Temp} returns this
  */
-proto.domopool.Temp.prototype.setAddrList = function (value) {
+proto.domopool.Temp.prototype.setAddrList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -1299,7 +1299,7 @@ proto.domopool.Temp.prototype.setAddrList = function (value) {
  * @param {number=} opt_index
  * @return {!proto.domopool.Temp} returns this
  */
-proto.domopool.Temp.prototype.addAddr = function (value, opt_index) {
+proto.domopool.Temp.prototype.addAddr = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
@@ -1308,7 +1308,7 @@ proto.domopool.Temp.prototype.addAddr = function (value, opt_index) {
  * Clears the list making it empty but non-null.
  * @return {!proto.domopool.Temp} returns this
  */
-proto.domopool.Temp.prototype.clearAddrList = function () {
+proto.domopool.Temp.prototype.clearAddrList = function() {
   return this.setAddrList([]);
 };
 
@@ -1317,43 +1317,44 @@ proto.domopool.Temp.prototype.clearAddrList = function () {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.AnalogSensor.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.AnalogSensor.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.AnalogSensor.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.AnalogSensor.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.AnalogSensor} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.AnalogSensor.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    threshold: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    adcPin: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.AnalogSensor} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.AnalogSensor.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-      threshold: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -1362,7 +1363,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.AnalogSensor}
  */
-proto.domopool.AnalogSensor.deserializeBinary = function (bytes) {
+proto.domopool.AnalogSensor.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.AnalogSensor;
   return proto.domopool.AnalogSensor.deserializeBinaryFromReader(msg, reader);
@@ -1376,24 +1377,28 @@ proto.domopool.AnalogSensor.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.AnalogSensor}
  */
-proto.domopool.AnalogSensor.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.AnalogSensor.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setEnabled(value);
-        break;
-      case 2:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setThreshold(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setThreshold(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setAdcPin(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -1404,7 +1409,7 @@ proto.domopool.AnalogSensor.deserializeBinaryFromReader = function (msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.AnalogSensor.prototype.serializeBinary = function () {
+proto.domopool.AnalogSensor.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.AnalogSensor.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -1418,7 +1423,7 @@ proto.domopool.AnalogSensor.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.AnalogSensor.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.AnalogSensor.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getEnabled();
   if (f) {
@@ -1434,6 +1439,13 @@ proto.domopool.AnalogSensor.serializeBinaryToWriter = function (message, writer)
       f
     );
   }
+  f = message.getAdcPin();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1441,7 +1453,7 @@ proto.domopool.AnalogSensor.serializeBinaryToWriter = function (message, writer)
  * optional bool enabled = 1;
  * @return {boolean}
  */
-proto.domopool.AnalogSensor.prototype.getEnabled = function () {
+proto.domopool.AnalogSensor.prototype.getEnabled = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -1450,7 +1462,7 @@ proto.domopool.AnalogSensor.prototype.getEnabled = function () {
  * @param {boolean} value
  * @return {!proto.domopool.AnalogSensor} returns this
  */
-proto.domopool.AnalogSensor.prototype.setEnabled = function (value) {
+proto.domopool.AnalogSensor.prototype.setEnabled = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -1459,7 +1471,7 @@ proto.domopool.AnalogSensor.prototype.setEnabled = function (value) {
  * optional float threshold = 2;
  * @return {number}
  */
-proto.domopool.AnalogSensor.prototype.getThreshold = function () {
+proto.domopool.AnalogSensor.prototype.getThreshold = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
@@ -1468,8 +1480,26 @@ proto.domopool.AnalogSensor.prototype.getThreshold = function () {
  * @param {number} value
  * @return {!proto.domopool.AnalogSensor} returns this
  */
-proto.domopool.AnalogSensor.prototype.setThreshold = function (value) {
+proto.domopool.AnalogSensor.prototype.setThreshold = function(value) {
   return jspb.Message.setProto3FloatField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 adc_pin = 3;
+ * @return {number}
+ */
+proto.domopool.AnalogSensor.prototype.getAdcPin = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.domopool.AnalogSensor} returns this
+ */
+proto.domopool.AnalogSensor.prototype.setAdcPin = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -1477,49 +1507,49 @@ proto.domopool.AnalogSensor.prototype.setThreshold = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Sensors.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Sensors.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Sensors.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Sensors.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Sensors} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Sensors.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    twin: (f = msg.getTwin()) && proto.domopool.Temp.toObject(includeInstance, f),
+    twout: (f = msg.getTwout()) && proto.domopool.Temp.toObject(includeInstance, f),
+    tamb: (f = msg.getTamb()) && proto.domopool.Temp.toObject(includeInstance, f),
+    waitForConversion: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    tempResolution: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    ph: (f = msg.getPh()) && proto.domopool.AnalogSensor.toObject(includeInstance, f),
+    ch: (f = msg.getCh()) && proto.domopool.AnalogSensor.toObject(includeInstance, f),
+    waterPressure: (f = msg.getWaterPressure()) && proto.domopool.AnalogSensor.toObject(includeInstance, f)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Sensors} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Sensors.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      twin: (f = msg.getTwin()) && proto.domopool.Temp.toObject(includeInstance, f),
-      twout: (f = msg.getTwout()) && proto.domopool.Temp.toObject(includeInstance, f),
-      tamb: (f = msg.getTamb()) && proto.domopool.Temp.toObject(includeInstance, f),
-      waitForConversion: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-      tempResolution: jspb.Message.getFieldWithDefault(msg, 5, 0),
-      ph: (f = msg.getPh()) && proto.domopool.AnalogSensor.toObject(includeInstance, f),
-      ch: (f = msg.getCh()) && proto.domopool.AnalogSensor.toObject(includeInstance, f),
-      waterPressure: (f = msg.getWaterPressure()) && proto.domopool.AnalogSensor.toObject(includeInstance, f)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -1528,7 +1558,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Sensors}
  */
-proto.domopool.Sensors.deserializeBinary = function (bytes) {
+proto.domopool.Sensors.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Sensors;
   return proto.domopool.Sensors.deserializeBinaryFromReader(msg, reader);
@@ -1542,54 +1572,54 @@ proto.domopool.Sensors.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Sensors}
  */
-proto.domopool.Sensors.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Sensors.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = new proto.domopool.Temp;
-        reader.readMessage(value, proto.domopool.Temp.deserializeBinaryFromReader);
-        msg.setTwin(value);
-        break;
-      case 2:
-        var value = new proto.domopool.Temp;
-        reader.readMessage(value, proto.domopool.Temp.deserializeBinaryFromReader);
-        msg.setTwout(value);
-        break;
-      case 3:
-        var value = new proto.domopool.Temp;
-        reader.readMessage(value, proto.domopool.Temp.deserializeBinaryFromReader);
-        msg.setTamb(value);
-        break;
-      case 4:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setWaitForConversion(value);
-        break;
-      case 5:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setTempResolution(value);
-        break;
-      case 6:
-        var value = new proto.domopool.AnalogSensor;
-        reader.readMessage(value, proto.domopool.AnalogSensor.deserializeBinaryFromReader);
-        msg.setPh(value);
-        break;
-      case 7:
-        var value = new proto.domopool.AnalogSensor;
-        reader.readMessage(value, proto.domopool.AnalogSensor.deserializeBinaryFromReader);
-        msg.setCh(value);
-        break;
-      case 8:
-        var value = new proto.domopool.AnalogSensor;
-        reader.readMessage(value, proto.domopool.AnalogSensor.deserializeBinaryFromReader);
-        msg.setWaterPressure(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = new proto.domopool.Temp;
+      reader.readMessage(value,proto.domopool.Temp.deserializeBinaryFromReader);
+      msg.setTwin(value);
+      break;
+    case 2:
+      var value = new proto.domopool.Temp;
+      reader.readMessage(value,proto.domopool.Temp.deserializeBinaryFromReader);
+      msg.setTwout(value);
+      break;
+    case 3:
+      var value = new proto.domopool.Temp;
+      reader.readMessage(value,proto.domopool.Temp.deserializeBinaryFromReader);
+      msg.setTamb(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWaitForConversion(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTempResolution(value);
+      break;
+    case 6:
+      var value = new proto.domopool.AnalogSensor;
+      reader.readMessage(value,proto.domopool.AnalogSensor.deserializeBinaryFromReader);
+      msg.setPh(value);
+      break;
+    case 7:
+      var value = new proto.domopool.AnalogSensor;
+      reader.readMessage(value,proto.domopool.AnalogSensor.deserializeBinaryFromReader);
+      msg.setCh(value);
+      break;
+    case 8:
+      var value = new proto.domopool.AnalogSensor;
+      reader.readMessage(value,proto.domopool.AnalogSensor.deserializeBinaryFromReader);
+      msg.setWaterPressure(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -1600,7 +1630,7 @@ proto.domopool.Sensors.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Sensors.prototype.serializeBinary = function () {
+proto.domopool.Sensors.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Sensors.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -1614,7 +1644,7 @@ proto.domopool.Sensors.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Sensors.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Sensors.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTwin();
   if (f != null) {
@@ -1685,7 +1715,7 @@ proto.domopool.Sensors.serializeBinaryToWriter = function (message, writer) {
  * optional Temp twin = 1;
  * @return {?proto.domopool.Temp}
  */
-proto.domopool.Sensors.prototype.getTwin = function () {
+proto.domopool.Sensors.prototype.getTwin = function() {
   return /** @type{?proto.domopool.Temp} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Temp, 1));
 };
@@ -1695,7 +1725,7 @@ proto.domopool.Sensors.prototype.getTwin = function () {
  * @param {?proto.domopool.Temp|undefined} value
  * @return {!proto.domopool.Sensors} returns this
 */
-proto.domopool.Sensors.prototype.setTwin = function (value) {
+proto.domopool.Sensors.prototype.setTwin = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1704,7 +1734,7 @@ proto.domopool.Sensors.prototype.setTwin = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Sensors} returns this
  */
-proto.domopool.Sensors.prototype.clearTwin = function () {
+proto.domopool.Sensors.prototype.clearTwin = function() {
   return this.setTwin(undefined);
 };
 
@@ -1713,7 +1743,7 @@ proto.domopool.Sensors.prototype.clearTwin = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Sensors.prototype.hasTwin = function () {
+proto.domopool.Sensors.prototype.hasTwin = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1722,7 +1752,7 @@ proto.domopool.Sensors.prototype.hasTwin = function () {
  * optional Temp twout = 2;
  * @return {?proto.domopool.Temp}
  */
-proto.domopool.Sensors.prototype.getTwout = function () {
+proto.domopool.Sensors.prototype.getTwout = function() {
   return /** @type{?proto.domopool.Temp} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Temp, 2));
 };
@@ -1732,7 +1762,7 @@ proto.domopool.Sensors.prototype.getTwout = function () {
  * @param {?proto.domopool.Temp|undefined} value
  * @return {!proto.domopool.Sensors} returns this
 */
-proto.domopool.Sensors.prototype.setTwout = function (value) {
+proto.domopool.Sensors.prototype.setTwout = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -1741,7 +1771,7 @@ proto.domopool.Sensors.prototype.setTwout = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Sensors} returns this
  */
-proto.domopool.Sensors.prototype.clearTwout = function () {
+proto.domopool.Sensors.prototype.clearTwout = function() {
   return this.setTwout(undefined);
 };
 
@@ -1750,7 +1780,7 @@ proto.domopool.Sensors.prototype.clearTwout = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Sensors.prototype.hasTwout = function () {
+proto.domopool.Sensors.prototype.hasTwout = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -1759,7 +1789,7 @@ proto.domopool.Sensors.prototype.hasTwout = function () {
  * optional Temp tamb = 3;
  * @return {?proto.domopool.Temp}
  */
-proto.domopool.Sensors.prototype.getTamb = function () {
+proto.domopool.Sensors.prototype.getTamb = function() {
   return /** @type{?proto.domopool.Temp} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Temp, 3));
 };
@@ -1769,7 +1799,7 @@ proto.domopool.Sensors.prototype.getTamb = function () {
  * @param {?proto.domopool.Temp|undefined} value
  * @return {!proto.domopool.Sensors} returns this
 */
-proto.domopool.Sensors.prototype.setTamb = function (value) {
+proto.domopool.Sensors.prototype.setTamb = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -1778,7 +1808,7 @@ proto.domopool.Sensors.prototype.setTamb = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Sensors} returns this
  */
-proto.domopool.Sensors.prototype.clearTamb = function () {
+proto.domopool.Sensors.prototype.clearTamb = function() {
   return this.setTamb(undefined);
 };
 
@@ -1787,7 +1817,7 @@ proto.domopool.Sensors.prototype.clearTamb = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Sensors.prototype.hasTamb = function () {
+proto.domopool.Sensors.prototype.hasTamb = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -1796,7 +1826,7 @@ proto.domopool.Sensors.prototype.hasTamb = function () {
  * optional bool wait_for_conversion = 4;
  * @return {boolean}
  */
-proto.domopool.Sensors.prototype.getWaitForConversion = function () {
+proto.domopool.Sensors.prototype.getWaitForConversion = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -1805,7 +1835,7 @@ proto.domopool.Sensors.prototype.getWaitForConversion = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Sensors} returns this
  */
-proto.domopool.Sensors.prototype.setWaitForConversion = function (value) {
+proto.domopool.Sensors.prototype.setWaitForConversion = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
@@ -1814,7 +1844,7 @@ proto.domopool.Sensors.prototype.setWaitForConversion = function (value) {
  * optional uint32 temp_resolution = 5;
  * @return {number}
  */
-proto.domopool.Sensors.prototype.getTempResolution = function () {
+proto.domopool.Sensors.prototype.getTempResolution = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -1823,7 +1853,7 @@ proto.domopool.Sensors.prototype.getTempResolution = function () {
  * @param {number} value
  * @return {!proto.domopool.Sensors} returns this
  */
-proto.domopool.Sensors.prototype.setTempResolution = function (value) {
+proto.domopool.Sensors.prototype.setTempResolution = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -1832,7 +1862,7 @@ proto.domopool.Sensors.prototype.setTempResolution = function (value) {
  * optional AnalogSensor ph = 6;
  * @return {?proto.domopool.AnalogSensor}
  */
-proto.domopool.Sensors.prototype.getPh = function () {
+proto.domopool.Sensors.prototype.getPh = function() {
   return /** @type{?proto.domopool.AnalogSensor} */ (
     jspb.Message.getWrapperField(this, proto.domopool.AnalogSensor, 6));
 };
@@ -1842,7 +1872,7 @@ proto.domopool.Sensors.prototype.getPh = function () {
  * @param {?proto.domopool.AnalogSensor|undefined} value
  * @return {!proto.domopool.Sensors} returns this
 */
-proto.domopool.Sensors.prototype.setPh = function (value) {
+proto.domopool.Sensors.prototype.setPh = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -1851,7 +1881,7 @@ proto.domopool.Sensors.prototype.setPh = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Sensors} returns this
  */
-proto.domopool.Sensors.prototype.clearPh = function () {
+proto.domopool.Sensors.prototype.clearPh = function() {
   return this.setPh(undefined);
 };
 
@@ -1860,7 +1890,7 @@ proto.domopool.Sensors.prototype.clearPh = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Sensors.prototype.hasPh = function () {
+proto.domopool.Sensors.prototype.hasPh = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -1869,7 +1899,7 @@ proto.domopool.Sensors.prototype.hasPh = function () {
  * optional AnalogSensor ch = 7;
  * @return {?proto.domopool.AnalogSensor}
  */
-proto.domopool.Sensors.prototype.getCh = function () {
+proto.domopool.Sensors.prototype.getCh = function() {
   return /** @type{?proto.domopool.AnalogSensor} */ (
     jspb.Message.getWrapperField(this, proto.domopool.AnalogSensor, 7));
 };
@@ -1879,7 +1909,7 @@ proto.domopool.Sensors.prototype.getCh = function () {
  * @param {?proto.domopool.AnalogSensor|undefined} value
  * @return {!proto.domopool.Sensors} returns this
 */
-proto.domopool.Sensors.prototype.setCh = function (value) {
+proto.domopool.Sensors.prototype.setCh = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -1888,7 +1918,7 @@ proto.domopool.Sensors.prototype.setCh = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Sensors} returns this
  */
-proto.domopool.Sensors.prototype.clearCh = function () {
+proto.domopool.Sensors.prototype.clearCh = function() {
   return this.setCh(undefined);
 };
 
@@ -1897,7 +1927,7 @@ proto.domopool.Sensors.prototype.clearCh = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Sensors.prototype.hasCh = function () {
+proto.domopool.Sensors.prototype.hasCh = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -1906,7 +1936,7 @@ proto.domopool.Sensors.prototype.hasCh = function () {
  * optional AnalogSensor water_pressure = 8;
  * @return {?proto.domopool.AnalogSensor}
  */
-proto.domopool.Sensors.prototype.getWaterPressure = function () {
+proto.domopool.Sensors.prototype.getWaterPressure = function() {
   return /** @type{?proto.domopool.AnalogSensor} */ (
     jspb.Message.getWrapperField(this, proto.domopool.AnalogSensor, 8));
 };
@@ -1916,7 +1946,7 @@ proto.domopool.Sensors.prototype.getWaterPressure = function () {
  * @param {?proto.domopool.AnalogSensor|undefined} value
  * @return {!proto.domopool.Sensors} returns this
 */
-proto.domopool.Sensors.prototype.setWaterPressure = function (value) {
+proto.domopool.Sensors.prototype.setWaterPressure = function(value) {
   return jspb.Message.setWrapperField(this, 8, value);
 };
 
@@ -1925,7 +1955,7 @@ proto.domopool.Sensors.prototype.setWaterPressure = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Sensors} returns this
  */
-proto.domopool.Sensors.prototype.clearWaterPressure = function () {
+proto.domopool.Sensors.prototype.clearWaterPressure = function() {
   return this.setWaterPressure(undefined);
 };
 
@@ -1934,7 +1964,7 @@ proto.domopool.Sensors.prototype.clearWaterPressure = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Sensors.prototype.hasWaterPressure = function () {
+proto.domopool.Sensors.prototype.hasWaterPressure = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -1943,46 +1973,46 @@ proto.domopool.Sensors.prototype.hasWaterPressure = function () {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Global.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Global.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Global.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Global.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Global} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Global.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    lcdBacklightDuration: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    ackDuration: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    ackTone: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    serialOut: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    displayStartup: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Global} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Global.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      lcdBacklightDuration: jspb.Message.getFieldWithDefault(msg, 1, 0),
-      ackDuration: jspb.Message.getFieldWithDefault(msg, 2, 0),
-      ackTone: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-      serialOut: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-      displayStartup: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -1991,7 +2021,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Global}
  */
-proto.domopool.Global.deserializeBinary = function (bytes) {
+proto.domopool.Global.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Global;
   return proto.domopool.Global.deserializeBinaryFromReader(msg, reader);
@@ -2005,36 +2035,36 @@ proto.domopool.Global.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Global}
  */
-proto.domopool.Global.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Global.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setLcdBacklightDuration(value);
-        break;
-      case 2:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setAckDuration(value);
-        break;
-      case 3:
-        var value = /** @type {number} */ (reader.readDouble());
-        msg.setAckTone(value);
-        break;
-      case 4:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setSerialOut(value);
-        break;
-      case 5:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setDisplayStartup(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setLcdBacklightDuration(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setAckDuration(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setAckTone(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSerialOut(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDisplayStartup(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -2045,7 +2075,7 @@ proto.domopool.Global.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Global.prototype.serializeBinary = function () {
+proto.domopool.Global.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Global.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -2059,7 +2089,7 @@ proto.domopool.Global.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Global.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Global.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getLcdBacklightDuration();
   if (f !== 0) {
@@ -2103,7 +2133,7 @@ proto.domopool.Global.serializeBinaryToWriter = function (message, writer) {
  * optional uint32 lcd_backlight_duration = 1;
  * @return {number}
  */
-proto.domopool.Global.prototype.getLcdBacklightDuration = function () {
+proto.domopool.Global.prototype.getLcdBacklightDuration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -2112,7 +2142,7 @@ proto.domopool.Global.prototype.getLcdBacklightDuration = function () {
  * @param {number} value
  * @return {!proto.domopool.Global} returns this
  */
-proto.domopool.Global.prototype.setLcdBacklightDuration = function (value) {
+proto.domopool.Global.prototype.setLcdBacklightDuration = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -2121,7 +2151,7 @@ proto.domopool.Global.prototype.setLcdBacklightDuration = function (value) {
  * optional uint32 ack_duration = 2;
  * @return {number}
  */
-proto.domopool.Global.prototype.getAckDuration = function () {
+proto.domopool.Global.prototype.getAckDuration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -2130,7 +2160,7 @@ proto.domopool.Global.prototype.getAckDuration = function () {
  * @param {number} value
  * @return {!proto.domopool.Global} returns this
  */
-proto.domopool.Global.prototype.setAckDuration = function (value) {
+proto.domopool.Global.prototype.setAckDuration = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -2139,7 +2169,7 @@ proto.domopool.Global.prototype.setAckDuration = function (value) {
  * optional double ack_tone = 3;
  * @return {number}
  */
-proto.domopool.Global.prototype.getAckTone = function () {
+proto.domopool.Global.prototype.getAckTone = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
@@ -2148,7 +2178,7 @@ proto.domopool.Global.prototype.getAckTone = function () {
  * @param {number} value
  * @return {!proto.domopool.Global} returns this
  */
-proto.domopool.Global.prototype.setAckTone = function (value) {
+proto.domopool.Global.prototype.setAckTone = function(value) {
   return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
@@ -2157,7 +2187,7 @@ proto.domopool.Global.prototype.setAckTone = function (value) {
  * optional bool serial_out = 4;
  * @return {boolean}
  */
-proto.domopool.Global.prototype.getSerialOut = function () {
+proto.domopool.Global.prototype.getSerialOut = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -2166,7 +2196,7 @@ proto.domopool.Global.prototype.getSerialOut = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Global} returns this
  */
-proto.domopool.Global.prototype.setSerialOut = function (value) {
+proto.domopool.Global.prototype.setSerialOut = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
@@ -2175,7 +2205,7 @@ proto.domopool.Global.prototype.setSerialOut = function (value) {
  * optional bool display_startup = 5;
  * @return {boolean}
  */
-proto.domopool.Global.prototype.getDisplayStartup = function () {
+proto.domopool.Global.prototype.getDisplayStartup = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -2184,7 +2214,7 @@ proto.domopool.Global.prototype.getDisplayStartup = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Global} returns this
  */
-proto.domopool.Global.prototype.setDisplayStartup = function (value) {
+proto.domopool.Global.prototype.setDisplayStartup = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
@@ -2193,48 +2223,48 @@ proto.domopool.Global.prototype.setDisplayStartup = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Pump.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Pump.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Pump.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Pump.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Pump} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Pump.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    forceFilter: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    forcePh: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    forceCh: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    automatic: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    forceCheck: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    forceDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    forceStartTime: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Pump} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Pump.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      forceFilter: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-      forcePh: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-      forceCh: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-      automatic: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-      forceCheck: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-      forceDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
-      forceStartTime: jspb.Message.getFieldWithDefault(msg, 7, 0)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -2243,7 +2273,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Pump}
  */
-proto.domopool.Pump.deserializeBinary = function (bytes) {
+proto.domopool.Pump.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Pump;
   return proto.domopool.Pump.deserializeBinaryFromReader(msg, reader);
@@ -2257,44 +2287,44 @@ proto.domopool.Pump.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Pump}
  */
-proto.domopool.Pump.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Pump.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setForceFilter(value);
-        break;
-      case 2:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setForcePh(value);
-        break;
-      case 3:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setForceCh(value);
-        break;
-      case 4:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setAutomatic(value);
-        break;
-      case 5:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setForceCheck(value);
-        break;
-      case 6:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setForceDuration(value);
-        break;
-      case 7:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setForceStartTime(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setForceFilter(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setForcePh(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setForceCh(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAutomatic(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setForceCheck(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setForceDuration(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setForceStartTime(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -2305,7 +2335,7 @@ proto.domopool.Pump.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Pump.prototype.serializeBinary = function () {
+proto.domopool.Pump.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Pump.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -2319,7 +2349,7 @@ proto.domopool.Pump.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Pump.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Pump.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getForceFilter();
   if (f) {
@@ -2377,7 +2407,7 @@ proto.domopool.Pump.serializeBinaryToWriter = function (message, writer) {
  * optional bool force_filter = 1;
  * @return {boolean}
  */
-proto.domopool.Pump.prototype.getForceFilter = function () {
+proto.domopool.Pump.prototype.getForceFilter = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -2386,7 +2416,7 @@ proto.domopool.Pump.prototype.getForceFilter = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Pump} returns this
  */
-proto.domopool.Pump.prototype.setForceFilter = function (value) {
+proto.domopool.Pump.prototype.setForceFilter = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -2395,7 +2425,7 @@ proto.domopool.Pump.prototype.setForceFilter = function (value) {
  * optional bool force_ph = 2;
  * @return {boolean}
  */
-proto.domopool.Pump.prototype.getForcePh = function () {
+proto.domopool.Pump.prototype.getForcePh = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
@@ -2404,7 +2434,7 @@ proto.domopool.Pump.prototype.getForcePh = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Pump} returns this
  */
-proto.domopool.Pump.prototype.setForcePh = function (value) {
+proto.domopool.Pump.prototype.setForcePh = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
@@ -2413,7 +2443,7 @@ proto.domopool.Pump.prototype.setForcePh = function (value) {
  * optional bool force_ch = 3;
  * @return {boolean}
  */
-proto.domopool.Pump.prototype.getForceCh = function () {
+proto.domopool.Pump.prototype.getForceCh = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -2422,7 +2452,7 @@ proto.domopool.Pump.prototype.getForceCh = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Pump} returns this
  */
-proto.domopool.Pump.prototype.setForceCh = function (value) {
+proto.domopool.Pump.prototype.setForceCh = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
@@ -2431,7 +2461,7 @@ proto.domopool.Pump.prototype.setForceCh = function (value) {
  * optional bool automatic = 4;
  * @return {boolean}
  */
-proto.domopool.Pump.prototype.getAutomatic = function () {
+proto.domopool.Pump.prototype.getAutomatic = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -2440,7 +2470,7 @@ proto.domopool.Pump.prototype.getAutomatic = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Pump} returns this
  */
-proto.domopool.Pump.prototype.setAutomatic = function (value) {
+proto.domopool.Pump.prototype.setAutomatic = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
@@ -2449,7 +2479,7 @@ proto.domopool.Pump.prototype.setAutomatic = function (value) {
  * optional bool force_check = 5;
  * @return {boolean}
  */
-proto.domopool.Pump.prototype.getForceCheck = function () {
+proto.domopool.Pump.prototype.getForceCheck = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -2458,7 +2488,7 @@ proto.domopool.Pump.prototype.getForceCheck = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Pump} returns this
  */
-proto.domopool.Pump.prototype.setForceCheck = function (value) {
+proto.domopool.Pump.prototype.setForceCheck = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
@@ -2467,7 +2497,7 @@ proto.domopool.Pump.prototype.setForceCheck = function (value) {
  * optional uint32 force_duration = 6;
  * @return {number}
  */
-proto.domopool.Pump.prototype.getForceDuration = function () {
+proto.domopool.Pump.prototype.getForceDuration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -2476,7 +2506,7 @@ proto.domopool.Pump.prototype.getForceDuration = function () {
  * @param {number} value
  * @return {!proto.domopool.Pump} returns this
  */
-proto.domopool.Pump.prototype.setForceDuration = function (value) {
+proto.domopool.Pump.prototype.setForceDuration = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
@@ -2485,7 +2515,7 @@ proto.domopool.Pump.prototype.setForceDuration = function (value) {
  * optional uint32 force_start_time = 7;
  * @return {number}
  */
-proto.domopool.Pump.prototype.getForceStartTime = function () {
+proto.domopool.Pump.prototype.getForceStartTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -2494,7 +2524,7 @@ proto.domopool.Pump.prototype.getForceStartTime = function () {
  * @param {number} value
  * @return {!proto.domopool.Pump} returns this
  */
-proto.domopool.Pump.prototype.setForceStartTime = function (value) {
+proto.domopool.Pump.prototype.setForceStartTime = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -2503,46 +2533,46 @@ proto.domopool.Pump.prototype.setForceStartTime = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Alarms.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Alarms.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Alarms.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Alarms.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Alarms} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Alarms.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filter: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    ph: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    ch: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    rtc: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    storage: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Alarms} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Alarms.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      filter: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-      ph: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-      ch: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-      rtc: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-      storage: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -2551,7 +2581,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Alarms}
  */
-proto.domopool.Alarms.deserializeBinary = function (bytes) {
+proto.domopool.Alarms.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Alarms;
   return proto.domopool.Alarms.deserializeBinaryFromReader(msg, reader);
@@ -2565,36 +2595,36 @@ proto.domopool.Alarms.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Alarms}
  */
-proto.domopool.Alarms.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Alarms.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setFilter(value);
-        break;
-      case 2:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setPh(value);
-        break;
-      case 3:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setCh(value);
-        break;
-      case 5:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setRtc(value);
-        break;
-      case 6:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setStorage(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFilter(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPh(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCh(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRtc(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStorage(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -2605,7 +2635,7 @@ proto.domopool.Alarms.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Alarms.prototype.serializeBinary = function () {
+proto.domopool.Alarms.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Alarms.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -2619,7 +2649,7 @@ proto.domopool.Alarms.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Alarms.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Alarms.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFilter();
   if (f) {
@@ -2663,7 +2693,7 @@ proto.domopool.Alarms.serializeBinaryToWriter = function (message, writer) {
  * optional bool filter = 1;
  * @return {boolean}
  */
-proto.domopool.Alarms.prototype.getFilter = function () {
+proto.domopool.Alarms.prototype.getFilter = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -2672,7 +2702,7 @@ proto.domopool.Alarms.prototype.getFilter = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Alarms} returns this
  */
-proto.domopool.Alarms.prototype.setFilter = function (value) {
+proto.domopool.Alarms.prototype.setFilter = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -2681,7 +2711,7 @@ proto.domopool.Alarms.prototype.setFilter = function (value) {
  * optional bool ph = 2;
  * @return {boolean}
  */
-proto.domopool.Alarms.prototype.getPh = function () {
+proto.domopool.Alarms.prototype.getPh = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
@@ -2690,7 +2720,7 @@ proto.domopool.Alarms.prototype.getPh = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Alarms} returns this
  */
-proto.domopool.Alarms.prototype.setPh = function (value) {
+proto.domopool.Alarms.prototype.setPh = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
@@ -2699,7 +2729,7 @@ proto.domopool.Alarms.prototype.setPh = function (value) {
  * optional bool ch = 3;
  * @return {boolean}
  */
-proto.domopool.Alarms.prototype.getCh = function () {
+proto.domopool.Alarms.prototype.getCh = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -2708,7 +2738,7 @@ proto.domopool.Alarms.prototype.getCh = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Alarms} returns this
  */
-proto.domopool.Alarms.prototype.setCh = function (value) {
+proto.domopool.Alarms.prototype.setCh = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
@@ -2717,7 +2747,7 @@ proto.domopool.Alarms.prototype.setCh = function (value) {
  * optional bool rtc = 5;
  * @return {boolean}
  */
-proto.domopool.Alarms.prototype.getRtc = function () {
+proto.domopool.Alarms.prototype.getRtc = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -2726,7 +2756,7 @@ proto.domopool.Alarms.prototype.getRtc = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Alarms} returns this
  */
-proto.domopool.Alarms.prototype.setRtc = function (value) {
+proto.domopool.Alarms.prototype.setRtc = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
@@ -2735,7 +2765,7 @@ proto.domopool.Alarms.prototype.setRtc = function (value) {
  * optional bool storage = 6;
  * @return {boolean}
  */
-proto.domopool.Alarms.prototype.getStorage = function () {
+proto.domopool.Alarms.prototype.getStorage = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -2744,7 +2774,7 @@ proto.domopool.Alarms.prototype.getStorage = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Alarms} returns this
  */
-proto.domopool.Alarms.prototype.setStorage = function (value) {
+proto.domopool.Alarms.prototype.setStorage = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
@@ -2753,46 +2783,46 @@ proto.domopool.Alarms.prototype.setStorage = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Tests.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Tests.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Tests.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Tests.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Tests} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Tests.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    twater: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    tamb: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    ph: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    pressure: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Tests} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Tests.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-      twater: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-      tamb: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-      ph: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-      pressure: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -2801,7 +2831,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Tests}
  */
-proto.domopool.Tests.deserializeBinary = function (bytes) {
+proto.domopool.Tests.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Tests;
   return proto.domopool.Tests.deserializeBinaryFromReader(msg, reader);
@@ -2815,36 +2845,36 @@ proto.domopool.Tests.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Tests}
  */
-proto.domopool.Tests.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Tests.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setEnabled(value);
-        break;
-      case 2:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setTwater(value);
-        break;
-      case 3:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setTamb(value);
-        break;
-      case 4:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setPh(value);
-        break;
-      case 5:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setPressure(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTwater(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTamb(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setPh(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setPressure(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -2855,7 +2885,7 @@ proto.domopool.Tests.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Tests.prototype.serializeBinary = function () {
+proto.domopool.Tests.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Tests.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -2869,7 +2899,7 @@ proto.domopool.Tests.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Tests.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Tests.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getEnabled();
   if (f) {
@@ -2913,7 +2943,7 @@ proto.domopool.Tests.serializeBinaryToWriter = function (message, writer) {
  * optional bool enabled = 1;
  * @return {boolean}
  */
-proto.domopool.Tests.prototype.getEnabled = function () {
+proto.domopool.Tests.prototype.getEnabled = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -2922,7 +2952,7 @@ proto.domopool.Tests.prototype.getEnabled = function () {
  * @param {boolean} value
  * @return {!proto.domopool.Tests} returns this
  */
-proto.domopool.Tests.prototype.setEnabled = function (value) {
+proto.domopool.Tests.prototype.setEnabled = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -2931,7 +2961,7 @@ proto.domopool.Tests.prototype.setEnabled = function (value) {
  * optional float twater = 2;
  * @return {number}
  */
-proto.domopool.Tests.prototype.getTwater = function () {
+proto.domopool.Tests.prototype.getTwater = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
@@ -2940,7 +2970,7 @@ proto.domopool.Tests.prototype.getTwater = function () {
  * @param {number} value
  * @return {!proto.domopool.Tests} returns this
  */
-proto.domopool.Tests.prototype.setTwater = function (value) {
+proto.domopool.Tests.prototype.setTwater = function(value) {
   return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
@@ -2949,7 +2979,7 @@ proto.domopool.Tests.prototype.setTwater = function (value) {
  * optional float tamb = 3;
  * @return {number}
  */
-proto.domopool.Tests.prototype.getTamb = function () {
+proto.domopool.Tests.prototype.getTamb = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
@@ -2958,7 +2988,7 @@ proto.domopool.Tests.prototype.getTamb = function () {
  * @param {number} value
  * @return {!proto.domopool.Tests} returns this
  */
-proto.domopool.Tests.prototype.setTamb = function (value) {
+proto.domopool.Tests.prototype.setTamb = function(value) {
   return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
@@ -2967,7 +2997,7 @@ proto.domopool.Tests.prototype.setTamb = function (value) {
  * optional float ph = 4;
  * @return {number}
  */
-proto.domopool.Tests.prototype.getPh = function () {
+proto.domopool.Tests.prototype.getPh = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
@@ -2976,7 +3006,7 @@ proto.domopool.Tests.prototype.getPh = function () {
  * @param {number} value
  * @return {!proto.domopool.Tests} returns this
  */
-proto.domopool.Tests.prototype.setPh = function (value) {
+proto.domopool.Tests.prototype.setPh = function(value) {
   return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
@@ -2985,7 +3015,7 @@ proto.domopool.Tests.prototype.setPh = function (value) {
  * optional float pressure = 5;
  * @return {number}
  */
-proto.domopool.Tests.prototype.getPressure = function () {
+proto.domopool.Tests.prototype.getPressure = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
@@ -2994,7 +3024,7 @@ proto.domopool.Tests.prototype.getPressure = function () {
  * @param {number} value
  * @return {!proto.domopool.Tests} returns this
  */
-proto.domopool.Tests.prototype.setPressure = function (value) {
+proto.domopool.Tests.prototype.setPressure = function(value) {
   return jspb.Message.setProto3FloatField(this, 5, value);
 };
 
@@ -3003,49 +3033,49 @@ proto.domopool.Tests.prototype.setPressure = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Metrics.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Metrics.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Metrics.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Metrics.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Metrics} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Metrics.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    tamb: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    twater: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    savedTwater: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    ph: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    ch: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+    waterPressure: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+    over15Duration: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    hour: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Metrics} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Metrics.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      tamb: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-      twater: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-      savedTwater: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-      ph: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-      ch: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-      waterPressure: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-      over15Duration: jspb.Message.getFieldWithDefault(msg, 7, 0),
-      hour: jspb.Message.getFieldWithDefault(msg, 8, 0)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -3054,7 +3084,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Metrics}
  */
-proto.domopool.Metrics.deserializeBinary = function (bytes) {
+proto.domopool.Metrics.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Metrics;
   return proto.domopool.Metrics.deserializeBinaryFromReader(msg, reader);
@@ -3068,48 +3098,48 @@ proto.domopool.Metrics.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Metrics}
  */
-proto.domopool.Metrics.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Metrics.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setTamb(value);
-        break;
-      case 2:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setTwater(value);
-        break;
-      case 3:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setSavedTwater(value);
-        break;
-      case 4:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setPh(value);
-        break;
-      case 5:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setCh(value);
-        break;
-      case 6:
-        var value = /** @type {number} */ (reader.readFloat());
-        msg.setWaterPressure(value);
-        break;
-      case 7:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setOver15Duration(value);
-        break;
-      case 8:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setHour(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTamb(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTwater(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setSavedTwater(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setPh(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setCh(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setWaterPressure(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setOver15Duration(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setHour(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -3120,7 +3150,7 @@ proto.domopool.Metrics.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Metrics.prototype.serializeBinary = function () {
+proto.domopool.Metrics.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Metrics.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -3134,7 +3164,7 @@ proto.domopool.Metrics.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Metrics.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Metrics.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTamb();
   if (f !== 0.0) {
@@ -3199,7 +3229,7 @@ proto.domopool.Metrics.serializeBinaryToWriter = function (message, writer) {
  * optional float tamb = 1;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getTamb = function () {
+proto.domopool.Metrics.prototype.getTamb = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
 };
 
@@ -3208,7 +3238,7 @@ proto.domopool.Metrics.prototype.getTamb = function () {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setTamb = function (value) {
+proto.domopool.Metrics.prototype.setTamb = function(value) {
   return jspb.Message.setProto3FloatField(this, 1, value);
 };
 
@@ -3217,7 +3247,7 @@ proto.domopool.Metrics.prototype.setTamb = function (value) {
  * optional float twater = 2;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getTwater = function () {
+proto.domopool.Metrics.prototype.getTwater = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
@@ -3226,7 +3256,7 @@ proto.domopool.Metrics.prototype.getTwater = function () {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setTwater = function (value) {
+proto.domopool.Metrics.prototype.setTwater = function(value) {
   return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
@@ -3235,7 +3265,7 @@ proto.domopool.Metrics.prototype.setTwater = function (value) {
  * optional float saved_twater = 3;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getSavedTwater = function () {
+proto.domopool.Metrics.prototype.getSavedTwater = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
@@ -3244,7 +3274,7 @@ proto.domopool.Metrics.prototype.getSavedTwater = function () {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setSavedTwater = function (value) {
+proto.domopool.Metrics.prototype.setSavedTwater = function(value) {
   return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
@@ -3253,7 +3283,7 @@ proto.domopool.Metrics.prototype.setSavedTwater = function (value) {
  * optional float ph = 4;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getPh = function () {
+proto.domopool.Metrics.prototype.getPh = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
@@ -3262,7 +3292,7 @@ proto.domopool.Metrics.prototype.getPh = function () {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setPh = function (value) {
+proto.domopool.Metrics.prototype.setPh = function(value) {
   return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
@@ -3271,7 +3301,7 @@ proto.domopool.Metrics.prototype.setPh = function (value) {
  * optional float ch = 5;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getCh = function () {
+proto.domopool.Metrics.prototype.getCh = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
@@ -3280,7 +3310,7 @@ proto.domopool.Metrics.prototype.getCh = function () {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setCh = function (value) {
+proto.domopool.Metrics.prototype.setCh = function(value) {
   return jspb.Message.setProto3FloatField(this, 5, value);
 };
 
@@ -3289,7 +3319,7 @@ proto.domopool.Metrics.prototype.setCh = function (value) {
  * optional float water_pressure = 6;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getWaterPressure = function () {
+proto.domopool.Metrics.prototype.getWaterPressure = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
 };
 
@@ -3298,7 +3328,7 @@ proto.domopool.Metrics.prototype.getWaterPressure = function () {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setWaterPressure = function (value) {
+proto.domopool.Metrics.prototype.setWaterPressure = function(value) {
   return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
@@ -3307,7 +3337,7 @@ proto.domopool.Metrics.prototype.setWaterPressure = function (value) {
  * optional uint32 over_15_duration = 7;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getOver15Duration = function () {
+proto.domopool.Metrics.prototype.getOver15Duration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -3316,7 +3346,7 @@ proto.domopool.Metrics.prototype.getOver15Duration = function () {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setOver15Duration = function (value) {
+proto.domopool.Metrics.prototype.setOver15Duration = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -3325,7 +3355,7 @@ proto.domopool.Metrics.prototype.setOver15Duration = function (value) {
  * optional uint32 hour = 8;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getHour = function () {
+proto.domopool.Metrics.prototype.getHour = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -3334,7 +3364,7 @@ proto.domopool.Metrics.prototype.getHour = function () {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setHour = function (value) {
+proto.domopool.Metrics.prototype.setHour = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
 
@@ -3343,49 +3373,49 @@ proto.domopool.Metrics.prototype.setHour = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.States.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.States.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.States.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.States.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.States} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.States.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    startup: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    filterOn: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    phOn: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    chOn: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    automatic: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    netActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    ntp: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    rtc: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.States} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.States.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      startup: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-      filterOn: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-      phOn: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-      chOn: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-      automatic: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-      netActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-      ntp: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-      rtc: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -3394,7 +3424,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.States}
  */
-proto.domopool.States.deserializeBinary = function (bytes) {
+proto.domopool.States.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.States;
   return proto.domopool.States.deserializeBinaryFromReader(msg, reader);
@@ -3408,48 +3438,48 @@ proto.domopool.States.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.States}
  */
-proto.domopool.States.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.States.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setStartup(value);
-        break;
-      case 2:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setFilterOn(value);
-        break;
-      case 3:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setPhOn(value);
-        break;
-      case 4:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setChOn(value);
-        break;
-      case 5:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setAutomatic(value);
-        break;
-      case 6:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setNetActive(value);
-        break;
-      case 7:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setNtp(value);
-        break;
-      case 8:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setRtc(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStartup(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFilterOn(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPhOn(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setChOn(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAutomatic(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNetActive(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNtp(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRtc(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -3460,7 +3490,7 @@ proto.domopool.States.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.States.prototype.serializeBinary = function () {
+proto.domopool.States.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.States.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -3474,7 +3504,7 @@ proto.domopool.States.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.States.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.States.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getStartup();
   if (f) {
@@ -3539,7 +3569,7 @@ proto.domopool.States.serializeBinaryToWriter = function (message, writer) {
  * optional bool startup = 1;
  * @return {boolean}
  */
-proto.domopool.States.prototype.getStartup = function () {
+proto.domopool.States.prototype.getStartup = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -3548,7 +3578,7 @@ proto.domopool.States.prototype.getStartup = function () {
  * @param {boolean} value
  * @return {!proto.domopool.States} returns this
  */
-proto.domopool.States.prototype.setStartup = function (value) {
+proto.domopool.States.prototype.setStartup = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -3557,7 +3587,7 @@ proto.domopool.States.prototype.setStartup = function (value) {
  * optional bool filter_on = 2;
  * @return {boolean}
  */
-proto.domopool.States.prototype.getFilterOn = function () {
+proto.domopool.States.prototype.getFilterOn = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
@@ -3566,7 +3596,7 @@ proto.domopool.States.prototype.getFilterOn = function () {
  * @param {boolean} value
  * @return {!proto.domopool.States} returns this
  */
-proto.domopool.States.prototype.setFilterOn = function (value) {
+proto.domopool.States.prototype.setFilterOn = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
@@ -3575,7 +3605,7 @@ proto.domopool.States.prototype.setFilterOn = function (value) {
  * optional bool ph_on = 3;
  * @return {boolean}
  */
-proto.domopool.States.prototype.getPhOn = function () {
+proto.domopool.States.prototype.getPhOn = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -3584,7 +3614,7 @@ proto.domopool.States.prototype.getPhOn = function () {
  * @param {boolean} value
  * @return {!proto.domopool.States} returns this
  */
-proto.domopool.States.prototype.setPhOn = function (value) {
+proto.domopool.States.prototype.setPhOn = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
@@ -3593,7 +3623,7 @@ proto.domopool.States.prototype.setPhOn = function (value) {
  * optional bool ch_on = 4;
  * @return {boolean}
  */
-proto.domopool.States.prototype.getChOn = function () {
+proto.domopool.States.prototype.getChOn = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -3602,7 +3632,7 @@ proto.domopool.States.prototype.getChOn = function () {
  * @param {boolean} value
  * @return {!proto.domopool.States} returns this
  */
-proto.domopool.States.prototype.setChOn = function (value) {
+proto.domopool.States.prototype.setChOn = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
@@ -3611,7 +3641,7 @@ proto.domopool.States.prototype.setChOn = function (value) {
  * optional bool automatic = 5;
  * @return {boolean}
  */
-proto.domopool.States.prototype.getAutomatic = function () {
+proto.domopool.States.prototype.getAutomatic = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -3620,7 +3650,7 @@ proto.domopool.States.prototype.getAutomatic = function () {
  * @param {boolean} value
  * @return {!proto.domopool.States} returns this
  */
-proto.domopool.States.prototype.setAutomatic = function (value) {
+proto.domopool.States.prototype.setAutomatic = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
@@ -3629,7 +3659,7 @@ proto.domopool.States.prototype.setAutomatic = function (value) {
  * optional bool net_active = 6;
  * @return {boolean}
  */
-proto.domopool.States.prototype.getNetActive = function () {
+proto.domopool.States.prototype.getNetActive = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -3638,7 +3668,7 @@ proto.domopool.States.prototype.getNetActive = function () {
  * @param {boolean} value
  * @return {!proto.domopool.States} returns this
  */
-proto.domopool.States.prototype.setNetActive = function (value) {
+proto.domopool.States.prototype.setNetActive = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
@@ -3647,7 +3677,7 @@ proto.domopool.States.prototype.setNetActive = function (value) {
  * optional bool ntp = 7;
  * @return {boolean}
  */
-proto.domopool.States.prototype.getNtp = function () {
+proto.domopool.States.prototype.getNtp = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
@@ -3656,7 +3686,7 @@ proto.domopool.States.prototype.getNtp = function () {
  * @param {boolean} value
  * @return {!proto.domopool.States} returns this
  */
-proto.domopool.States.prototype.setNtp = function (value) {
+proto.domopool.States.prototype.setNtp = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
@@ -3665,7 +3695,7 @@ proto.domopool.States.prototype.setNtp = function (value) {
  * optional bool rtc = 8;
  * @return {boolean}
  */
-proto.domopool.States.prototype.getRtc = function () {
+proto.domopool.States.prototype.getRtc = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
@@ -3674,7 +3704,7 @@ proto.domopool.States.prototype.getRtc = function () {
  * @param {boolean} value
  * @return {!proto.domopool.States} returns this
  */
-proto.domopool.States.prototype.setRtc = function (value) {
+proto.domopool.States.prototype.setRtc = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
@@ -3683,44 +3713,44 @@ proto.domopool.States.prototype.setRtc = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Infos.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Infos.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Infos.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Infos.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Infos} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Infos.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    compile: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    boardName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    versions: (f = msg.getVersions()) && proto.domopool.Versions.toObject(includeInstance, f)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Infos} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Infos.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      compile: jspb.Message.getFieldWithDefault(msg, 1, ""),
-      boardName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-      versions: (f = msg.getVersions()) && proto.domopool.Versions.toObject(includeInstance, f)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -3729,7 +3759,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Infos}
  */
-proto.domopool.Infos.deserializeBinary = function (bytes) {
+proto.domopool.Infos.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Infos;
   return proto.domopool.Infos.deserializeBinaryFromReader(msg, reader);
@@ -3743,29 +3773,29 @@ proto.domopool.Infos.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Infos}
  */
-proto.domopool.Infos.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Infos.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setCompile(value);
-        break;
-      case 2:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setBoardName(value);
-        break;
-      case 3:
-        var value = new proto.domopool.Versions;
-        reader.readMessage(value, proto.domopool.Versions.deserializeBinaryFromReader);
-        msg.setVersions(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCompile(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBoardName(value);
+      break;
+    case 3:
+      var value = new proto.domopool.Versions;
+      reader.readMessage(value,proto.domopool.Versions.deserializeBinaryFromReader);
+      msg.setVersions(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -3776,7 +3806,7 @@ proto.domopool.Infos.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Infos.prototype.serializeBinary = function () {
+proto.domopool.Infos.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Infos.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -3790,7 +3820,7 @@ proto.domopool.Infos.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Infos.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Infos.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCompile();
   if (f.length > 0) {
@@ -3821,7 +3851,7 @@ proto.domopool.Infos.serializeBinaryToWriter = function (message, writer) {
  * optional string compile = 1;
  * @return {string}
  */
-proto.domopool.Infos.prototype.getCompile = function () {
+proto.domopool.Infos.prototype.getCompile = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -3830,7 +3860,7 @@ proto.domopool.Infos.prototype.getCompile = function () {
  * @param {string} value
  * @return {!proto.domopool.Infos} returns this
  */
-proto.domopool.Infos.prototype.setCompile = function (value) {
+proto.domopool.Infos.prototype.setCompile = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3839,7 +3869,7 @@ proto.domopool.Infos.prototype.setCompile = function (value) {
  * optional string board_name = 2;
  * @return {string}
  */
-proto.domopool.Infos.prototype.getBoardName = function () {
+proto.domopool.Infos.prototype.getBoardName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -3848,7 +3878,7 @@ proto.domopool.Infos.prototype.getBoardName = function () {
  * @param {string} value
  * @return {!proto.domopool.Infos} returns this
  */
-proto.domopool.Infos.prototype.setBoardName = function (value) {
+proto.domopool.Infos.prototype.setBoardName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3857,7 +3887,7 @@ proto.domopool.Infos.prototype.setBoardName = function (value) {
  * optional Versions versions = 3;
  * @return {?proto.domopool.Versions}
  */
-proto.domopool.Infos.prototype.getVersions = function () {
+proto.domopool.Infos.prototype.getVersions = function() {
   return /** @type{?proto.domopool.Versions} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Versions, 3));
 };
@@ -3867,7 +3897,7 @@ proto.domopool.Infos.prototype.getVersions = function () {
  * @param {?proto.domopool.Versions|undefined} value
  * @return {!proto.domopool.Infos} returns this
 */
-proto.domopool.Infos.prototype.setVersions = function (value) {
+proto.domopool.Infos.prototype.setVersions = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -3876,7 +3906,7 @@ proto.domopool.Infos.prototype.setVersions = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Infos} returns this
  */
-proto.domopool.Infos.prototype.clearVersions = function () {
+proto.domopool.Infos.prototype.clearVersions = function() {
   return this.setVersions(undefined);
 };
 
@@ -3885,7 +3915,7 @@ proto.domopool.Infos.prototype.clearVersions = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Infos.prototype.hasVersions = function () {
+proto.domopool.Infos.prototype.hasVersions = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -3894,46 +3924,46 @@ proto.domopool.Infos.prototype.hasVersions = function () {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Versions.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Versions.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Versions.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Versions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Versions} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Versions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    domopool: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    platformio: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    espIdf: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    xtensa: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    tftEspi: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Versions} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Versions.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      domopool: jspb.Message.getFieldWithDefault(msg, 1, ""),
-      platformio: jspb.Message.getFieldWithDefault(msg, 2, 0),
-      espIdf: jspb.Message.getFieldWithDefault(msg, 3, ""),
-      xtensa: jspb.Message.getFieldWithDefault(msg, 4, ""),
-      tftEspi: jspb.Message.getFieldWithDefault(msg, 6, "")
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -3942,7 +3972,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Versions}
  */
-proto.domopool.Versions.deserializeBinary = function (bytes) {
+proto.domopool.Versions.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Versions;
   return proto.domopool.Versions.deserializeBinaryFromReader(msg, reader);
@@ -3956,36 +3986,36 @@ proto.domopool.Versions.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Versions}
  */
-proto.domopool.Versions.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Versions.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setDomopool(value);
-        break;
-      case 2:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setPlatformio(value);
-        break;
-      case 3:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setEspIdf(value);
-        break;
-      case 4:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setXtensa(value);
-        break;
-      case 6:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setTftEspi(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDomopool(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPlatformio(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEspIdf(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setXtensa(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTftEspi(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -3996,7 +4026,7 @@ proto.domopool.Versions.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Versions.prototype.serializeBinary = function () {
+proto.domopool.Versions.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Versions.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -4010,7 +4040,7 @@ proto.domopool.Versions.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Versions.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Versions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDomopool();
   if (f.length > 0) {
@@ -4054,7 +4084,7 @@ proto.domopool.Versions.serializeBinaryToWriter = function (message, writer) {
  * optional string domopool = 1;
  * @return {string}
  */
-proto.domopool.Versions.prototype.getDomopool = function () {
+proto.domopool.Versions.prototype.getDomopool = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -4063,7 +4093,7 @@ proto.domopool.Versions.prototype.getDomopool = function () {
  * @param {string} value
  * @return {!proto.domopool.Versions} returns this
  */
-proto.domopool.Versions.prototype.setDomopool = function (value) {
+proto.domopool.Versions.prototype.setDomopool = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4072,7 +4102,7 @@ proto.domopool.Versions.prototype.setDomopool = function (value) {
  * optional uint32 platformio = 2;
  * @return {number}
  */
-proto.domopool.Versions.prototype.getPlatformio = function () {
+proto.domopool.Versions.prototype.getPlatformio = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -4081,7 +4111,7 @@ proto.domopool.Versions.prototype.getPlatformio = function () {
  * @param {number} value
  * @return {!proto.domopool.Versions} returns this
  */
-proto.domopool.Versions.prototype.setPlatformio = function (value) {
+proto.domopool.Versions.prototype.setPlatformio = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -4090,7 +4120,7 @@ proto.domopool.Versions.prototype.setPlatformio = function (value) {
  * optional string esp_idf = 3;
  * @return {string}
  */
-proto.domopool.Versions.prototype.getEspIdf = function () {
+proto.domopool.Versions.prototype.getEspIdf = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -4099,7 +4129,7 @@ proto.domopool.Versions.prototype.getEspIdf = function () {
  * @param {string} value
  * @return {!proto.domopool.Versions} returns this
  */
-proto.domopool.Versions.prototype.setEspIdf = function (value) {
+proto.domopool.Versions.prototype.setEspIdf = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -4108,7 +4138,7 @@ proto.domopool.Versions.prototype.setEspIdf = function (value) {
  * optional string xtensa = 4;
  * @return {string}
  */
-proto.domopool.Versions.prototype.getXtensa = function () {
+proto.domopool.Versions.prototype.getXtensa = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -4117,7 +4147,7 @@ proto.domopool.Versions.prototype.getXtensa = function () {
  * @param {string} value
  * @return {!proto.domopool.Versions} returns this
  */
-proto.domopool.Versions.prototype.setXtensa = function (value) {
+proto.domopool.Versions.prototype.setXtensa = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -4126,7 +4156,7 @@ proto.domopool.Versions.prototype.setXtensa = function (value) {
  * optional string tft_espi = 6;
  * @return {string}
  */
-proto.domopool.Versions.prototype.getTftEspi = function () {
+proto.domopool.Versions.prototype.getTftEspi = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -4135,7 +4165,7 @@ proto.domopool.Versions.prototype.getTftEspi = function () {
  * @param {string} value
  * @return {!proto.domopool.Versions} returns this
  */
-proto.domopool.Versions.prototype.setTftEspi = function (value) {
+proto.domopool.Versions.prototype.setTftEspi = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
@@ -4144,50 +4174,50 @@ proto.domopool.Versions.prototype.setTftEspi = function (value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Config.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Config.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Config.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Config.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Config} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Config.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    network: (f = msg.getNetwork()) && proto.domopool.Network.toObject(includeInstance, f),
+    sensors: (f = msg.getSensors()) && proto.domopool.Sensors.toObject(includeInstance, f),
+    global: (f = msg.getGlobal()) && proto.domopool.Global.toObject(includeInstance, f),
+    pump: (f = msg.getPump()) && proto.domopool.Pump.toObject(includeInstance, f),
+    metrics: (f = msg.getMetrics()) && proto.domopool.Metrics.toObject(includeInstance, f),
+    states: (f = msg.getStates()) && proto.domopool.States.toObject(includeInstance, f),
+    alarms: (f = msg.getAlarms()) && proto.domopool.Alarms.toObject(includeInstance, f),
+    tests: (f = msg.getTests()) && proto.domopool.Tests.toObject(includeInstance, f),
+    infos: (f = msg.getInfos()) && proto.domopool.Infos.toObject(includeInstance, f)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Config} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Config.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      network: (f = msg.getNetwork()) && proto.domopool.Network.toObject(includeInstance, f),
-      sensors: (f = msg.getSensors()) && proto.domopool.Sensors.toObject(includeInstance, f),
-      global: (f = msg.getGlobal()) && proto.domopool.Global.toObject(includeInstance, f),
-      pump: (f = msg.getPump()) && proto.domopool.Pump.toObject(includeInstance, f),
-      metrics: (f = msg.getMetrics()) && proto.domopool.Metrics.toObject(includeInstance, f),
-      states: (f = msg.getStates()) && proto.domopool.States.toObject(includeInstance, f),
-      alarms: (f = msg.getAlarms()) && proto.domopool.Alarms.toObject(includeInstance, f),
-      tests: (f = msg.getTests()) && proto.domopool.Tests.toObject(includeInstance, f),
-      infos: (f = msg.getInfos()) && proto.domopool.Infos.toObject(includeInstance, f)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -4196,7 +4226,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Config}
  */
-proto.domopool.Config.deserializeBinary = function (bytes) {
+proto.domopool.Config.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Config;
   return proto.domopool.Config.deserializeBinaryFromReader(msg, reader);
@@ -4210,61 +4240,61 @@ proto.domopool.Config.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Config}
  */
-proto.domopool.Config.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Config.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = new proto.domopool.Network;
-        reader.readMessage(value, proto.domopool.Network.deserializeBinaryFromReader);
-        msg.setNetwork(value);
-        break;
-      case 2:
-        var value = new proto.domopool.Sensors;
-        reader.readMessage(value, proto.domopool.Sensors.deserializeBinaryFromReader);
-        msg.setSensors(value);
-        break;
-      case 3:
-        var value = new proto.domopool.Global;
-        reader.readMessage(value, proto.domopool.Global.deserializeBinaryFromReader);
-        msg.setGlobal(value);
-        break;
-      case 5:
-        var value = new proto.domopool.Pump;
-        reader.readMessage(value, proto.domopool.Pump.deserializeBinaryFromReader);
-        msg.setPump(value);
-        break;
-      case 6:
-        var value = new proto.domopool.Metrics;
-        reader.readMessage(value, proto.domopool.Metrics.deserializeBinaryFromReader);
-        msg.setMetrics(value);
-        break;
-      case 7:
-        var value = new proto.domopool.States;
-        reader.readMessage(value, proto.domopool.States.deserializeBinaryFromReader);
-        msg.setStates(value);
-        break;
-      case 8:
-        var value = new proto.domopool.Alarms;
-        reader.readMessage(value, proto.domopool.Alarms.deserializeBinaryFromReader);
-        msg.setAlarms(value);
-        break;
-      case 9:
-        var value = new proto.domopool.Tests;
-        reader.readMessage(value, proto.domopool.Tests.deserializeBinaryFromReader);
-        msg.setTests(value);
-        break;
-      case 10:
-        var value = new proto.domopool.Infos;
-        reader.readMessage(value, proto.domopool.Infos.deserializeBinaryFromReader);
-        msg.setInfos(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = new proto.domopool.Network;
+      reader.readMessage(value,proto.domopool.Network.deserializeBinaryFromReader);
+      msg.setNetwork(value);
+      break;
+    case 2:
+      var value = new proto.domopool.Sensors;
+      reader.readMessage(value,proto.domopool.Sensors.deserializeBinaryFromReader);
+      msg.setSensors(value);
+      break;
+    case 3:
+      var value = new proto.domopool.Global;
+      reader.readMessage(value,proto.domopool.Global.deserializeBinaryFromReader);
+      msg.setGlobal(value);
+      break;
+    case 5:
+      var value = new proto.domopool.Pump;
+      reader.readMessage(value,proto.domopool.Pump.deserializeBinaryFromReader);
+      msg.setPump(value);
+      break;
+    case 6:
+      var value = new proto.domopool.Metrics;
+      reader.readMessage(value,proto.domopool.Metrics.deserializeBinaryFromReader);
+      msg.setMetrics(value);
+      break;
+    case 7:
+      var value = new proto.domopool.States;
+      reader.readMessage(value,proto.domopool.States.deserializeBinaryFromReader);
+      msg.setStates(value);
+      break;
+    case 8:
+      var value = new proto.domopool.Alarms;
+      reader.readMessage(value,proto.domopool.Alarms.deserializeBinaryFromReader);
+      msg.setAlarms(value);
+      break;
+    case 9:
+      var value = new proto.domopool.Tests;
+      reader.readMessage(value,proto.domopool.Tests.deserializeBinaryFromReader);
+      msg.setTests(value);
+      break;
+    case 10:
+      var value = new proto.domopool.Infos;
+      reader.readMessage(value,proto.domopool.Infos.deserializeBinaryFromReader);
+      msg.setInfos(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -4275,7 +4305,7 @@ proto.domopool.Config.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Config.prototype.serializeBinary = function () {
+proto.domopool.Config.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Config.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -4289,7 +4319,7 @@ proto.domopool.Config.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Config.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Config.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNetwork();
   if (f != null) {
@@ -4370,7 +4400,7 @@ proto.domopool.Config.serializeBinaryToWriter = function (message, writer) {
  * optional Network network = 1;
  * @return {?proto.domopool.Network}
  */
-proto.domopool.Config.prototype.getNetwork = function () {
+proto.domopool.Config.prototype.getNetwork = function() {
   return /** @type{?proto.domopool.Network} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Network, 1));
 };
@@ -4380,7 +4410,7 @@ proto.domopool.Config.prototype.getNetwork = function () {
  * @param {?proto.domopool.Network|undefined} value
  * @return {!proto.domopool.Config} returns this
 */
-proto.domopool.Config.prototype.setNetwork = function (value) {
+proto.domopool.Config.prototype.setNetwork = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -4389,7 +4419,7 @@ proto.domopool.Config.prototype.setNetwork = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Config} returns this
  */
-proto.domopool.Config.prototype.clearNetwork = function () {
+proto.domopool.Config.prototype.clearNetwork = function() {
   return this.setNetwork(undefined);
 };
 
@@ -4398,7 +4428,7 @@ proto.domopool.Config.prototype.clearNetwork = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Config.prototype.hasNetwork = function () {
+proto.domopool.Config.prototype.hasNetwork = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -4407,7 +4437,7 @@ proto.domopool.Config.prototype.hasNetwork = function () {
  * optional Sensors sensors = 2;
  * @return {?proto.domopool.Sensors}
  */
-proto.domopool.Config.prototype.getSensors = function () {
+proto.domopool.Config.prototype.getSensors = function() {
   return /** @type{?proto.domopool.Sensors} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Sensors, 2));
 };
@@ -4417,7 +4447,7 @@ proto.domopool.Config.prototype.getSensors = function () {
  * @param {?proto.domopool.Sensors|undefined} value
  * @return {!proto.domopool.Config} returns this
 */
-proto.domopool.Config.prototype.setSensors = function (value) {
+proto.domopool.Config.prototype.setSensors = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -4426,7 +4456,7 @@ proto.domopool.Config.prototype.setSensors = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Config} returns this
  */
-proto.domopool.Config.prototype.clearSensors = function () {
+proto.domopool.Config.prototype.clearSensors = function() {
   return this.setSensors(undefined);
 };
 
@@ -4435,7 +4465,7 @@ proto.domopool.Config.prototype.clearSensors = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Config.prototype.hasSensors = function () {
+proto.domopool.Config.prototype.hasSensors = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -4444,7 +4474,7 @@ proto.domopool.Config.prototype.hasSensors = function () {
  * optional Global global = 3;
  * @return {?proto.domopool.Global}
  */
-proto.domopool.Config.prototype.getGlobal = function () {
+proto.domopool.Config.prototype.getGlobal = function() {
   return /** @type{?proto.domopool.Global} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Global, 3));
 };
@@ -4454,7 +4484,7 @@ proto.domopool.Config.prototype.getGlobal = function () {
  * @param {?proto.domopool.Global|undefined} value
  * @return {!proto.domopool.Config} returns this
 */
-proto.domopool.Config.prototype.setGlobal = function (value) {
+proto.domopool.Config.prototype.setGlobal = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -4463,7 +4493,7 @@ proto.domopool.Config.prototype.setGlobal = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Config} returns this
  */
-proto.domopool.Config.prototype.clearGlobal = function () {
+proto.domopool.Config.prototype.clearGlobal = function() {
   return this.setGlobal(undefined);
 };
 
@@ -4472,7 +4502,7 @@ proto.domopool.Config.prototype.clearGlobal = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Config.prototype.hasGlobal = function () {
+proto.domopool.Config.prototype.hasGlobal = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -4481,7 +4511,7 @@ proto.domopool.Config.prototype.hasGlobal = function () {
  * optional Pump pump = 5;
  * @return {?proto.domopool.Pump}
  */
-proto.domopool.Config.prototype.getPump = function () {
+proto.domopool.Config.prototype.getPump = function() {
   return /** @type{?proto.domopool.Pump} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Pump, 5));
 };
@@ -4491,7 +4521,7 @@ proto.domopool.Config.prototype.getPump = function () {
  * @param {?proto.domopool.Pump|undefined} value
  * @return {!proto.domopool.Config} returns this
 */
-proto.domopool.Config.prototype.setPump = function (value) {
+proto.domopool.Config.prototype.setPump = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -4500,7 +4530,7 @@ proto.domopool.Config.prototype.setPump = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Config} returns this
  */
-proto.domopool.Config.prototype.clearPump = function () {
+proto.domopool.Config.prototype.clearPump = function() {
   return this.setPump(undefined);
 };
 
@@ -4509,7 +4539,7 @@ proto.domopool.Config.prototype.clearPump = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Config.prototype.hasPump = function () {
+proto.domopool.Config.prototype.hasPump = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -4518,7 +4548,7 @@ proto.domopool.Config.prototype.hasPump = function () {
  * optional Metrics metrics = 6;
  * @return {?proto.domopool.Metrics}
  */
-proto.domopool.Config.prototype.getMetrics = function () {
+proto.domopool.Config.prototype.getMetrics = function() {
   return /** @type{?proto.domopool.Metrics} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Metrics, 6));
 };
@@ -4528,7 +4558,7 @@ proto.domopool.Config.prototype.getMetrics = function () {
  * @param {?proto.domopool.Metrics|undefined} value
  * @return {!proto.domopool.Config} returns this
 */
-proto.domopool.Config.prototype.setMetrics = function (value) {
+proto.domopool.Config.prototype.setMetrics = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -4537,7 +4567,7 @@ proto.domopool.Config.prototype.setMetrics = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Config} returns this
  */
-proto.domopool.Config.prototype.clearMetrics = function () {
+proto.domopool.Config.prototype.clearMetrics = function() {
   return this.setMetrics(undefined);
 };
 
@@ -4546,7 +4576,7 @@ proto.domopool.Config.prototype.clearMetrics = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Config.prototype.hasMetrics = function () {
+proto.domopool.Config.prototype.hasMetrics = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -4555,7 +4585,7 @@ proto.domopool.Config.prototype.hasMetrics = function () {
  * optional States states = 7;
  * @return {?proto.domopool.States}
  */
-proto.domopool.Config.prototype.getStates = function () {
+proto.domopool.Config.prototype.getStates = function() {
   return /** @type{?proto.domopool.States} */ (
     jspb.Message.getWrapperField(this, proto.domopool.States, 7));
 };
@@ -4565,7 +4595,7 @@ proto.domopool.Config.prototype.getStates = function () {
  * @param {?proto.domopool.States|undefined} value
  * @return {!proto.domopool.Config} returns this
 */
-proto.domopool.Config.prototype.setStates = function (value) {
+proto.domopool.Config.prototype.setStates = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -4574,7 +4604,7 @@ proto.domopool.Config.prototype.setStates = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Config} returns this
  */
-proto.domopool.Config.prototype.clearStates = function () {
+proto.domopool.Config.prototype.clearStates = function() {
   return this.setStates(undefined);
 };
 
@@ -4583,7 +4613,7 @@ proto.domopool.Config.prototype.clearStates = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Config.prototype.hasStates = function () {
+proto.domopool.Config.prototype.hasStates = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -4592,7 +4622,7 @@ proto.domopool.Config.prototype.hasStates = function () {
  * optional Alarms alarms = 8;
  * @return {?proto.domopool.Alarms}
  */
-proto.domopool.Config.prototype.getAlarms = function () {
+proto.domopool.Config.prototype.getAlarms = function() {
   return /** @type{?proto.domopool.Alarms} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Alarms, 8));
 };
@@ -4602,7 +4632,7 @@ proto.domopool.Config.prototype.getAlarms = function () {
  * @param {?proto.domopool.Alarms|undefined} value
  * @return {!proto.domopool.Config} returns this
 */
-proto.domopool.Config.prototype.setAlarms = function (value) {
+proto.domopool.Config.prototype.setAlarms = function(value) {
   return jspb.Message.setWrapperField(this, 8, value);
 };
 
@@ -4611,7 +4641,7 @@ proto.domopool.Config.prototype.setAlarms = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Config} returns this
  */
-proto.domopool.Config.prototype.clearAlarms = function () {
+proto.domopool.Config.prototype.clearAlarms = function() {
   return this.setAlarms(undefined);
 };
 
@@ -4620,7 +4650,7 @@ proto.domopool.Config.prototype.clearAlarms = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Config.prototype.hasAlarms = function () {
+proto.domopool.Config.prototype.hasAlarms = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -4629,7 +4659,7 @@ proto.domopool.Config.prototype.hasAlarms = function () {
  * optional Tests tests = 9;
  * @return {?proto.domopool.Tests}
  */
-proto.domopool.Config.prototype.getTests = function () {
+proto.domopool.Config.prototype.getTests = function() {
   return /** @type{?proto.domopool.Tests} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Tests, 9));
 };
@@ -4639,7 +4669,7 @@ proto.domopool.Config.prototype.getTests = function () {
  * @param {?proto.domopool.Tests|undefined} value
  * @return {!proto.domopool.Config} returns this
 */
-proto.domopool.Config.prototype.setTests = function (value) {
+proto.domopool.Config.prototype.setTests = function(value) {
   return jspb.Message.setWrapperField(this, 9, value);
 };
 
@@ -4648,7 +4678,7 @@ proto.domopool.Config.prototype.setTests = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Config} returns this
  */
-proto.domopool.Config.prototype.clearTests = function () {
+proto.domopool.Config.prototype.clearTests = function() {
   return this.setTests(undefined);
 };
 
@@ -4657,7 +4687,7 @@ proto.domopool.Config.prototype.clearTests = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Config.prototype.hasTests = function () {
+proto.domopool.Config.prototype.hasTests = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -4666,7 +4696,7 @@ proto.domopool.Config.prototype.hasTests = function () {
  * optional Infos infos = 10;
  * @return {?proto.domopool.Infos}
  */
-proto.domopool.Config.prototype.getInfos = function () {
+proto.domopool.Config.prototype.getInfos = function() {
   return /** @type{?proto.domopool.Infos} */ (
     jspb.Message.getWrapperField(this, proto.domopool.Infos, 10));
 };
@@ -4676,7 +4706,7 @@ proto.domopool.Config.prototype.getInfos = function () {
  * @param {?proto.domopool.Infos|undefined} value
  * @return {!proto.domopool.Config} returns this
 */
-proto.domopool.Config.prototype.setInfos = function (value) {
+proto.domopool.Config.prototype.setInfos = function(value) {
   return jspb.Message.setWrapperField(this, 10, value);
 };
 
@@ -4685,7 +4715,7 @@ proto.domopool.Config.prototype.setInfos = function (value) {
  * Clears the message field making it undefined.
  * @return {!proto.domopool.Config} returns this
  */
-proto.domopool.Config.prototype.clearInfos = function () {
+proto.domopool.Config.prototype.clearInfos = function() {
   return this.setInfos(undefined);
 };
 
@@ -4694,7 +4724,7 @@ proto.domopool.Config.prototype.clearInfos = function () {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.domopool.Config.prototype.hasInfos = function () {
+proto.domopool.Config.prototype.hasInfos = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
@@ -4703,44 +4733,44 @@ proto.domopool.Config.prototype.hasInfos = function () {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.domopool.Filter.prototype.toObject = function (opt_includeInstance) {
-    return proto.domopool.Filter.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.domopool.Filter.prototype.toObject = function(opt_includeInstance) {
+  return proto.domopool.Filter.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.domopool.Filter} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.domopool.Filter.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    state: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    duration: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    startTime: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.domopool.Filter} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.domopool.Filter.toObject = function (includeInstance, msg) {
-    var f, obj = {
-      state: jspb.Message.getFieldWithDefault(msg, 1, 0),
-      duration: jspb.Message.getFieldWithDefault(msg, 2, 0),
-      startTime: jspb.Message.getFieldWithDefault(msg, 3, 0)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -4749,7 +4779,7 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.domopool.Filter}
  */
-proto.domopool.Filter.deserializeBinary = function (bytes) {
+proto.domopool.Filter.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.domopool.Filter;
   return proto.domopool.Filter.deserializeBinaryFromReader(msg, reader);
@@ -4763,28 +4793,28 @@ proto.domopool.Filter.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.domopool.Filter}
  */
-proto.domopool.Filter.deserializeBinaryFromReader = function (msg, reader) {
+proto.domopool.Filter.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {!proto.domopool.Filter_states} */ (reader.readEnum());
-        msg.setState(value);
-        break;
-      case 2:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setDuration(value);
-        break;
-      case 3:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setStartTime(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {!proto.domopool.Filter_states} */ (reader.readEnum());
+      msg.setState(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setDuration(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setStartTime(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -4795,7 +4825,7 @@ proto.domopool.Filter.deserializeBinaryFromReader = function (msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.domopool.Filter.prototype.serializeBinary = function () {
+proto.domopool.Filter.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.domopool.Filter.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -4809,7 +4839,7 @@ proto.domopool.Filter.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.domopool.Filter.serializeBinaryToWriter = function (message, writer) {
+proto.domopool.Filter.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getState();
   if (f !== 0.0) {
@@ -4839,7 +4869,7 @@ proto.domopool.Filter.serializeBinaryToWriter = function (message, writer) {
  * optional Filter_states state = 1;
  * @return {!proto.domopool.Filter_states}
  */
-proto.domopool.Filter.prototype.getState = function () {
+proto.domopool.Filter.prototype.getState = function() {
   return /** @type {!proto.domopool.Filter_states} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -4848,7 +4878,7 @@ proto.domopool.Filter.prototype.getState = function () {
  * @param {!proto.domopool.Filter_states} value
  * @return {!proto.domopool.Filter} returns this
  */
-proto.domopool.Filter.prototype.setState = function (value) {
+proto.domopool.Filter.prototype.setState = function(value) {
   return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
@@ -4857,7 +4887,7 @@ proto.domopool.Filter.prototype.setState = function (value) {
  * optional uint32 duration = 2;
  * @return {number}
  */
-proto.domopool.Filter.prototype.getDuration = function () {
+proto.domopool.Filter.prototype.getDuration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -4866,7 +4896,7 @@ proto.domopool.Filter.prototype.getDuration = function () {
  * @param {number} value
  * @return {!proto.domopool.Filter} returns this
  */
-proto.domopool.Filter.prototype.setDuration = function (value) {
+proto.domopool.Filter.prototype.setDuration = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -4875,7 +4905,7 @@ proto.domopool.Filter.prototype.setDuration = function (value) {
  * optional uint32 start_time = 3;
  * @return {number}
  */
-proto.domopool.Filter.prototype.getStartTime = function () {
+proto.domopool.Filter.prototype.getStartTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -4884,7 +4914,7 @@ proto.domopool.Filter.prototype.getStartTime = function () {
  * @param {number} value
  * @return {!proto.domopool.Filter} returns this
  */
-proto.domopool.Filter.prototype.setStartTime = function (value) {
+proto.domopool.Filter.prototype.setStartTime = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
