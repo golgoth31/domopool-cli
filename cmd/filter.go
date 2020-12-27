@@ -76,6 +76,7 @@ to quickly create a Cobra application.`,
 			if err != nil {
 				fmt.Println(err)
 			}
+
 			if resp.StatusCode() == 200 {
 				time.Sleep(2 * time.Second)
 				response, err := domoClient.R().Get("/api/v1/filter")
