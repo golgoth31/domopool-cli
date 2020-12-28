@@ -68,7 +68,9 @@ to quickly create a Cobra application.`,
 			case "stop":
 				filter.State = domopool_proto.FilterStates_stop
 			}
+
 			body, _ := proto.Marshal(filter)
+			// fmt.Printf("%s", body)
 			resp, err := domoClient.
 				R().
 				SetBody(body).
@@ -85,6 +87,10 @@ to quickly create a Cobra application.`,
 				}
 				// err = json.Unmarshal(resp.Body(), config)
 				// fmt.Println(resp.String())
+				// pj := protojson.UnmarshalOptions{
+				// 	AllowPartial:   false,
+				// 	DiscardUnknown: true,
+				// }
 				err = proto.Unmarshal(response.Body(), filter)
 				if err != nil {
 					fmt.Println(err)
