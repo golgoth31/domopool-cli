@@ -37,6 +37,7 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		getConfig, _ := cmd.Flags().GetString("get")
+		wpThreshold, _ := cmd.Flags().GetFloat32("wp")
 		getWP, _ := cmd.Flags().GetBool("wp-threshold")
 		scheme := "http"
 		domoClient := resty.New()
@@ -46,47 +47,63 @@ to quickly create a Cobra application.`,
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
-		URI := "/api/v1/config"
-		if !getWP {
-			resp, err := domoClient.R().Get(URI)
+		if wpThreshold != 0 {
+			analogSens.Threshold = wpThreshold
+			analogSens.AdcPin = 3
+			analogSens.Enabled = true
+			body, _ := proto.Marshal(analogSens)
+			resp, err := domoClient.
+				R().
+				SetBody(body).
+				Post("/api/v1/config/wp")
 			if err != nil {
 				fmt.Println(err)
 			}
-			// err = json.Unmarshal(resp.Body(), config)
-			// fmt.Println(resp.String())
-			err = proto.Unmarshal(resp.Body(), config)
-			if err != nil {
-				fmt.Println(err)
-			}
-		} else {
-			resp, err := domoClient.R().Get(URI + "/wp/cur_threshold")
-			if err != nil {
-				fmt.Println(err)
-			}
-			// err = json.Unmarshal(resp.Body(), config)
-			// fmt.Println(resp.String())
-			err = proto.Unmarshal(resp.Body(), analogSens)
-			if err != nil {
-				fmt.Println(err)
-			}
-		}
+			fmt.Println(resp.Status())
 
-		switch getConfig {
-		case "", "all":
+		} else {
 			if !getWP {
-				fmt.Println(config)
+				resp, err := domoClient.R().Get("/api/v1/config")
+				if err != nil {
+					fmt.Println(err)
+				}
+				// err = json.Unmarshal(resp.Body(), config)
+				// fmt.Println(resp.String())
+				err = proto.Unmarshal(resp.Body(), config)
+				if err != nil {
+					fmt.Println(err)
+				}
 			} else {
-				fmt.Println(analogSens.GetThreshold())
+				resp, err := domoClient.R().Get("/api/v1/wp_threshold")
+				if err != nil {
+					fmt.Println(err)
+				}
+				// err = json.Unmarshal(resp.Body(), config)
+				// fmt.Println(resp.String())
+				err = proto.Unmarshal(resp.Body(), analogSens)
+				if err != nil {
+					fmt.Println(err)
+				}
+				fmt.Println(resp.Status())
 			}
-		case "mqtt":
-			fmt.Println(config.Network.GetMqtt())
-		case "wp":
-			fmt.Println(config.Sensors.GetWaterPressure())
-		case "temp":
-			fmt.Println(config.Sensors.GetTamb())
-			fmt.Println(config.Sensors.GetTwout())
-			if config.Sensors.Twin.GetEnabled() {
-				fmt.Println(config.Sensors.GetTwin())
+
+			switch getConfig {
+			case "", "all":
+				if !getWP {
+					fmt.Println(config)
+				} else {
+					fmt.Println(analogSens)
+				}
+			case "mqtt":
+				fmt.Println(config.Network.GetMqtt())
+			case "wp":
+				fmt.Println(config.Sensors.GetWp())
+			case "temp":
+				fmt.Println(config.Sensors.GetTamb())
+				fmt.Println(config.Sensors.GetTwout())
+				if config.Sensors.Twin.GetEnabled() {
+					fmt.Println(config.Sensors.GetTwin())
+				}
 			}
 		}
 	},
@@ -104,5 +121,6 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	configCmd.Flags().StringP("get", "g", "all", "get config (all, mqtt, wp)")
+	configCmd.Flags().Float32("wp", 0, "post wp threshold")
 	configCmd.Flags().Bool("wp-threshold", false, "get current water pressure sensor threshold")
 }
