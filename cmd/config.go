@@ -76,7 +76,7 @@ to quickly create a Cobra application.`,
 			if !getWP {
 				fmt.Println(config)
 			} else {
-				fmt.Println(analogSens)
+				fmt.Println(analogSens.GetThreshold())
 			}
 		case "mqtt":
 			fmt.Println(config.Network.GetMqtt())
