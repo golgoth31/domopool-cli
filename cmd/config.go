@@ -38,6 +38,9 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		getConfig, _ := cmd.Flags().GetString("get")
 		wpThreshold, _ := cmd.Flags().GetFloat32("wp")
+		wpThresholdAccuracy, _ := cmd.Flags().GetUint32("wp-accuracy")
+		wpVmin, _ := cmd.Flags().GetFloat32("wp-vmin")
+		wpVmax, _ := cmd.Flags().GetFloat32("wp-vmax")
 		getWP, _ := cmd.Flags().GetBool("wp-threshold")
 		scheme := "http"
 		domoClient := resty.New()
@@ -49,13 +52,16 @@ to quickly create a Cobra application.`,
 		domoClient.SetRetryWaitTime(5 * time.Second)
 		if wpThreshold != 0 {
 			analogSens.Threshold = wpThreshold
+			analogSens.ThresholdAccuracy = wpThresholdAccuracy
+			analogSens.Vmin = wpVmin
+			analogSens.Vmax = wpVmax
 			analogSens.AdcPin = 3
-			analogSens.Enabled = true
+			analogSens.Enabled = false
 			body, _ := proto.Marshal(analogSens)
 			resp, err := domoClient.
 				R().
 				SetBody(body).
-				Post("/api/v1/config/wp")
+				Post("/api/v1/config/wp/spec")
 			if err != nil {
 				fmt.Println(err)
 			}
@@ -122,5 +128,8 @@ func init() {
 	// is called directly, e.g.:
 	configCmd.Flags().StringP("get", "g", "all", "get config (all, mqtt, wp)")
 	configCmd.Flags().Float32("wp", 0, "post wp threshold")
+	configCmd.Flags().Uint32("wp-accuracy", 8, "post wp threshold accuracy")
+	configCmd.Flags().Float32("wp-vmin", 0.5, "post wp threshold accuracy")
+	configCmd.Flags().Float32("wp-vmax", 4.5, "post wp threshold accuracy")
 	configCmd.Flags().Bool("wp-threshold", false, "get current water pressure sensor threshold")
 }
