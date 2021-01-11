@@ -20,9 +20,9 @@ import (
 	"time"
 
 	"github.com/go-resty/resty/v2"
+	"github.com/gogo/protobuf/proto"
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
-	"google.golang.org/protobuf/proto"
 )
 
 // configCmd represents the config command
@@ -110,6 +110,8 @@ to quickly create a Cobra application.`,
 				if config.Sensors.Twin.GetEnabled() {
 					fmt.Println(config.Sensors.GetTwin())
 				}
+			default:
+				fmt.Println("Unknown config")
 			}
 		}
 	},

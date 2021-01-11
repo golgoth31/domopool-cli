@@ -22,11 +22,10 @@ import (
 	"time"
 
 	"github.com/go-resty/resty/v2"
+	"github.com/gogo/protobuf/proto"
 	domopool_proto "github.com/golgoth31/domopool-proto"
-	"github.com/spf13/cobra"
-	"google.golang.org/protobuf/proto"
-
 	homedir "github.com/mitchellh/go-homedir"
+	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
 

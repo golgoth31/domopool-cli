@@ -20,9 +20,9 @@ import (
 	"time"
 
 	"github.com/go-resty/resty/v2"
+	"github.com/gogo/protobuf/proto"
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
-	"google.golang.org/protobuf/proto"
 )
 
 // filterCmd represents the filter command
@@ -60,14 +60,7 @@ to quickly create a Cobra application.`,
 			fmt.Println(filter)
 		} else {
 			filter.Duration, _ = cmd.Flags().GetUint32("duration")
-			switch setState {
-			case "auto":
-				filter.State = domopool_proto.FilterStates_auto
-			case "start":
-				filter.State = domopool_proto.FilterStates_start
-			case "stop":
-				filter.State = domopool_proto.FilterStates_stop
-			}
+			filter.State = domopool_proto.FilterStates(domopool_proto.FilterStates_value[setState])
 
 			body, _ := proto.Marshal(filter)
 			// fmt.Printf("%s", body)

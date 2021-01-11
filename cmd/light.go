@@ -20,9 +20,9 @@ import (
 	"time"
 
 	"github.com/go-resty/resty/v2"
+	"github.com/gogo/protobuf/proto"
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
-	"google.golang.org/protobuf/proto"
 )
 
 // lightCmd represents the filter command
@@ -36,7 +36,7 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		setState, _ := cmd.Flags().GetString("state")
+		// setState, _ := cmd.Flags().GetString("state")
 		scheme := "http"
 		domoClient := resty.New()
 		relay := &domopool_proto.Switch{}
@@ -45,12 +45,12 @@ to quickly create a Cobra application.`,
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
-		switch setState {
-		case "start":
-			relay.State = domopool_proto.FilterStates_start
-		case "stop":
-			relay.State = domopool_proto.FilterStates_stop
-		}
+		// switch setState {
+		// case "start":
+		// 	relay.State = domopool_proto.FilterStates_start
+		// case "stop":
+		// 	relay.State = domopool_proto.FilterStates_stop
+		// }
 		body, _ := proto.Marshal(relay)
 		resp, err := domoClient.
 			R().

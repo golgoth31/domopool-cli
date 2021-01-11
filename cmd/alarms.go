@@ -26,9 +26,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// statesCmd represents the states command
-var statesCmd = &cobra.Command{
-	Use:   "states",
+// alarmsCmd represents the alarms command
+var alarmsCmd = &cobra.Command{
+	Use:   "alarms",
 	Short: "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
@@ -39,37 +39,26 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		scheme := "http"
 		domoClient := resty.New()
-		states := &domopool_proto.States{}
+		alarms := &domopool_proto.Alarms{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetHeader("Content-Type", "application/json")
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
-		resp, err := domoClient.R().Get("/api/v1/states")
-		if err != nil {
-			fmt.Println(err)
-		}
-		// err = json.Unmarshal(resp.Body(), config)
-		// fmt.Println(resp.String())
-		err = proto.Unmarshal(resp.Body(), states)
+
+		resp, err := domoClient.R().Get("/api/v1/alarms")
 		if err != nil {
 			fmt.Println(err)
 		}
 
-		fmt.Println(states)
+		err = proto.Unmarshal(resp.Body(), alarms)
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		fmt.Println(alarms)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(statesCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// statesCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// statesCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.AddCommand(alarmsCmd)
 }

@@ -21,9 +21,9 @@ import (
 	"time"
 
 	"github.com/go-resty/resty/v2"
+	"github.com/gogo/protobuf/proto"
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
-	"google.golang.org/protobuf/proto"
 )
 
 // mqttCmd represents the mqtt command
