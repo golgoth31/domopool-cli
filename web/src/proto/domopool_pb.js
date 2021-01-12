@@ -1423,9 +1423,9 @@ proto.domopool.Limits.toObject = function(includeInstance, msg) {
     chTempThreshold: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
     chTempWaitReset: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
     wp0Derive: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
-    twMin: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    twMax: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    tambMin: jspb.Message.getFieldWithDefault(msg, 13, 0)
+    twMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
+    twMax: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
+    tambMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0)
   };
 
   if (includeInstance) {
@@ -1503,15 +1503,15 @@ proto.domopool.Limits.deserializeBinaryFromReader = function(msg, reader) {
       msg.setWp0Derive(value);
       break;
     case 11:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {number} */ (reader.readFloat());
       msg.setTwMin(value);
       break;
     case 12:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {number} */ (reader.readFloat());
       msg.setTwMax(value);
       break;
     case 13:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readFloat());
       msg.setTambMin(value);
       break;
     default:
@@ -1614,22 +1614,22 @@ proto.domopool.Limits.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getTwMin();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f !== 0.0) {
+    writer.writeFloat(
       11,
       f
     );
   }
   f = message.getTwMax();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f !== 0.0) {
+    writer.writeFloat(
       12,
       f
     );
   }
   f = message.getTambMin();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeFloat(
       13,
       f
     );
@@ -1818,11 +1818,11 @@ proto.domopool.Limits.prototype.setWp0Derive = function(value) {
 
 
 /**
- * optional uint32 tw_min = 11;
+ * optional float tw_min = 11;
  * @return {number}
  */
 proto.domopool.Limits.prototype.getTwMin = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
 };
 
 
@@ -1831,16 +1831,16 @@ proto.domopool.Limits.prototype.getTwMin = function() {
  * @return {!proto.domopool.Limits} returns this
  */
 proto.domopool.Limits.prototype.setTwMin = function(value) {
-  return jspb.Message.setProto3IntField(this, 11, value);
+  return jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 
 /**
- * optional uint32 tw_max = 12;
+ * optional float tw_max = 12;
  * @return {number}
  */
 proto.domopool.Limits.prototype.getTwMax = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
 };
 
 
@@ -1849,16 +1849,16 @@ proto.domopool.Limits.prototype.getTwMax = function() {
  * @return {!proto.domopool.Limits} returns this
  */
 proto.domopool.Limits.prototype.setTwMax = function(value) {
-  return jspb.Message.setProto3IntField(this, 12, value);
+  return jspb.Message.setProto3FloatField(this, 12, value);
 };
 
 
 /**
- * optional int32 tamb_min = 13;
+ * optional float tamb_min = 13;
  * @return {number}
  */
 proto.domopool.Limits.prototype.getTambMin = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
 };
 
 
@@ -1867,7 +1867,7 @@ proto.domopool.Limits.prototype.getTambMin = function() {
  * @return {!proto.domopool.Limits} returns this
  */
 proto.domopool.Limits.prototype.setTambMin = function(value) {
-  return jspb.Message.setProto3IntField(this, 13, value);
+  return jspb.Message.setProto3FloatField(this, 13, value);
 };
 
 

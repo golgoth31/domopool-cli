@@ -12,6 +12,9 @@ import TwoutFields from '../components/TwoutForm';
 import TwinFields from '../components/TwinForm';
 import TambFields from '../components/TambForm';
 import { Grid } from "@material-ui/core";
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 
 var domopool_pb = require('../proto/domopool_pb');
 // import { } from './../proto/domopool_pb';
@@ -59,51 +62,110 @@ export default class ConfigView extends React.Component {
       }
       this.state.ipDisabled = this.state.config.network.dhcp;
       return (
-        <Formik
-          enableReinitialize
-          initialValues={{
-            global: this.state.config.global,
-            network: this.state.config.network,
-            sensors: this.state.config.sensors,
-          }
-          }
-          onSubmit={(values, actions) => {
-            dataprovider.post(this.state.config.toArrayBuffer(),
-              {
-                responseType: 'arraybuffer',
-                headers: { 'Content-Type': 'application/octet-stream' }
+        <Card>
+          <CardContent>
+            <Formik
+              enableReinitialize
+              initialValues={{
+                global: this.state.config.global,
               }
-            ).then(function (response) {
-              console.log(response)
-            })
-              .catch(function (response) {
-                console.log(response)
-              })
-          }}
-        >
-          {props => (
+              }
+              onSubmit={(values, actions) => {
+                dataprovider.post(this.state.config.toArrayBuffer(),
+                  {
+                    responseType: 'arraybuffer',
+                    headers: { 'Content-Type': 'application/octet-stream' }
+                  }
+                ).then(function (response) {
+                  console.log(response)
+                })
+                  .catch(function (response) {
+                    console.log(response)
+                  })
+              }}
+            >
+              {props => (
 
-            <Form>
-              <GlobalFields {...props} />
-              <br />
-              <NetworkFields {...props} />
-              <br />
-              <Grid container spacing={2}>
-                <Grid item>
-                  <TwoutFields {...props} />
-                </Grid>
-                <Grid item>
-                  <TambFields {...props} />
-                </Grid>
-                <Grid item>
-                  <TwinFields {...props} />
-                </Grid>
-              </Grid>
-              <SubmitButton />
-            </Form>
+                <Form>
+                  <GlobalFields {...props} />
+                  <br />
+                  <SubmitButton />
+                </Form>
 
-          )}
-        </Formik >
+              )}
+            </Formik >
+            <Formik
+              enableReinitialize
+              initialValues={{
+                network: this.state.config.network,
+              }
+              }
+              onSubmit={(values, actions) => {
+                dataprovider.post(this.state.config.toArrayBuffer(),
+                  {
+                    responseType: 'arraybuffer',
+                    headers: { 'Content-Type': 'application/octet-stream' }
+                  }
+                ).then(function (response) {
+                  console.log(response)
+                })
+                  .catch(function (response) {
+                    console.log(response)
+                  })
+              }}
+            >
+              {props => (
+
+                <Form>
+                  <NetworkFields {...props} />
+                  <br />
+                  <SubmitButton />
+                </Form>
+
+              )}
+            </Formik >
+            <Formik
+              enableReinitialize
+              initialValues={{
+                sensors: this.state.config.sensors,
+              }
+              }
+              onSubmit={(values, actions) => {
+                dataprovider.post(this.state.config.toArrayBuffer(),
+                  {
+                    responseType: 'arraybuffer',
+                    headers: { 'Content-Type': 'application/octet-stream' }
+                  }
+                ).then(function (response) {
+                  console.log(response)
+                })
+                  .catch(function (response) {
+                    console.log(response)
+                  })
+              }}
+            >
+              {props => (
+
+                <Form>
+                  <Grid container spacing={2}>
+                    <Grid item>
+                      <TwoutFields {...props} />
+                    </Grid>
+                    <Grid item>
+                      <TambFields {...props} />
+                    </Grid>
+                    <Grid item>
+                      <TwinFields {...props} />
+                    </Grid>
+                  </Grid>
+                  <br />
+                  <SubmitButton />
+                </Form>
+
+              )}
+            </Formik >
+          </CardContent>
+        </Card>
       )
     } else {
       return (

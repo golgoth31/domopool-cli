@@ -1,7 +1,8 @@
 import * as React from "react";
 // import { Outlet } from 'react-router-dom';
 import {
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -24,6 +25,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MainListItems from './Menu';
 import ConfigView from '../views/ConfigView';
 import MetricsView from '../views/MetricsView';
+import AlarmsView from '../views/AlarmsView';
 
 function Copyright() {
   return (
@@ -174,13 +176,22 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <Paper className={classes.paper}>
+          {/* <Paper className={classes.paper}> */}
+          <Switch>
             {/* <ConfigForm /> */}
-            <Route path="/" component={MetricsView} />
-            <Route path="/config" component={ConfigView} />
+            <Route exact path="/">
+              <MetricsView />
+            </Route>
+            <Route path="/config">
+              <ConfigView />
+            </Route>
+            <Route path="/alarms">
+              <AlarmsView />
+            </Route>
             {/* <Route path="/messages" component={Messages} />
             <Route path="/about" component={About} /> */}
-          </Paper>
+          </Switch>
+          {/* </Paper> */}
 
           <Box pt={4}>
             <Copyright />

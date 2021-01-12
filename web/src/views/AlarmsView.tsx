@@ -1,0 +1,102 @@
+import * as React from "react";
+import dataprovider from '../dataprovider/dataprovider';
+import {
+  Formik,
+  Form,
+} from 'formik';
+import SubmitButton from "../components/SubmitButton";
+import CircularProgress from '@material-ui/core/CircularProgress';
+import NetworkFields from '../components/NetworkForm';
+import GlobalFields from '../components/GlobalForm';
+import TwoutFields from '../components/TwoutForm';
+import TwinFields from '../components/TwinForm';
+import TambFields from '../components/TambForm';
+import { Grid } from "@material-ui/core";
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
+
+var domopool_pb = require('../proto/domopool_pb');
+// import { } from './../proto/domopool_pb';
+
+export default class MetricsView extends React.Component {
+  constructor(
+    private alarms: any
+  ) { super(alarms); };
+
+  state = {
+    alarms: this.alarms,
+  }
+
+  componentDidMount() {
+    dataprovider.get(`/api/v1/alarms`, {
+      responseType: 'arraybuffer'
+      // headers: {
+      //   'Access-Control-Allow-Origin': '*',
+      //   'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+      //   'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+      // }
+    })
+      .then(res => {
+        const resp = res.data;
+        this.setState({ alarms: domopool_pb.Alarms.deserializeBinary(resp).toObject() });
+        console.log(this.state.alarms);
+      })
+  }
+
+  // private validateEmail(value) {
+  //   let error;
+  //   if (!value) {
+  //     error = 'Required';
+  //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+  //     error = 'Invalid email address';
+  //   }
+  //   return error;
+  // }
+
+  render() {
+    if (this.state.alarms.wpLow != undefined) {
+      // if (this.state.config.global.displayStartup == undefined) {
+      //   this.state.config.global.displayStartup = false;
+      // }
+
+      return (
+        <Card>
+          <CardContent>
+            <FormGroup>
+              <FormControlLabel
+                control={<Switch
+                  checked={this.state.alarms.wpLow}
+                  name="wpLow"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />}
+                label="Water pressure low"
+                labelPlacement="end"
+              />
+
+              <FormControlLabel
+                control={<Switch
+                  checked={this.state.alarms.wpHigh}
+                  name="wpHigh"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />}
+                label="Water pressure high"
+                labelPlacement="end"
+              />
+            </FormGroup>
+          </CardContent>
+          {/* <CardActions>
+            <Button size="small">Learn More</Button>
+          </CardActions> */}
+        </Card>
+      )
+    } else {
+      return (
+        <CircularProgress />
+      )
+    }
+  };
+};

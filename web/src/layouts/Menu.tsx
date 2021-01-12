@@ -32,7 +32,7 @@ export default function MainListItems() {
         <ListItemText primary="Data" />
       </ListItem>
 
-      <ListItem button>
+      <ListItem button component={Link} to="/alarms">
         <ListItemIcon>
           <PeopleIcon />
         </ListItemIcon>
