@@ -25,9 +25,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// configCmd represents the config command
-var configCmd = &cobra.Command{
-	Use:   "config",
+// wpCmd represents the filter command
+var wpCmd = &cobra.Command{
+	Use:   "wp",
 	Short: "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
@@ -35,57 +35,50 @@ and usage of using your command. For example:
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
+	Args: cobra.ExactValidArgs(1),
+	ValidArgs: []string{
+		"enable",
+		"disable",
+		"set",
+	},
 	Run: func(cmd *cobra.Command, args []string) {
-		getConfig, _ := cmd.Flags().GetString("get")
+		wpThreshold, _ := cmd.Flags().GetFloat32("wp")
+		wpThresholdAccuracy, _ := cmd.Flags().GetUint32("wp-accuracy")
+		wpAdcPin, _ := cmd.Flags().GetUint32("wp-adc-pin")
+		wpVmin, _ := cmd.Flags().GetFloat32("wp-vmin")
+		wpVmax, _ := cmd.Flags().GetFloat32("wp-vmax")
 
 		scheme := "http"
 		domoClient := resty.New()
-		config := &domopool_proto.Config{}
-		// analogSens := &domopool_proto.AnalogSensor{}
+		wp := &domopool_proto.AnalogSensor{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
-		resp, err := domoClient.R().Get("/api/v1/config")
-		if err != nil {
-			fmt.Println(err)
-		}
-		// err = json.Unmarshal(resp.Body(), config)
-		// fmt.Println(resp.String())
-		err = proto.Unmarshal(resp.Body(), config)
-		if err != nil {
-			fmt.Println(err)
-		}
 
-		switch getConfig {
-		case "", "all":
-			fmt.Println(config)
-		case "mqtt":
-			fmt.Println(config.Network.GetMqtt())
-		case "wp":
-			fmt.Println(config.Sensors.GetWp())
-		case "temp":
-			fmt.Println(config.Sensors.GetTamb())
-			fmt.Println(config.Sensors.GetTwout())
-			if config.Sensors.Twin.GetEnabled() {
-				fmt.Println(config.Sensors.GetTwin())
-			}
-		default:
-			fmt.Println("Unknown config")
+		wp.AdcPin = wpAdcPin
+		wp.Threshold = wpThreshold
+		wp.ThresholdAccuracy = wpThresholdAccuracy
+		wp.Vmax = wpVmax
+		wp.Vmin = wpVmin
+		body, _ := proto.Marshal(wp)
+		resp, err := domoClient.
+			R().
+			SetBody(body).
+			Post("/api/v1/wp")
+		if err != nil {
+			fmt.Println(err)
 		}
+		fmt.Println(resp.Status())
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(configCmd)
+	rootCmd.AddCommand(wpCmd)
 
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// configCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	configCmd.Flags().StringP("get", "g", "all", "get config (all, mqtt, wp)")
+	wpCmd.Flags().Uint32("accuracy", 8, "post wp threshold accuracy")
+	wpCmd.Flags().Uint32("adc-pin", 3, "post wp adc pin")
+	wpCmd.Flags().Float32("vmin", 0.5, "post wp threshold accuracy")
+	wpCmd.Flags().Float32("vmax", 4.5, "post wp threshold accuracy")
+	wpCmd.Flags().Bool("threshold", false, "get current water pressure sensor threshold")
 }
