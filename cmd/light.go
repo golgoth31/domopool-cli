@@ -39,18 +39,12 @@ to quickly create a Cobra application.`,
 		// setState, _ := cmd.Flags().GetString("state")
 		scheme := "http"
 		domoClient := resty.New()
-		relay := &domopool_proto.Switch{}
+		relay := &domopool_proto.Relay{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
-		// switch setState {
-		// case "start":
-		// 	relay.State = domopool_proto.FilterStates_start
-		// case "stop":
-		// 	relay.State = domopool_proto.FilterStates_stop
-		// }
 		body, _ := proto.Marshal(relay)
 		resp, err := domoClient.
 			R().

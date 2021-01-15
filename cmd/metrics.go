@@ -39,23 +39,27 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		scheme := "http"
 		domoClient := resty.New()
-		metrics := &domopool_proto.Metrics{}
+		metrics := &domopool_proto.Config{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
-		resp, err := domoClient.R().Get("/metrics")
+		resp, err := domoClient.R().Get("/api/v1/config")
 		if err != nil {
 			fmt.Println(err)
 		}
-		// err = json.Unmarshal(resp.Body(), config)
-		// fmt.Println(resp.String())
-		err = proto.Unmarshal(resp.Body(), metrics)
-		if err != nil {
-			fmt.Println(err)
-		}
+		switch resp.StatusCode() {
+		case 200:
 
-		fmt.Println(metrics)
+			err = proto.Unmarshal(resp.Body(), metrics)
+			if err != nil {
+				fmt.Println(err)
+			}
+
+			fmt.Println(metrics.GetMetrics())
+		default:
+			fmt.Println(resp.Status())
+		}
 	},
 }
 

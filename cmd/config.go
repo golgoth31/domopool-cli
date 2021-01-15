@@ -37,82 +37,45 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		getConfig, _ := cmd.Flags().GetString("get")
-		wpThreshold, _ := cmd.Flags().GetFloat32("wp")
-		wpThresholdAccuracy, _ := cmd.Flags().GetUint32("wp-accuracy")
-		wpVmin, _ := cmd.Flags().GetFloat32("wp-vmin")
-		wpVmax, _ := cmd.Flags().GetFloat32("wp-vmax")
-		getWP, _ := cmd.Flags().GetBool("wp-threshold")
+		// wpThreshold, _ := cmd.Flags().GetFloat32("wp")
+		// wpThresholdAccuracy, _ := cmd.Flags().GetUint32("wp-accuracy")
+		// wpVmin, _ := cmd.Flags().GetFloat32("wp-vmin")
+		// wpVmax, _ := cmd.Flags().GetFloat32("wp-vmax")
+		// getWP, _ := cmd.Flags().GetBool("wp-threshold")
 		scheme := "http"
 		domoClient := resty.New()
 		config := &domopool_proto.Config{}
-		analogSens := &domopool_proto.AnalogSensor{}
+		// analogSens := &domopool_proto.AnalogSensor{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
-		if wpThreshold != 0 {
-			analogSens.Threshold = wpThreshold
-			analogSens.ThresholdAccuracy = wpThresholdAccuracy
-			analogSens.Vmin = wpVmin
-			analogSens.Vmax = wpVmax
-			analogSens.AdcPin = 3
-			analogSens.Enabled = false
-			body, _ := proto.Marshal(analogSens)
-			resp, err := domoClient.
-				R().
-				SetBody(body).
-				Post("/api/v1/config/wp/spec")
-			if err != nil {
-				fmt.Println(err)
-			}
-			fmt.Println(resp.Status())
+		resp, err := domoClient.R().Get("/api/v1/config")
+		if err != nil {
+			fmt.Println(err)
+		}
+		// err = json.Unmarshal(resp.Body(), config)
+		// fmt.Println(resp.String())
+		err = proto.Unmarshal(resp.Body(), config)
+		if err != nil {
+			fmt.Println(err)
+		}
 
-		} else {
-			if !getWP {
-				resp, err := domoClient.R().Get("/api/v1/config")
-				if err != nil {
-					fmt.Println(err)
-				}
-				// err = json.Unmarshal(resp.Body(), config)
-				// fmt.Println(resp.String())
-				err = proto.Unmarshal(resp.Body(), config)
-				if err != nil {
-					fmt.Println(err)
-				}
-			} else {
-				resp, err := domoClient.R().Get("/api/v1/wp_threshold")
-				if err != nil {
-					fmt.Println(err)
-				}
-				// err = json.Unmarshal(resp.Body(), config)
-				// fmt.Println(resp.String())
-				err = proto.Unmarshal(resp.Body(), analogSens)
-				if err != nil {
-					fmt.Println(err)
-				}
-				fmt.Println(resp.Status())
+		switch getConfig {
+		case "", "all":
+			fmt.Println(config)
+		case "mqtt":
+			fmt.Println(config.Network.GetMqtt())
+		case "wp":
+			fmt.Println(config.Sensors.GetWp())
+		case "temp":
+			fmt.Println(config.Sensors.GetTamb())
+			fmt.Println(config.Sensors.GetTwout())
+			if config.Sensors.Twin.GetEnabled() {
+				fmt.Println(config.Sensors.GetTwin())
 			}
-
-			switch getConfig {
-			case "", "all":
-				if !getWP {
-					fmt.Println(config)
-				} else {
-					fmt.Println(analogSens)
-				}
-			case "mqtt":
-				fmt.Println(config.Network.GetMqtt())
-			case "wp":
-				fmt.Println(config.Sensors.GetWp())
-			case "temp":
-				fmt.Println(config.Sensors.GetTamb())
-				fmt.Println(config.Sensors.GetTwout())
-				if config.Sensors.Twin.GetEnabled() {
-					fmt.Println(config.Sensors.GetTwin())
-				}
-			default:
-				fmt.Println("Unknown config")
-			}
+		default:
+			fmt.Println("Unknown config")
 		}
 	},
 }

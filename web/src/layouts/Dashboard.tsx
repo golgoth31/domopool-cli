@@ -179,15 +179,9 @@ export default function Dashboard() {
           {/* <Paper className={classes.paper}> */}
           <Switch>
             {/* <ConfigForm /> */}
-            <Route exact path="/">
-              <MetricsView />
-            </Route>
-            <Route path="/config">
-              <ConfigView />
-            </Route>
-            <Route path="/alarms">
-              <AlarmsView />
-            </Route>
+            <Route exact path="/" component={MetricsView} />
+            <Route exact path="/config" component={ConfigView} />
+            <Route exact path="/alarms" component={AlarmsView} />
             {/* <Route path="/messages" component={Messages} />
             <Route path="/about" component={About} /> */}
           </Switch>

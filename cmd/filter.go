@@ -39,31 +39,29 @@ to quickly create a Cobra application.`,
 		setState, _ := cmd.Flags().GetString("state")
 		scheme := "http"
 		domoClient := resty.New()
-		filter := &domopool_proto.Filter{}
+		filter := &domopool_proto.Relay{}
+		config := &domopool_proto.Config{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
 		if setState == "" {
-			resp, err := domoClient.R().Get("/api/v1/filter")
+			resp, err := domoClient.R().Get("/api/v1/config")
 			if err != nil {
 				fmt.Println(err)
 			}
-			// err = json.Unmarshal(resp.Body(), config)
-			// fmt.Println(resp.String())
-			err = proto.Unmarshal(resp.Body(), filter)
+			err = proto.Unmarshal(resp.Body(), config)
 			if err != nil {
 				fmt.Println(err)
 			}
 
-			fmt.Println(filter)
+			fmt.Println(config.GetStates().GetAutomatic())
 		} else {
 			filter.Duration, _ = cmd.Flags().GetUint32("duration")
-			filter.State = domopool_proto.FilterStates(domopool_proto.FilterStates_value[setState])
+			filter.State = domopool_proto.RelayStates(domopool_proto.RelayStates_value[setState])
 
 			body, _ := proto.Marshal(filter)
-			// fmt.Printf("%s", body)
 			resp, err := domoClient.
 				R().
 				SetBody(body).
@@ -74,22 +72,16 @@ to quickly create a Cobra application.`,
 
 			if resp.StatusCode() == 200 {
 				time.Sleep(2 * time.Second)
-				response, err := domoClient.R().Get("/api/v1/filter")
+				response, err := domoClient.R().Get("/api/v1/config")
 				if err != nil {
 					fmt.Println(err)
 				}
-				// err = json.Unmarshal(resp.Body(), config)
-				// fmt.Println(resp.String())
-				// pj := protojson.UnmarshalOptions{
-				// 	AllowPartial:   false,
-				// 	DiscardUnknown: true,
-				// }
-				err = proto.Unmarshal(response.Body(), filter)
+				err = proto.Unmarshal(response.Body(), config)
 				if err != nil {
 					fmt.Println(err)
 				}
 
-				fmt.Println(filter)
+				fmt.Println(config.GetStates().GetAutomatic())
 			}
 		}
 	},
