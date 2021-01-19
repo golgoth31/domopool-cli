@@ -36,61 +36,63 @@ and usage of using your command. For example:
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
+	Args: cobra.ExactValidArgs(1),
+	ValidArgs: []string{
+		"enable",
+		"disable",
+		"set",
+		"get",
+	},
 	Run: func(cmd *cobra.Command, args []string) {
-		setSet, _ := cmd.Flags().GetBool("set")
-		setEnabled, _ := cmd.Flags().GetBool("enabled")
 		setServer, _ := cmd.Flags().GetString("server")
 		scheme := "http"
 		domoClient := resty.New()
-		mqtt := &domopool_proto.Mqtt{}
+		mqtt := &domopool_proto.Config{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
-		resp, err := domoClient.R().Get("/api/v1/mqtt")
+		switch args[0] {
+		case "enable":
+			_, err := domoClient.
+				R().
+				Post("/api/v1/mqtt/enable")
+			if err != nil {
+				fmt.Println(err)
+			}
+			time.Sleep(5 * time.Second)
+		case "disable":
+			_, err := domoClient.
+				R().
+				Post("/api/v1/mqtt/disable")
+			if err != nil {
+				fmt.Println(err)
+			}
+			time.Sleep(5 * time.Second)
+		case "set":
+			mqtt.Network.Mqtt.Server = setServer
+			body, _ := proto.Marshal(mqtt.Network.GetMqtt())
+			_, err := domoClient.
+				R().
+				SetBody(body).
+				Post("/api/v1/mqtt/set")
+			if err != nil {
+				fmt.Println(err)
+			}
+			time.Sleep(5 * time.Second)
+		}
+
+		resp, err := domoClient.R().Get("/api/v1/config")
 		if err != nil {
 			fmt.Println(err)
 		}
-		// err = json.Unmarshal(resp.Body(), config)
-		// fmt.Println(resp.String())
 		err = proto.Unmarshal(resp.Body(), mqtt)
 		if err != nil {
 			fmt.Println(err)
 		}
-
-		if !setSet {
-			fmt.Println(mqtt)
-			// }
-		} else {
-			mqtt.Enabled = setEnabled
-
-			if setServer != "" {
-				mqtt.Server = setServer
-			}
-			body, _ := proto.Marshal(mqtt)
-			resp, err := domoClient.
-				R().
-				SetBody(body).
-				Post("/api/v1/mqtt")
-			if err != nil {
-				fmt.Println(err)
-			}
-			if resp.StatusCode() == 200 {
-				time.Sleep(2 * time.Second)
-				response, err := domoClient.R().Get("/api/v1/mqtt")
-				if err != nil {
-					fmt.Println(err)
-				}
-				// err = json.Unmarshal(resp.Body(), config)
-				// fmt.Println(resp.String())
-				err = proto.Unmarshal(response.Body(), mqtt)
-				if err != nil {
-					fmt.Println(err)
-				}
-
-				fmt.Println(mqtt)
-			}
+		if resp.StatusCode() == 200 {
+			fmt.Println(mqtt.Network.GetMqtt())
 		}
 	},
 }
@@ -106,7 +108,5 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	mqttCmd.Flags().BoolP("set", "s", false, "Help message for toggle")
-	mqttCmd.Flags().BoolP("enabled", "e", false, "Help message for toggle")
-	mqttCmd.Flags().String("server", "", "Help message for toggle")
+	mqttCmd.Flags().String("server", "s", "Help message for toggle")
 }
