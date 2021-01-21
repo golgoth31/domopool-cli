@@ -53,9 +53,11 @@ to quickly create a Cobra application.`,
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
+		resp := &resty.Response{}
+		var err error
 		switch args[0] {
 		case "enable":
-			_, err := domoClient.
+			resp, err = domoClient.
 				R().
 				Post("/api/v1/mqtt/enable")
 			if err != nil {
@@ -63,7 +65,7 @@ to quickly create a Cobra application.`,
 			}
 			time.Sleep(5 * time.Second)
 		case "disable":
-			_, err := domoClient.
+			resp, err = domoClient.
 				R().
 				Post("/api/v1/mqtt/disable")
 			if err != nil {
@@ -71,9 +73,11 @@ to quickly create a Cobra application.`,
 			}
 			time.Sleep(5 * time.Second)
 		case "set":
-			mqtt.Network.Mqtt.Server = setServer
-			body, _ := proto.Marshal(mqtt.Network.GetMqtt())
-			_, err := domoClient.
+			mqttbody := &domopool_proto.Mqtt{
+				Server: setServer,
+			}
+			body, _ := proto.Marshal(mqttbody)
+			resp, err = domoClient.
 				R().
 				SetBody(body).
 				Post("/api/v1/mqtt/set")
@@ -83,16 +87,18 @@ to quickly create a Cobra application.`,
 			time.Sleep(5 * time.Second)
 		}
 
-		resp, err := domoClient.R().Get("/api/v1/config")
-		if err != nil {
-			fmt.Println(err)
-		}
-		err = proto.Unmarshal(resp.Body(), mqtt)
-		if err != nil {
-			fmt.Println(err)
-		}
 		if resp.StatusCode() == 200 {
-			fmt.Println(mqtt.Network.GetMqtt())
+			readResp, err := domoClient.R().Get("/api/v1/config")
+			if err != nil {
+				fmt.Println(err)
+			}
+			err = proto.Unmarshal(readResp.Body(), mqtt)
+			if err != nil {
+				fmt.Println(err)
+			}
+			if readResp.StatusCode() == 200 {
+				fmt.Println(mqtt.Network.GetMqtt())
+			}
 		}
 	},
 }
