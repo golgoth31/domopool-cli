@@ -46,43 +46,31 @@ to quickly create a Cobra application.`,
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
-		if setState == "" {
-			resp, err := domoClient.R().Get("/api/v1/config")
+		filter.Duration, _ = cmd.Flags().GetUint32("duration")
+		filter.State = domopool_proto.RelayStates(domopool_proto.RelayStates_value[setState])
+		filter.Relay = domopool_proto.RelayNames(domopool_proto.RelayNames_value["filter"])
+
+		body, _ := proto.Marshal(filter)
+		resp, err := domoClient.
+			R().
+			SetBody(body).
+			Post("/api/v1/filter")
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		if resp.StatusCode() == 200 {
+			time.Sleep(2 * time.Second)
+			response, err := domoClient.R().Get("/api/v1/config")
 			if err != nil {
 				fmt.Println(err)
 			}
-			err = proto.Unmarshal(resp.Body(), config)
+			err = proto.Unmarshal(response.Body(), config)
 			if err != nil {
 				fmt.Println(err)
 			}
 
-			fmt.Println(config.GetStates().GetAutomatic())
-		} else {
-			filter.Duration, _ = cmd.Flags().GetUint32("duration")
-			filter.State = domopool_proto.RelayStates(domopool_proto.RelayStates_value[setState])
-
-			body, _ := proto.Marshal(filter)
-			resp, err := domoClient.
-				R().
-				SetBody(body).
-				Post("/api/v1/filter")
-			if err != nil {
-				fmt.Println(err)
-			}
-
-			if resp.StatusCode() == 200 {
-				time.Sleep(2 * time.Second)
-				response, err := domoClient.R().Get("/api/v1/config")
-				if err != nil {
-					fmt.Println(err)
-				}
-				err = proto.Unmarshal(response.Body(), config)
-				if err != nil {
-					fmt.Println(err)
-				}
-
-				fmt.Println(config.GetStates().GetAutomatic())
-			}
+			fmt.Println(config.GetPump())
 		}
 	},
 }
@@ -90,15 +78,7 @@ to quickly create a Cobra application.`,
 func init() {
 	rootCmd.AddCommand(filterCmd)
 
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// filterCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// filterCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	filterCmd.Flags().StringP("state", "s", "", "Help message for toggle")
-	filterCmd.Flags().Uint32P("duration", "d", 0, "Help message for toggle")
+	filterCmd.Flags().StringP("state", "s", "", "start, stop")
+	filterCmd.MarkFlagRequired("state")
+	filterCmd.Flags().Uint32P("duration", "d", 0, "duration of filtering, in minutes")
 }

@@ -62,6 +62,8 @@ to quickly create a Cobra application.`,
 			fmt.Println(config)
 		case "mqtt":
 			fmt.Println(config.Network.GetMqtt())
+		case "limits":
+			fmt.Println(config.GetLimits())
 		case "wp":
 			fmt.Println(config.Sensors.GetWp())
 		case "temp":

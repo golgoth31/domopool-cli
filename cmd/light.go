@@ -36,7 +36,7 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		// setState, _ := cmd.Flags().GetString("state")
+		setState, _ := cmd.Flags().GetString("state")
 		scheme := "http"
 		domoClient := resty.New()
 		relay := &domopool_proto.Relay{}
@@ -45,6 +45,9 @@ to quickly create a Cobra application.`,
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
+		relay.Duration = 0
+		relay.State = domopool_proto.RelayStates(domopool_proto.RelayStates_value[setState])
+		relay.Relay = domopool_proto.RelayNames(domopool_proto.RelayNames_value["light"])
 		body, _ := proto.Marshal(relay)
 		resp, err := domoClient.
 			R().
@@ -60,16 +63,6 @@ to quickly create a Cobra application.`,
 func init() {
 	rootCmd.AddCommand(lightCmd)
 
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// filterCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// filterCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	lightCmd.Flags().StringP("state", "s", "", "Help message for toggle")
 	lightCmd.MarkFlagRequired("state")
-	// lightCmd.Flags().Uint32P("duration", "d", 0, "Help message for toggle")
 }

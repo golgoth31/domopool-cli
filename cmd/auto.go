@@ -25,9 +25,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// chCmd represents the filter command
-var chCmd = &cobra.Command{
-	Use:   "ch",
+// autoCmd represents the filter command
+var autoCmd = &cobra.Command{
+	Use:   "auto",
 	Short: "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
@@ -36,42 +36,37 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		setState, _ := cmd.Flags().GetString("state")
 		scheme := "http"
 		domoClient := resty.New()
-		relay := &domopool_proto.Relay{}
+		config := &domopool_proto.Config{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
-		relay.State = domopool_proto.RelayStates(domopool_proto.RelayStates_value[setState])
-		relay.Relay = domopool_proto.RelayNames(domopool_proto.RelayNames_value["ch"])
-		body, _ := proto.Marshal(relay)
 		resp, err := domoClient.
 			R().
-			SetBody(body).
-			Post("/api/v1/ch")
+			Post("/api/v1/auto")
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println(resp.Status())
+
+		if resp.StatusCode() == 200 {
+			time.Sleep(2 * time.Second)
+			response, err := domoClient.R().Get("/api/v1/config")
+			if err != nil {
+				fmt.Println(err)
+			}
+			err = proto.Unmarshal(response.Body(), config)
+			if err != nil {
+				fmt.Println(err)
+			}
+
+			fmt.Println(config.GetPump())
+		}
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(chCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// filterCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// filterCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	chCmd.Flags().StringP("state", "s", "", "Help message for toggle")
-	chCmd.MarkFlagRequired("state")
-	// lightCmd.Flags().Uint32P("duration", "d", 0, "Help message for toggle")
+	rootCmd.AddCommand(autoCmd)
 }

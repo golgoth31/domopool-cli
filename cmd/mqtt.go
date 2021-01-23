@@ -41,7 +41,6 @@ to quickly create a Cobra application.`,
 		"enable",
 		"disable",
 		"set",
-		"get",
 	},
 	Run: func(cmd *cobra.Command, args []string) {
 		setServer, _ := cmd.Flags().GetString("server")
@@ -88,6 +87,7 @@ to quickly create a Cobra application.`,
 		}
 
 		if resp.StatusCode() == 200 {
+			time.Sleep(2 * time.Second)
 			readResp, err := domoClient.R().Get("/api/v1/config")
 			if err != nil {
 				fmt.Println(err)
@@ -106,13 +106,5 @@ to quickly create a Cobra application.`,
 func init() {
 	rootCmd.AddCommand(mqttCmd)
 
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// mqttCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
 	mqttCmd.Flags().String("server", "s", "Help message for toggle")
 }

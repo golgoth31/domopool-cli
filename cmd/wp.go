@@ -42,11 +42,12 @@ to quickly create a Cobra application.`,
 		"set",
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		wpThreshold, _ := cmd.Flags().GetFloat32("wp")
-		wpThresholdAccuracy, _ := cmd.Flags().GetUint32("wp-accuracy")
-		wpAdcPin, _ := cmd.Flags().GetUint32("wp-adc-pin")
-		wpVmin, _ := cmd.Flags().GetFloat32("wp-vmin")
-		wpVmax, _ := cmd.Flags().GetFloat32("wp-vmax")
+		wpThreshold, _ := cmd.Flags().GetFloat32("threshold")
+		wpThresholdAccuracy, _ := cmd.Flags().GetUint32("accuracy")
+		wpAdcPin, _ := cmd.Flags().GetUint32("adc-pin")
+		wpVmin, _ := cmd.Flags().GetFloat32("vmin")
+		wpVmax, _ := cmd.Flags().GetFloat32("vmax")
+		wpAutoCal, _ := cmd.Flags().GetBool("auto-cal")
 
 		scheme := "http"
 		domoClient := resty.New()
@@ -61,6 +62,7 @@ to quickly create a Cobra application.`,
 		wp.ThresholdAccuracy = wpThresholdAccuracy
 		wp.Vmax = wpVmax
 		wp.Vmin = wpVmin
+		wp.AutoCal = wpAutoCal
 		body, _ := proto.Marshal(wp)
 		resp, err := domoClient.
 			R().
@@ -76,9 +78,10 @@ to quickly create a Cobra application.`,
 func init() {
 	rootCmd.AddCommand(wpCmd)
 
-	wpCmd.Flags().Uint32("accuracy", 8, "post wp threshold accuracy")
-	wpCmd.Flags().Uint32("adc-pin", 3, "post wp adc pin")
-	wpCmd.Flags().Float32("vmin", 0.5, "post wp threshold accuracy")
-	wpCmd.Flags().Float32("vmax", 4.5, "post wp threshold accuracy")
-	wpCmd.Flags().Bool("threshold", false, "get current water pressure sensor threshold")
+	wpCmd.Flags().Uint32("accuracy", 8, "set wp threshold accuracy, in %")
+	wpCmd.Flags().Uint32("adc-pin", 3, "set wp adc pin")
+	wpCmd.Flags().Float32("vmin", 0.5, "set wp threshold accuracy")
+	wpCmd.Flags().Float32("vmax", 4.5, "set wp threshold accuracy")
+	wpCmd.Flags().Float32("threshold", 0.5, "set wp sensor threshold")
+	wpCmd.Flags().Bool("auto-cal", true, "set wp autocalibration")
 }

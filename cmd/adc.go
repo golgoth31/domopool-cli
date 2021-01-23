@@ -35,10 +35,6 @@ and usage of using your command. For example:
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
-	Args: cobra.ExactValidArgs(1),
-	ValidArgs: []string{
-		"set",
-	},
 	Run: func(cmd *cobra.Command, args []string) {
 		ADCMode, _ := cmd.Flags().GetUint32("mode")
 		ADCGain, _ := cmd.Flags().GetUint32("gain")
@@ -72,5 +68,5 @@ func init() {
 
 	adcCmd.Flags().Uint32P("mode", "m", 1, "ADC mode (1: single; 0: continuous)")
 	adcCmd.Flags().Uint32P("gain", "g", 1, "ADC gain")
-	adcCmd.Flags().Uint32P("datarate", "d", 4, "ADC datarate")
+	adcCmd.Flags().Uint32P("datarate", "d", 1, "ADC datarate")
 }
