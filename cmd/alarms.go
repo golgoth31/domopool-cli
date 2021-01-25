@@ -36,6 +36,9 @@ and usage of using your command. For example:
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
+	ValidArgs: []string{
+		"reset",
+	},
 	Run: func(cmd *cobra.Command, args []string) {
 		scheme := "http"
 		domoClient := resty.New()
@@ -44,6 +47,20 @@ to quickly create a Cobra application.`,
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
+
+		if len(args) != 0 && args[0] == "reset" {
+			fmt.Println("Reseting alarms")
+			resp, err := domoClient.
+				R().
+				Post("/api/v1/filter")
+			if err != nil {
+				fmt.Println(err)
+			}
+
+			if resp.StatusCode() == 200 {
+				time.Sleep(2 * time.Second)
+			}
+		}
 
 		resp, err := domoClient.R().Get("/api/v1/config")
 		if err != nil {
