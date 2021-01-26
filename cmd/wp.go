@@ -35,7 +35,7 @@ and usage of using your command. For example:
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
-	Args: cobra.ExactValidArgs(1),
+	// Args: cobra.ExactValidArgs(1),
 	ValidArgs: []string{
 		"enable",
 		"disable",
@@ -51,27 +51,64 @@ to quickly create a Cobra application.`,
 
 		scheme := "http"
 		domoClient := resty.New()
-		wp := &domopool_proto.AnalogSensor{}
+		wp := &domopool_proto.Config{}
 
 		domoClient.HostURL = scheme + "://192.168.11.183"
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
-		wp.AdcPin = wpAdcPin
-		wp.Threshold = wpThreshold
-		wp.ThresholdAccuracy = wpThresholdAccuracy
-		wp.Vmax = wpVmax
-		wp.Vmin = wpVmin
-		wp.AutoCal = wpAutoCal
-		body, _ := proto.Marshal(wp)
-		resp, err := domoClient.
-			R().
-			SetBody(body).
-			Post("/api/v1/wp")
+		resp := &resty.Response{}
+		var err error
+		if len(args) != 0 {
+			switch args[0] {
+			case "enable":
+				resp, err = domoClient.
+					R().
+					Post("/api/v1/wp/enable")
+				if err != nil {
+					fmt.Println(err)
+				}
+			case "disable":
+				resp, err = domoClient.
+					R().
+					Post("/api/v1/wp/disable")
+				if err != nil {
+					fmt.Println(err)
+				}
+			case "set":
+				wpbody := &domopool_proto.AnalogSensor{
+					AdcPin:            wpAdcPin,
+					Threshold:         wpThreshold,
+					ThresholdAccuracy: wpThresholdAccuracy,
+					Vmin:              wpVmin,
+					Vmax:              wpVmax,
+					AutoCal:           wpAutoCal,
+				}
+				body, _ := proto.Marshal(wpbody)
+				resp, err = domoClient.
+					R().
+					SetBody(body).
+					Post("/api/v1/wp/set")
+				if err != nil {
+					fmt.Println(err)
+				}
+			}
+			if resp.StatusCode() == 200 {
+				time.Sleep(2 * time.Second)
+			}
+		}
+
+		readResp, err := domoClient.R().Get("/api/v1/config")
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println(resp.Status())
+		err = proto.Unmarshal(readResp.Body(), wp)
+		if err != nil {
+			fmt.Println(err)
+		}
+		if readResp.StatusCode() == 200 {
+			fmt.Println(wp.Sensors.GetWp())
+		}
 	},
 }
 
