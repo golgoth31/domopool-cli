@@ -52,7 +52,7 @@ to quickly create a Cobra application.`,
 			fmt.Println("Reseting alarms")
 			resp, err := domoClient.
 				R().
-				Post("/api/v1/filter")
+				Post("/api/v1/alarms/reset")
 			if err != nil {
 				fmt.Println(err)
 			}
