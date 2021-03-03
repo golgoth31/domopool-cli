@@ -19,10 +19,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/go-resty/resty/v2"
-	"github.com/gogo/protobuf/proto"
+	"github.com/golgoth31/domopool-cli/internal/domoClient"
+	"github.com/golgoth31/domopool-cli/internal/domoConfig"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
+	"google.golang.org/protobuf/proto"
 )
 
 // filterCmd represents the filter command
@@ -37,40 +40,21 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		setState, _ := cmd.Flags().GetString("state")
-		scheme := "http"
-		domoClient := resty.New()
+		client := domoClient.NewClient()
 		filter := &domopool_proto.Relay{}
-		config := &domopool_proto.Config{}
-
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
 
 		filter.Duration, _ = cmd.Flags().GetUint32("duration")
 		filter.State = domopool_proto.RelayStates(domopool_proto.RelayStates_value[setState])
 		filter.Relay = domopool_proto.RelayNames(domopool_proto.RelayNames_value["filter"])
 
 		body, _ := proto.Marshal(filter)
-		resp, err := domoClient.
-			R().
-			SetBody(body).
-			Post("/api/v1/filter")
-		if err != nil {
-			fmt.Println(err)
-		}
+		resp := client.Post(fmt.Sprintf("api/%s/%s", viper.GetString("api.version"), "filter"), body)
 
 		if resp.StatusCode() == 200 {
 			time.Sleep(2 * time.Second)
-			response, err := domoClient.R().Get("/api/v1/config")
-			if err != nil {
-				fmt.Println(err)
-			}
-			err = proto.Unmarshal(response.Body(), config)
-			if err != nil {
-				fmt.Println(err)
-			}
+			config := domoConfig.GetConfig()
 
-			fmt.Println(config.GetPump())
+			logger.StdLog.Info().Msgf("%v", config.GetPump())
 		}
 	},
 }
@@ -79,6 +63,8 @@ func init() {
 	rootCmd.AddCommand(filterCmd)
 
 	filterCmd.Flags().StringP("state", "s", "", "start, stop")
-	filterCmd.MarkFlagRequired("state")
-	filterCmd.Flags().Uint32P("duration", "d", 0, "duration of filtering, in minutes")
+	if err := filterCmd.MarkFlagRequired("state"); err != nil {
+		logger.StdLog.Fatal().Err(err).Msg("")
+	}
+	filterCmd.Flags().Uint32("duration", 0, "duration of filtering, in minutes")
 }

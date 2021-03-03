@@ -16,13 +16,11 @@ limitations under the License.
 package cmd
 
 import (
-	"fmt"
-	"time"
-
-	"github.com/go-resty/resty/v2"
-	"github.com/gogo/protobuf/proto"
+	"github.com/golgoth31/domopool-cli/internal/domoClient"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
+	"google.golang.org/protobuf/proto"
 )
 
 // adcCmd represents the filter command
@@ -39,27 +37,15 @@ to quickly create a Cobra application.`,
 		ADCMode, _ := cmd.Flags().GetUint32("mode")
 		ADCGain, _ := cmd.Flags().GetUint32("gain")
 		ADCDatarate, _ := cmd.Flags().GetUint32("datarate")
-
-		scheme := "http"
-		domoClient := resty.New()
 		adc := &domopool_proto.Sensors{}
-
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
-
+		client := domoClient.NewClient()
 		adc.AdcDatarate = ADCDatarate
 		adc.AdcGain = ADCGain
 		adc.AdcMode = ADCMode
 		body, _ := proto.Marshal(adc)
-		resp, err := domoClient.
-			R().
-			SetBody(body).
-			Post("/api/v1/adc/set")
-		if err != nil {
-			fmt.Println(err)
-		}
-		fmt.Println(resp.Status())
+		resp := client.Post("/api/v1/adc/set", body)
+
+		logger.StdLog.Info().Msg(resp.Status())
 	},
 }
 

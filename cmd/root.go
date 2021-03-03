@@ -19,12 +19,11 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"time"
 
-	"github.com/go-resty/resty/v2"
-	"github.com/gogo/protobuf/proto"
-	domopool_proto "github.com/golgoth31/domopool-proto"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	homedir "github.com/mitchellh/go-homedir"
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -44,25 +43,7 @@ to quickly create a Cobra application.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
-		scheme := "http"
-		domoClient := resty.New()
-		infos := &domopool_proto.Infos{}
 
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
-		resp, err := domoClient.R().Get("/")
-		if err != nil {
-			fmt.Println(err)
-		}
-		// err = json.Unmarshal(resp.Body(), config)
-		// fmt.Println(resp.String())
-		err = proto.Unmarshal(resp.Body(), infos)
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		fmt.Println(infos)
 	},
 }
 
@@ -77,20 +58,25 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
-
-	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file (default is $HOME/.ardipool-cli.yaml)")
-
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	// rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file (default is $HOME/.domopool-cli.yaml)")
+	rootCmd.PersistentFlags().BoolP("debug", "d", false, "debug")
 }
 
 // initConfig reads in config file and ENV variables if set.
 func initConfig() {
+	logLevel, err := rootCmd.Flags().GetBool("debug")
+	if err != nil {
+		log.Fatal().Err(err).Msg("")
+	}
+
+	if logLevel {
+		zerolog.SetGlobalLevel(zerolog.DebugLevel)
+	} else {
+		zerolog.SetGlobalLevel(zerolog.InfoLevel)
+	}
+
+	logger.Initialize()
+
 	if cfgFile != "" {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
@@ -98,19 +84,27 @@ func initConfig() {
 		// Find home directory.
 		home, err := homedir.Dir()
 		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
+			logger.StdLog.Fatal().Err(err).Msg("")
 		}
 
-		// Search config in home directory with name ".ardipool-cli" (without extension).
-		viper.AddConfigPath(home)
-		viper.SetConfigName(".ardipool-cli")
+		viper.SetConfigFile(fmt.Sprintf("%s/.domopool-cli.yaml", home))
 	}
+	viper.SetConfigType("yaml")
 
 	viper.AutomaticEnv() // read in environment variables that match
 
+	viper.SetDefault("boxIP", "192.168.11.183")
+	viper.SetDefault("boxScheme", "http")
+	viper.SetDefault("api.version", "v1")
+	viper.SetDefault("api.path.config", "config")
+
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
-		fmt.Println("Using config file:", viper.ConfigFileUsed())
+		logger.StdLog.Debug().Msgf("Using config file: %s", viper.ConfigFileUsed())
+	} else {
+		logger.StdLog.Debug().Msgf("Saving config file")
+		if err := viper.WriteConfig(); err != nil {
+			logger.StdLog.Debug().Msgf("Error saving file")
+		}
 	}
 }

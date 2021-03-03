@@ -17,12 +17,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package cmd
 
 import (
-	"fmt"
 	"time"
 
-	"github.com/go-resty/resty/v2"
-	"github.com/gogo/protobuf/proto"
-	domopool_proto "github.com/golgoth31/domopool-proto"
+	"github.com/golgoth31/domopool-cli/internal/domoClient"
+	"github.com/golgoth31/domopool-cli/internal/domoConfig"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	"github.com/spf13/cobra"
 )
 
@@ -40,39 +39,19 @@ to quickly create a Cobra application.`,
 		"reset",
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		scheme := "http"
-		domoClient := resty.New()
-		config := &domopool_proto.Config{}
-
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
-
 		if len(args) != 0 && args[0] == "reset" {
-			fmt.Println("Reseting alarms")
-			resp, err := domoClient.
-				R().
-				Post("/api/v1/alarms/reset")
-			if err != nil {
-				fmt.Println(err)
-			}
+			client := domoClient.NewClient()
+			logger.StdLog.Info().Msg("Reseting alarms")
+			resp := client.Post("/api/v1/alarms/reset", nil)
 
 			if resp.StatusCode() == 200 {
 				time.Sleep(2 * time.Second)
 			}
 		}
 
-		resp, err := domoClient.R().Get("/api/v1/config")
-		if err != nil {
-			fmt.Println(err)
-		}
+		config := domoConfig.GetConfig()
 
-		err = proto.Unmarshal(resp.Body(), config)
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		fmt.Println(config.GetAlarms())
+		logger.StdLog.Info().Msgf("%v", config.GetAlarms())
 	},
 }
 

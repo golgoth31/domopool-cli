@@ -27,11 +27,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-type uploadFile struct {
-	filename string
-	data     []byte
-}
-
 // uploadUiCmd represents the uploadUi command
 var uploadUiCmd = &cobra.Command{
 	Use:   "uploadUi",
