@@ -19,5 +19,9 @@ func GetConfig() *domopool_proto.Config {
 		logger.StdLog.Fatal().Err(err).Msg("Unable to unmarchal proto")
 	}
 
+	if resp.StatusCode() != 200 {
+		logger.StdLog.Fatal().Msg(resp.Status())
+	}
+
 	return config
 }
