@@ -5,7 +5,7 @@ go 1.15
 require (
 	github.com/GeertJohan/go.rice v1.0.1
 	github.com/go-resty/resty/v2 v2.3.0
-	github.com/golgoth31/domopool-proto v1.0.58
+	github.com/golgoth31/domopool-proto v1.0.59
 	github.com/labstack/echo/v4 v4.1.17
 	github.com/logrusorgru/aurora/v3 v3.0.0
 	github.com/markbates/pkger v0.17.1
