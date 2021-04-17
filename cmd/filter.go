@@ -66,5 +66,5 @@ func init() {
 	if err := filterCmd.MarkFlagRequired("state"); err != nil {
 		logger.StdLog.Fatal().Err(err).Msg("")
 	}
-	filterCmd.Flags().Uint32("duration", 0, "duration of filtering, in minutes")
+	filterCmd.Flags().Uint32P("duration", "d", 0, "duration of filtering, in minutes")
 }
