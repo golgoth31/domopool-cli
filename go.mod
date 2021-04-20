@@ -3,15 +3,15 @@ module github.com/golgoth31/domopool-cli
 go 1.15
 
 require (
-	github.com/GeertJohan/go.rice v1.0.1
-	github.com/go-resty/resty/v2 v2.3.0
+	github.com/GeertJohan/go.rice v1.0.2
+	github.com/go-resty/resty/v2 v2.6.0
 	github.com/golgoth31/domopool-proto v1.0.59
-	github.com/labstack/echo/v4 v4.1.17
+	github.com/labstack/echo/v4 v4.2.2
 	github.com/logrusorgru/aurora/v3 v3.0.0
 	github.com/markbates/pkger v0.17.1
 	github.com/mitchellh/go-homedir v1.1.0
-	github.com/rs/zerolog v1.20.0
-	github.com/spf13/cobra v1.1.1
+	github.com/rs/zerolog v1.21.0
+	github.com/spf13/cobra v1.1.3
 	github.com/spf13/viper v1.7.1
-	google.golang.org/protobuf v1.25.0
+	google.golang.org/protobuf v1.26.0
 )
