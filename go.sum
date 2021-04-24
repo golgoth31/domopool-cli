@@ -71,6 +71,10 @@ github.com/golang/protobuf v1.3.2/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5y
 github.com/golang/protobuf v1.5.0/go.mod h1:FsONVRAS9T7sI+LIUmWTfcYkHO4aIWwzhcaSAoJOfIk=
 github.com/golgoth31/domopool-proto v1.0.59 h1:Sz8fYzbPx8GluhlXkm4cfWbOUR+hTYoOzpKGRVDeXjU=
 github.com/golgoth31/domopool-proto v1.0.59/go.mod h1:v4is0wK+0d93D95raTTzWUwgaCzY3LQDFr4qEutZAS0=
+github.com/golgoth31/domopool-proto v1.0.60 h1:tLV0/b4s07jY4PH5SbsqNR76YkFlkDo08gbluM7d91E=
+github.com/golgoth31/domopool-proto v1.0.60/go.mod h1:v4is0wK+0d93D95raTTzWUwgaCzY3LQDFr4qEutZAS0=
+github.com/golgoth31/domopool-proto v1.0.61 h1:9LGN2pBZpN2nMwSk+1mIcQNwL6KlAUoLTpAtrW2FD1A=
+github.com/golgoth31/domopool-proto v1.0.61/go.mod h1:v4is0wK+0d93D95raTTzWUwgaCzY3LQDFr4qEutZAS0=
 github.com/google/btree v0.0.0-20180813153112-4030bb1f1f0c/go.mod h1:lNA+9X1NB3Zf8V7Ke586lFgjr2dZNuvo3lPJSGZ5JPQ=
 github.com/google/btree v1.0.0/go.mod h1:lNA+9X1NB3Zf8V7Ke586lFgjr2dZNuvo3lPJSGZ5JPQ=
 github.com/google/go-cmp v0.2.0/go.mod h1:oXzfMopK8JAjlY9xF4vHSVASa0yLyX7SntLO5aqRK0M=
