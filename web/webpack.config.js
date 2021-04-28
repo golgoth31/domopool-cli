@@ -3,9 +3,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('css-minimizer-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const options = {};
 
 module.exports = {
   mode: "production",
@@ -101,6 +103,7 @@ module.exports = {
       logo: './src/favicon.png',
       prefix: '/',
     }),
-    new HardSourceWebpackPlugin()
+    new WebpackManifestPlugin(options)
+    // new HardSourceWebpackPlugin()
   ],
 };

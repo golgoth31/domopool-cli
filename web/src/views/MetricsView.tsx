@@ -21,15 +21,15 @@ var domopool_pb = require('../proto/domopool_pb');
 
 export default class MetricsView extends React.Component {
   constructor(
-    private metrics: any
-  ) { super(metrics); };
+    private config: any
+  ) { super(config); };
 
   state = {
-    metrics: this.metrics,
+    config: this.config,
   }
 
   componentDidMount() {
-    dataprovider.get(`/metrics`, {
+    dataprovider.get(`/api/v1/config`, {
       responseType: 'arraybuffer'
       // headers: {
       //   'Access-Control-Allow-Origin': '*',
@@ -39,8 +39,8 @@ export default class MetricsView extends React.Component {
     })
       .then(res => {
         const resp = res.data;
-        this.setState({ metrics: domopool_pb.Metrics.deserializeBinary(resp).toObject() });
-        console.log(this.state.metrics);
+        this.setState({ config: domopool_pb.Config.deserializeBinary(resp).toObject() });
+        console.log(this.state.config);
       })
   }
 
@@ -55,7 +55,7 @@ export default class MetricsView extends React.Component {
   // }
 
   render() {
-    if (this.state.metrics.twater != undefined) {
+    if (this.state.config.metrics != undefined) {
       // if (this.state.config.global.displayStartup == undefined) {
       //   this.state.config.global.displayStartup = false;
       // }
@@ -63,7 +63,7 @@ export default class MetricsView extends React.Component {
       return (
         <Card>
           <CardContent>
-            {this.state.metrics.twater}
+            {this.state.config.metrics.twater}
           </CardContent>
           {/* <CardActions>
             <Button size="small">Learn More</Button>
