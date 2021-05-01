@@ -18,11 +18,9 @@ package cmd
 import (
 	"bytes"
 	"fmt"
-	"log"
 	"os"
 	"time"
 
-	rice "github.com/GeertJohan/go.rice"
 	"github.com/go-resty/resty/v2"
 	"github.com/spf13/cobra"
 )
@@ -45,16 +43,12 @@ to quickly create a Cobra application.`,
 		domoClient.SetRetryCount(3)
 		domoClient.SetRetryWaitTime(5 * time.Second)
 
-		uiBox, err := rice.FindBox("../web/build")
-		if err != nil {
-			log.Fatal(err)
-		}
-		index, err := uiBox.Bytes("index.html")
+		index, err := web.ReadFile("web/build/index.html")
 		if err != nil {
 			fmt.Println("can't read index file")
 			os.Exit(1)
 		}
-		bundle, err := uiBox.Bytes("bundle.js")
+		bundle, err := web.ReadFile("web/build/bundle.js")
 		if err != nil {
 			fmt.Println("can't read index file")
 			os.Exit(1)

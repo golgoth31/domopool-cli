@@ -18,12 +18,12 @@ package cmd
 import (
 	"fmt"
 	"io"
+	"io/fs"
 	"log"
 	"net"
 	"net/http"
 	"text/template"
 
-	rice "github.com/GeertJohan/go.rice"
 	"github.com/labstack/echo/v4"
 	"github.com/spf13/cobra"
 )
@@ -41,24 +41,11 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		port, _ := cmd.Flags().GetInt("port")
 		e := echo.New()
-		uiBox, err := rice.FindBox("../web/build")
+		templateString, err := web.ReadFile("web/build/index.html")
 		if err != nil {
 			log.Fatal(err)
 		}
-		// jsBox, err := rice.FindBox("../../build/bundle")
-		// if err != nil {
-		// 	log.Fatal(err)
-		// }
 
-		templateString, err := uiBox.String("index.html")
-		if err != nil {
-			log.Fatal(err)
-		}
-		// parse and execute the template
-		// tmplIndex, err := template.New("index").Parse(templateString)
-		// if err != nil {
-		// 	log.Fatal(err)
-		// }
 		box_host, err := cmd.Flags().GetIP("box-host")
 		if err != nil {
 			log.Fatal(err)
@@ -77,27 +64,23 @@ to quickly create a Cobra application.`,
 			DomopoolBoxScheme: box_scheme,
 		}
 		t := &Template{
-			templates: template.Must(template.New("index").Parse(templateString)),
+			templates: template.Must(template.New("index").Parse(fmt.Sprintf("%s", templateString))),
 		}
 		e.Renderer = t
-		// bundle, err := jsBox.String("bundle.js")
-		// if err != nil {
-		// 	log.Fatal(err)
-		// }
-		// fmt.Println(bundle)
+		web2root, err := fs.Sub(web, "web/build")
+		if err != nil {
+			log.Fatal(err)
+		}
 		e.GET(
 			"/*",
 			echo.WrapHandler(
 
-				http.FileServer(
-					uiBox.HTTPBox(),
+				http.StripPrefix(
+					"/",
+					http.FileServer(
+						http.FS(web2root),
+					),
 				),
-
-				// http.StripPrefix("/",
-				// 	http.FileServer(
-				// 		uiBox.HTTPBox(),
-				// 	),
-				// ),
 			),
 		)
 		e.GET(

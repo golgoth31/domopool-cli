@@ -1,14 +1,12 @@
 module github.com/golgoth31/domopool-cli
 
-go 1.15
+go 1.16
 
 require (
-	github.com/GeertJohan/go.rice v1.0.2
 	github.com/go-resty/resty/v2 v2.6.0
 	github.com/golgoth31/domopool-proto v1.0.63
 	github.com/labstack/echo/v4 v4.2.2
 	github.com/logrusorgru/aurora/v3 v3.0.0
-	github.com/markbates/pkger v0.17.1
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/rs/zerolog v1.21.0
 	github.com/spf13/cobra v1.1.3

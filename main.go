@@ -16,8 +16,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 package main
 
-import "github.com/golgoth31/domopool-cli/cmd"
+import (
+	"embed"
+
+	"github.com/golgoth31/domopool-cli/cmd"
+)
+
+//go:embed web/build/*
+var web embed.FS
 
 func main() {
-	cmd.Execute()
+	cmd.Execute(web)
 }
