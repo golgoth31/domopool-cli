@@ -17,10 +17,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package cmd
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/go-resty/resty/v2"
+	"github.com/golgoth31/domopool-cli/internal/domoClient"
+	"github.com/golgoth31/domopool-cli/internal/domoConfig"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
 	"google.golang.org/protobuf/proto"
@@ -44,61 +46,29 @@ to quickly create a Cobra application.`,
 	},
 	Run: func(cmd *cobra.Command, args []string) {
 		setServer, _ := cmd.Flags().GetString("server")
-		scheme := "http"
-		domoClient := resty.New()
-		mqtt := &domopool_proto.Config{}
-
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
-
+		client := domoClient.NewClient()
 		resp := &resty.Response{}
-		var err error
+
 		switch args[0] {
 		case "enable":
-			resp, err = domoClient.
-				R().
-				Post("/api/v1/mqtt/enable")
-			if err != nil {
-				fmt.Println(err)
-			}
+			resp = client.Post("/api/v1/mqtt/enable", nil)
 			time.Sleep(5 * time.Second)
 		case "disable":
-			resp, err = domoClient.
-				R().
-				Post("/api/v1/mqtt/disable")
-			if err != nil {
-				fmt.Println(err)
-			}
+			resp = client.Post("/api/v1/mqtt/disable", nil)
 			time.Sleep(5 * time.Second)
 		case "set":
 			mqttbody := &domopool_proto.Mqtt{
 				Server: setServer,
 			}
 			body, _ := proto.Marshal(mqttbody)
-			resp, err = domoClient.
-				R().
-				SetBody(body).
-				Post("/api/v1/mqtt/set")
-			if err != nil {
-				fmt.Println(err)
-			}
+			resp = client.Post("/api/v1/mqtt/set", body)
 			time.Sleep(5 * time.Second)
 		}
 
 		if resp.StatusCode() == 200 {
 			time.Sleep(2 * time.Second)
-			readResp, err := domoClient.R().Get("/api/v1/config")
-			if err != nil {
-				fmt.Println(err)
-			}
-			err = proto.Unmarshal(readResp.Body(), mqtt)
-			if err != nil {
-				fmt.Println(err)
-			}
-			if readResp.StatusCode() == 200 {
-				fmt.Println(mqtt.Network.GetMqtt())
-			}
+			config := domoConfig.GetConfig()
+			logger.StdLog.Info().Msgf("%v", config.Network.GetMqtt())
 		}
 	},
 }

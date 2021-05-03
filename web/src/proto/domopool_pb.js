@@ -1422,13 +1422,14 @@ proto.domopool.Limits.toObject = function(includeInstance, msg) {
     phMax: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
     chMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
     chMax: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    waitBeforeCh: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    chTempThreshold: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
-    chTempWaitReset: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
-    wp0Derive: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
-    twMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
-    twMax: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
-    tambMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0)
+    chWaitBeforeAllow: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    chWaitBeforeDeny: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    chTempThresholdHigh: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
+    chTempThresholdLow: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
+    wp0Derive: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
+    twMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
+    twMax: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
+    tambMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0)
   };
 
   if (includeInstance) {
@@ -1491,29 +1492,33 @@ proto.domopool.Limits.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setWaitBeforeCh(value);
+      msg.setChWaitBeforeAllow(value);
       break;
     case 8:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setChTempThreshold(value);
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setChWaitBeforeDeny(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readFloat());
-      msg.setChTempWaitReset(value);
+      msg.setChTempThresholdHigh(value);
       break;
     case 10:
       var value = /** @type {number} */ (reader.readFloat());
-      msg.setWp0Derive(value);
+      msg.setChTempThresholdLow(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readFloat());
-      msg.setTwMin(value);
+      msg.setWp0Derive(value);
       break;
     case 12:
       var value = /** @type {number} */ (reader.readFloat());
-      msg.setTwMax(value);
+      msg.setTwMin(value);
       break;
     case 13:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTwMax(value);
+      break;
+    case 14:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setTambMin(value);
       break;
@@ -1588,52 +1593,59 @@ proto.domopool.Limits.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getWaitBeforeCh();
+  f = message.getChWaitBeforeAllow();
   if (f !== 0) {
     writer.writeUint32(
       7,
       f
     );
   }
-  f = message.getChTempThreshold();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  f = message.getChWaitBeforeDeny();
+  if (f !== 0) {
+    writer.writeUint32(
       8,
       f
     );
   }
-  f = message.getChTempWaitReset();
+  f = message.getChTempThresholdHigh();
   if (f !== 0.0) {
     writer.writeFloat(
       9,
       f
     );
   }
-  f = message.getWp0Derive();
+  f = message.getChTempThresholdLow();
   if (f !== 0.0) {
     writer.writeFloat(
       10,
       f
     );
   }
-  f = message.getTwMin();
+  f = message.getWp0Derive();
   if (f !== 0.0) {
     writer.writeFloat(
       11,
       f
     );
   }
-  f = message.getTwMax();
+  f = message.getTwMin();
   if (f !== 0.0) {
     writer.writeFloat(
       12,
       f
     );
   }
-  f = message.getTambMin();
+  f = message.getTwMax();
   if (f !== 0.0) {
     writer.writeFloat(
       13,
+      f
+    );
+  }
+  f = message.getTambMin();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      14,
       f
     );
   }
@@ -1749,10 +1761,10 @@ proto.domopool.Limits.prototype.setChMax = function(value) {
 
 
 /**
- * optional uint32 wait_before_ch = 7;
+ * optional uint32 ch_wait_before_allow = 7;
  * @return {number}
  */
-proto.domopool.Limits.prototype.getWaitBeforeCh = function() {
+proto.domopool.Limits.prototype.getChWaitBeforeAllow = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -1761,17 +1773,17 @@ proto.domopool.Limits.prototype.getWaitBeforeCh = function() {
  * @param {number} value
  * @return {!proto.domopool.Limits} returns this
  */
-proto.domopool.Limits.prototype.setWaitBeforeCh = function(value) {
+proto.domopool.Limits.prototype.setChWaitBeforeAllow = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
 /**
- * optional float ch_temp_threshold = 8;
+ * optional uint32 ch_wait_before_deny = 8;
  * @return {number}
  */
-proto.domopool.Limits.prototype.getChTempThreshold = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
+proto.domopool.Limits.prototype.getChWaitBeforeDeny = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
@@ -1779,16 +1791,16 @@ proto.domopool.Limits.prototype.getChTempThreshold = function() {
  * @param {number} value
  * @return {!proto.domopool.Limits} returns this
  */
-proto.domopool.Limits.prototype.setChTempThreshold = function(value) {
-  return jspb.Message.setProto3FloatField(this, 8, value);
+proto.domopool.Limits.prototype.setChWaitBeforeDeny = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
 /**
- * optional float ch_temp_wait_reset = 9;
+ * optional float ch_temp_threshold_high = 9;
  * @return {number}
  */
-proto.domopool.Limits.prototype.getChTempWaitReset = function() {
+proto.domopool.Limits.prototype.getChTempThresholdHigh = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
 };
 
@@ -1797,16 +1809,16 @@ proto.domopool.Limits.prototype.getChTempWaitReset = function() {
  * @param {number} value
  * @return {!proto.domopool.Limits} returns this
  */
-proto.domopool.Limits.prototype.setChTempWaitReset = function(value) {
+proto.domopool.Limits.prototype.setChTempThresholdHigh = function(value) {
   return jspb.Message.setProto3FloatField(this, 9, value);
 };
 
 
 /**
- * optional float wp_0_derive = 10;
+ * optional float ch_temp_threshold_low = 10;
  * @return {number}
  */
-proto.domopool.Limits.prototype.getWp0Derive = function() {
+proto.domopool.Limits.prototype.getChTempThresholdLow = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
 };
 
@@ -1815,16 +1827,16 @@ proto.domopool.Limits.prototype.getWp0Derive = function() {
  * @param {number} value
  * @return {!proto.domopool.Limits} returns this
  */
-proto.domopool.Limits.prototype.setWp0Derive = function(value) {
+proto.domopool.Limits.prototype.setChTempThresholdLow = function(value) {
   return jspb.Message.setProto3FloatField(this, 10, value);
 };
 
 
 /**
- * optional float tw_min = 11;
+ * optional float wp_0_derive = 11;
  * @return {number}
  */
-proto.domopool.Limits.prototype.getTwMin = function() {
+proto.domopool.Limits.prototype.getWp0Derive = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
 };
 
@@ -1833,16 +1845,16 @@ proto.domopool.Limits.prototype.getTwMin = function() {
  * @param {number} value
  * @return {!proto.domopool.Limits} returns this
  */
-proto.domopool.Limits.prototype.setTwMin = function(value) {
+proto.domopool.Limits.prototype.setWp0Derive = function(value) {
   return jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 
 /**
- * optional float tw_max = 12;
+ * optional float tw_min = 12;
  * @return {number}
  */
-proto.domopool.Limits.prototype.getTwMax = function() {
+proto.domopool.Limits.prototype.getTwMin = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
 };
 
@@ -1851,16 +1863,16 @@ proto.domopool.Limits.prototype.getTwMax = function() {
  * @param {number} value
  * @return {!proto.domopool.Limits} returns this
  */
-proto.domopool.Limits.prototype.setTwMax = function(value) {
+proto.domopool.Limits.prototype.setTwMin = function(value) {
   return jspb.Message.setProto3FloatField(this, 12, value);
 };
 
 
 /**
- * optional float tamb_min = 13;
+ * optional float tw_max = 13;
  * @return {number}
  */
-proto.domopool.Limits.prototype.getTambMin = function() {
+proto.domopool.Limits.prototype.getTwMax = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
 };
 
@@ -1869,8 +1881,26 @@ proto.domopool.Limits.prototype.getTambMin = function() {
  * @param {number} value
  * @return {!proto.domopool.Limits} returns this
  */
-proto.domopool.Limits.prototype.setTambMin = function(value) {
+proto.domopool.Limits.prototype.setTwMax = function(value) {
   return jspb.Message.setProto3FloatField(this, 13, value);
+};
+
+
+/**
+ * optional float tamb_min = 14;
+ * @return {number}
+ */
+proto.domopool.Limits.prototype.getTambMin = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.domopool.Limits} returns this
+ */
+proto.domopool.Limits.prototype.setTambMin = function(value) {
+  return jspb.Message.setProto3FloatField(this, 14, value);
 };
 
 
@@ -3903,7 +3933,8 @@ proto.domopool.Alarms.toObject = function(includeInstance, msg) {
     twFrost: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     twHigh: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     tambFrost: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    mqtt: (f = msg.getMqtt()) && proto.domopool.MqttAlarms.toObject(includeInstance, f)
+    mqtt: (f = msg.getMqtt()) && proto.domopool.MqttAlarms.toObject(includeInstance, f),
+    reboot: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -3989,6 +4020,10 @@ proto.domopool.Alarms.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.domopool.MqttAlarms;
       reader.readMessage(value,proto.domopool.MqttAlarms.deserializeBinaryFromReader);
       msg.setMqtt(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setReboot(value);
       break;
     default:
       reader.skipField();
@@ -4103,6 +4138,13 @@ proto.domopool.Alarms.serializeBinaryToWriter = function(message, writer) {
       13,
       f,
       proto.domopool.MqttAlarms.serializeBinaryToWriter
+    );
+  }
+  f = message.getReboot();
+  if (f) {
+    writer.writeBool(
+      14,
+      f
     );
   }
 };
@@ -4359,6 +4401,24 @@ proto.domopool.Alarms.prototype.clearMqtt = function() {
  */
 proto.domopool.Alarms.prototype.hasMqtt = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool reboot = 14;
+ * @return {boolean}
+ */
+proto.domopool.Alarms.prototype.getReboot = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.domopool.Alarms} returns this
+ */
+proto.domopool.Alarms.prototype.setReboot = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
@@ -4651,9 +4711,10 @@ proto.domopool.Metrics.toObject = function(includeInstance, msg) {
     ch: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
     wp: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
     wpVolt: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
-    over15Duration: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    hour: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    time: jspb.Message.getFieldWithDefault(msg, 10, "")
+    overChTHighDuration: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    underChTLowDuration: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    hour: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    time: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -4720,13 +4781,17 @@ proto.domopool.Metrics.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 8:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setOver15Duration(value);
+      msg.setOverChTHighDuration(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setHour(value);
+      msg.setUnderChTLowDuration(value);
       break;
     case 10:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setHour(value);
+      break;
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setTime(value);
       break;
@@ -4808,24 +4873,31 @@ proto.domopool.Metrics.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOver15Duration();
+  f = message.getOverChTHighDuration();
   if (f !== 0) {
     writer.writeUint32(
       8,
       f
     );
   }
-  f = message.getHour();
+  f = message.getUnderChTLowDuration();
   if (f !== 0) {
     writer.writeUint32(
       9,
       f
     );
   }
+  f = message.getHour();
+  if (f !== 0) {
+    writer.writeUint32(
+      10,
+      f
+    );
+  }
   f = message.getTime();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      11,
       f
     );
   }
@@ -4959,10 +5031,10 @@ proto.domopool.Metrics.prototype.setWpVolt = function(value) {
 
 
 /**
- * optional uint32 over_15_duration = 8;
+ * optional uint32 over_ch_t_high_duration = 8;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getOver15Duration = function() {
+proto.domopool.Metrics.prototype.getOverChTHighDuration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -4971,16 +5043,16 @@ proto.domopool.Metrics.prototype.getOver15Duration = function() {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setOver15Duration = function(value) {
+proto.domopool.Metrics.prototype.setOverChTHighDuration = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
 /**
- * optional uint32 hour = 9;
+ * optional uint32 under_ch_t_low_duration = 9;
  * @return {number}
  */
-proto.domopool.Metrics.prototype.getHour = function() {
+proto.domopool.Metrics.prototype.getUnderChTLowDuration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
@@ -4989,17 +5061,35 @@ proto.domopool.Metrics.prototype.getHour = function() {
  * @param {number} value
  * @return {!proto.domopool.Metrics} returns this
  */
-proto.domopool.Metrics.prototype.setHour = function(value) {
+proto.domopool.Metrics.prototype.setUnderChTLowDuration = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
 /**
- * optional string time = 10;
+ * optional uint32 hour = 10;
+ * @return {number}
+ */
+proto.domopool.Metrics.prototype.getHour = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.domopool.Metrics} returns this
+ */
+proto.domopool.Metrics.prototype.setHour = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional string time = 11;
  * @return {string}
  */
 proto.domopool.Metrics.prototype.getTime = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
@@ -5008,7 +5098,7 @@ proto.domopool.Metrics.prototype.getTime = function() {
  * @return {!proto.domopool.Metrics} returns this
  */
 proto.domopool.Metrics.prototype.setTime = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 

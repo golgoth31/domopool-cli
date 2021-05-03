@@ -17,11 +17,9 @@ package cmd
 
 import (
 	"bytes"
-	"fmt"
-	"os"
-	"time"
 
-	"github.com/go-resty/resty/v2"
+	"github.com/golgoth31/domopool-cli/internal/domoClient"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	"github.com/spf13/cobra"
 )
 
@@ -36,26 +34,23 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		scheme := "http"
-		domoClient := resty.New()
-
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
+		client := domoClient.NewClient()
 
 		index, err := web.ReadFile("web/build/index.html")
 		if err != nil {
-			fmt.Println("can't read index file")
-			os.Exit(1)
+			logger.StdLog.Fatal().Err(err).Msg("Unable to read file")
 		}
 		bundle, err := web.ReadFile("web/build/bundle.js")
 		if err != nil {
-			fmt.Println("can't read index file")
-			os.Exit(1)
+			logger.StdLog.Fatal().Err(err).Msg("Unable to read file")
+		}
+		favicon, err := web.ReadFile("web/build/favicon.ico")
+		if err != nil {
+			logger.StdLog.Fatal().Err(err).Msg("Unable to read file")
 		}
 
-		fmt.Println("uploading index")
-		resp, err := domoClient.
+		logger.StdLog.Info().Msg("uploading index")
+		resp, err := client.Client.
 			R().
 			SetFileReader("", "index.html", bytes.NewReader(index)).
 			SetFormData(map[string]string{
@@ -64,24 +59,38 @@ to quickly create a Cobra application.`,
 			SetContentLength(true).
 			Post("/ui/upload")
 		if err != nil {
-			fmt.Println(err)
+			logger.StdLog.Fatal().Err(err).Msg("Unable to request box")
 		}
 
 		if resp.StatusCode() == 200 {
-			fmt.Println("uploading bundle")
-			resp, err := domoClient.
+			logger.StdLog.Info().Msg("uploading favicon")
+			resp, err = client.Client.
 				R().
-				SetFileReader("", "bundle.js", bytes.NewReader(bundle)).
+				SetFileReader("", "favicon.ico", bytes.NewReader(favicon)).
 				SetFormData(map[string]string{
-					"filename": "bundle.js",
+					"filename": "favicon.ico",
 				}).
 				SetContentLength(true).
 				Post("/ui/upload")
 			if err != nil {
-				fmt.Println(err)
+				logger.StdLog.Fatal().Err(err).Msg("Unable to request box")
 			}
 			if resp.StatusCode() == 200 {
-				fmt.Println("upload ok")
+				logger.StdLog.Info().Msg("uploading bundle")
+				resp, err := client.Client.
+					R().
+					SetFileReader("", "bundle.js", bytes.NewReader(bundle)).
+					SetFormData(map[string]string{
+						"filename": "bundle.js",
+					}).
+					SetContentLength(true).
+					Post("/ui/upload")
+				if err != nil {
+					logger.StdLog.Fatal().Err(err).Msg("Unable to request box")
+				}
+				if resp.StatusCode() == 200 {
+					logger.StdLog.Info().Msg("upload ok")
+				}
 			}
 		}
 	},
@@ -89,14 +98,4 @@ to quickly create a Cobra application.`,
 
 func init() {
 	rootCmd.AddCommand(uploadUiCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// uploadUiCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// uploadUiCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

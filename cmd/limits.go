@@ -57,19 +57,20 @@ to quickly create a Cobra application.`,
 			switch args[0] {
 			case "set":
 				limitsbody := &domopool_proto.Limits{
-					WpMin:           0.2,
-					WpMax:           2,
-					PhMin:           0.0,
-					PhMax:           0.0,
-					ChMin:           0.0,
-					ChMax:           0.0,
-					WaitBeforeCh:    72,
-					ChTempThreshold: 15,
-					ChTempWaitReset: 14,
-					Wp_0Derive:      0.03,
-					TwMin:           1,
-					TwMax:           30,
-					TambMin:         0,
+					WpMin:               0.2,
+					WpMax:               2,
+					PhMin:               0.0,
+					PhMax:               0.0,
+					ChMin:               0.0,
+					ChMax:               0.0,
+					ChWaitBeforeAllow:   24,
+					ChWaitBeforeDeny:    24,
+					ChTempThresholdHigh: 15,
+					ChTempThresholdLow:  14,
+					Wp_0Derive:          0.03,
+					TwMin:               1,
+					TwMax:               30,
+					TambMin:             0,
 				}
 				body, _ := proto.Marshal(limitsbody)
 				resp, err = domoClient.

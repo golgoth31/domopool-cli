@@ -19,6 +19,7 @@ package cmd
 import (
 	"embed"
 	"fmt"
+	"net"
 	"os"
 
 	logger "github.com/golgoth31/domopool-cli/internal/log"
@@ -29,8 +30,12 @@ import (
 	"github.com/spf13/viper"
 )
 
-var cfgFile string
-var web embed.FS
+var (
+	cfgFile string
+	web     embed.FS
+)
+
+const defaultIp = "192.168.11.183"
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -61,8 +66,22 @@ func Execute(webFiles embed.FS) {
 
 func init() {
 	cobra.OnInitialize(initConfig)
+
 	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file (default is $HOME/.domopool-cli.yaml)")
 	rootCmd.PersistentFlags().Bool("debug", false, "debug")
+	rootCmd.PersistentFlags().IP("box-host", net.ParseIP(defaultIp), "ip of the domopool box")
+	rootCmd.PersistentFlags().Int("box-port", 80, "port of the domopool box")
+	rootCmd.PersistentFlags().String("box-scheme", "http", "port of the domopool box")
+	rootCmd.PersistentFlags().String("api-version", "v1", "api version")
+
+	err := viper.BindPFlag("boxHost", rootCmd.PersistentFlags().Lookup("box-host"))
+	err = viper.BindPFlag("boxPort", rootCmd.PersistentFlags().Lookup("box-port"))
+	err = viper.BindPFlag("boxScheme", rootCmd.PersistentFlags().Lookup("box-scheme"))
+	err = viper.BindPFlag("api.version", rootCmd.PersistentFlags().Lookup("api-version"))
+	err = viper.BindPFlag("api.path.config", rootCmd.PersistentFlags().Lookup("config"))
+	if err != nil {
+		log.Fatal().Err(err).Msg("Unable to set viper value")
+	}
 }
 
 // initConfig reads in config file and ENV variables if set.
@@ -96,7 +115,7 @@ func initConfig() {
 
 	viper.AutomaticEnv() // read in environment variables that match
 
-	viper.SetDefault("boxIP", "192.168.11.183")
+	viper.SetDefault("boxHost", defaultIp)
 	viper.SetDefault("boxScheme", "http")
 	viper.SetDefault("api.version", "v1")
 	viper.SetDefault("api.path.config", "config")

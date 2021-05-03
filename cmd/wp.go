@@ -16,10 +16,12 @@ limitations under the License.
 package cmd
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/go-resty/resty/v2"
+	"github.com/golgoth31/domopool-cli/internal/domoClient"
+	"github.com/golgoth31/domopool-cli/internal/domoConfig"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	domopool_proto "github.com/golgoth31/domopool-proto"
 	"github.com/spf13/cobra"
 	"google.golang.org/protobuf/proto"
@@ -49,32 +51,15 @@ to quickly create a Cobra application.`,
 		wpVmax, _ := cmd.Flags().GetFloat32("vmax")
 		wpAutoCal, _ := cmd.Flags().GetBool("auto-cal")
 
-		scheme := "http"
-		domoClient := resty.New()
-		wp := &domopool_proto.Config{}
-
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
+		client := domoClient.NewClient()
 
 		resp := &resty.Response{}
-		var err error
 		if len(args) != 0 {
 			switch args[0] {
 			case "enable":
-				resp, err = domoClient.
-					R().
-					Post("/api/v1/wp/enable")
-				if err != nil {
-					fmt.Println(err)
-				}
+				resp = client.Post("/api/v1/wp/enable", nil)
 			case "disable":
-				resp, err = domoClient.
-					R().
-					Post("/api/v1/wp/disable")
-				if err != nil {
-					fmt.Println(err)
-				}
+				resp = client.Post("/api/v1/wp/disable", nil)
 			case "set":
 				wpbody := &domopool_proto.AnalogSensor{
 					AdcPin:            wpAdcPin,
@@ -85,30 +70,15 @@ to quickly create a Cobra application.`,
 					AutoCal:           wpAutoCal,
 				}
 				body, _ := proto.Marshal(wpbody)
-				resp, err = domoClient.
-					R().
-					SetBody(body).
-					Post("/api/v1/wp/set")
-				if err != nil {
-					fmt.Println(err)
-				}
+				resp = client.Post("/api/v1/wp/set", body)
 			}
 			if resp.StatusCode() == 200 {
 				time.Sleep(2 * time.Second)
 			}
 		}
 
-		readResp, err := domoClient.R().Get("/api/v1/config")
-		if err != nil {
-			fmt.Println(err)
-		}
-		err = proto.Unmarshal(readResp.Body(), wp)
-		if err != nil {
-			fmt.Println(err)
-		}
-		if readResp.StatusCode() == 200 {
-			fmt.Println(wp.Sensors.GetWp())
-		}
+		config := domoConfig.GetConfig()
+		logger.StdLog.Info().Msgf("%v", config.Sensors.GetWp())
 	},
 }
 

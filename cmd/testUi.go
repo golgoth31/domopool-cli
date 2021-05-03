@@ -17,14 +17,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package cmd
 
 import (
-	"encoding/json"
 	"fmt"
 	"net/http"
-	"time"
 
-	"github.com/go-resty/resty/v2"
-
-	domopool_proto "github.com/golgoth31/domopool-proto"
+	"github.com/golgoth31/domopool-cli/internal/domoConfig"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/spf13/cobra"
@@ -41,25 +37,7 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-
-		scheme := "http"
-		domoClient := resty.New()
-		config := &domopool_proto.Config{}
-
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetHeader("Content-Type", "application/json")
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
-		resp, err := domoClient.R().Get("/api/v1/config")
-		if err != nil {
-			fmt.Println(err)
-		}
-		err = json.Unmarshal(resp.Body(), config)
-		// fmt.Println(resp.String())
-		// err = proto.Unmarshal(resp.Body(), config)
-		if err != nil {
-			fmt.Println(err)
-		}
+		config := domoConfig.GetConfig()
 
 		e := echo.New()
 		e.Use(middleware.Logger())
@@ -76,22 +54,8 @@ to quickly create a Cobra application.`,
 			},
 		}))
 		e.GET("/api/v1/config", func(c echo.Context) error {
-			// resp := domopool_proto.Config{
-			// 	Global: &domopool_proto.Global{
-			// 		AckTone: 4000,
-			// 	},
-			// }
 			return c.JSON(http.StatusOK, config)
 		})
-		// e.POST("/config", func(c echo.Context) error {
-		// 	u := internal.Aconfig{}
-		// 	if err := c.Bind(u); err != nil {
-		// 		return err
-		// 	}
-		// 	log.Printf("%+v", u)
-		// 	e.Logger.Info(u)
-		// 	return c.JSON(http.StatusOK, u)
-		// })
 		port, _ := cmd.Flags().GetInt("port")
 		e.Logger.Fatal(e.Start(fmt.Sprintf(":%d", port)))
 	},

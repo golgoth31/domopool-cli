@@ -5,15 +5,17 @@ import {
     Form,
 } from 'formik';
 import SubmitButton from "../components/SubmitButton";
-import CircularProgress from '@material-ui/core/CircularProgress';
 import NetworkFields from '../components/NetworkForm';
 import GlobalFields from '../components/GlobalForm';
 import TwoutFields from '../components/TwoutForm';
 import TwinFields from '../components/TwinForm';
 import TambFields from '../components/TambForm';
-import { Grid } from "@material-ui/core";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import {
+    Grid,
+    LinearProgress,
+    Card,
+    CardContent,
+} from "@material-ui/core";
 
 var domopool_pb = require('../proto/domopool_pb');
 
@@ -153,7 +155,11 @@ export default class ConfigView extends React.Component {
             )
         } else {
             return (
-                <CircularProgress />
+                <Card>
+                    <CardContent>
+                        <LinearProgress />
+                    </CardContent>
+                </Card>
             )
         }
     };

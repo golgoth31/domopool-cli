@@ -1,8 +1,10 @@
 import * as React from "react";
 import dataprovider from '../dataprovider/dataprovider';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import {
+    LinearProgress,
+    Card,
+    CardContent,
+} from "@material-ui/core";
 
 var domopool_pb = require('../proto/domopool_pb');
 
@@ -37,7 +39,11 @@ export default class MetricsView extends React.Component {
             )
         } else {
             return (
-                <CircularProgress />
+                <Card>
+                    <CardContent>
+                        <LinearProgress />
+                    </CardContent>
+                </Card>
             )
         }
     };

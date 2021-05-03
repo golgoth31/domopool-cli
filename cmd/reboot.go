@@ -17,10 +17,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package cmd
 
 import (
-	"fmt"
 	"time"
 
-	"github.com/go-resty/resty/v2"
+	"github.com/golgoth31/domopool-cli/internal/domoClient"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	"github.com/spf13/cobra"
 )
 
@@ -35,20 +35,12 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		scheme := "http"
-		domoClient := resty.New()
-
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
-
-		resp, err := domoClient.R().Get("/api/v1/reboot")
-		if err != nil {
-			fmt.Println(err)
-		}
+		client := domoClient.NewClient()
+		logger.StdLog.Info().Msg("Rebooting")
+		resp := client.Post("/api/v1/reboot", nil)
 
 		if resp.StatusCode() == 200 {
-			fmt.Println("reboot started")
+			time.Sleep(2 * time.Second)
 		}
 	},
 }

@@ -17,10 +17,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package cmd
 
 import (
-	"fmt"
 	"time"
 
-	"github.com/go-resty/resty/v2"
+	"github.com/golgoth31/domopool-cli/internal/domoClient"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	"github.com/spf13/cobra"
 )
 
@@ -39,22 +39,12 @@ to quickly create a Cobra application.`,
 		"config",
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		scheme := "http"
-		domoClient := resty.New()
-
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
-
-		resp, err := domoClient.R().Get("/api/v1/sensors/reset")
-		if err != nil {
-			fmt.Println(err)
-		}
+		client := domoClient.NewClient()
+		logger.StdLog.Info().Msg("Reseting")
+		resp := client.Post("/api/v1/config/reset", nil)
 
 		if resp.StatusCode() == 200 {
-			fmt.Println("sensors reset ok")
-		} else {
-			fmt.Printf("return code: %v", resp.StatusCode())
+			time.Sleep(2 * time.Second)
 		}
 	},
 }

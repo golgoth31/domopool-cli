@@ -13,7 +13,12 @@ func NewClient() *DomoClient {
 	var client DomoClient
 	client.Client = resty.New()
 
-	client.Client.HostURL = fmt.Sprintf("%s://%s", viper.GetString("boxScheme"), viper.GetString("boxIP"))
+	client.Client.HostURL = fmt.Sprintf(
+		"%s://%s:%d",
+		viper.GetString("boxScheme"),
+		viper.GetString("boxHost"),
+		viper.GetInt("boxPort"),
+	)
 	client.Client.SetRetryCount(3)
 	client.Client.SetRetryWaitTime(5 * time.Second)
 

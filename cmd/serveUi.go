@@ -19,13 +19,13 @@ import (
 	"fmt"
 	"io"
 	"io/fs"
-	"log"
-	"net"
 	"net/http"
 	"text/template"
 
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	"github.com/labstack/echo/v4"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // serveUiCmd represents the serveUi command
@@ -43,25 +43,13 @@ to quickly create a Cobra application.`,
 		e := echo.New()
 		templateString, err := web.ReadFile("web/build/index.html")
 		if err != nil {
-			log.Fatal(err)
+			logger.StdLog.Fatal().Err(err).Msg("Unable to template index.html")
 		}
 
-		box_host, err := cmd.Flags().GetIP("box-host")
-		if err != nil {
-			log.Fatal(err)
-		}
-		box_port, err := cmd.Flags().GetInt("box-port")
-		if err != nil {
-			log.Fatal(err)
-		}
-		box_scheme, err := cmd.Flags().GetString("box-scheme")
-		if err != nil {
-			log.Fatal(err)
-		}
 		box := &IndexTemplate{
-			DomopoolBoxHost:   box_host.String(),
-			DomopoolBoxPort:   box_port,
-			DomopoolBoxScheme: box_scheme,
+			DomopoolBoxHost:   viper.GetString("boxHost"),
+			DomopoolBoxPort:   viper.GetInt("boxPort"),
+			DomopoolBoxScheme: viper.GetString("boxScheme"),
 		}
 		t := &Template{
 			templates: template.Must(template.New("index").Parse(fmt.Sprintf("%s", templateString))),
@@ -69,7 +57,7 @@ to quickly create a Cobra application.`,
 		e.Renderer = t
 		web2root, err := fs.Sub(web, "web/build")
 		if err != nil {
-			log.Fatal(err)
+			logger.StdLog.Fatal().Err(err).Msg("Unable to read sub path")
 		}
 		e.GET(
 			"/*",
@@ -113,10 +101,5 @@ func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Con
 
 func init() {
 	rootCmd.AddCommand(serveUiCmd)
-
-	defaultIp := net.ParseIP("127.0.0.1")
 	serveUiCmd.Flags().IntP("port", "p", 8080, "port to listen on")
-	serveUiCmd.Flags().IP("box-host", defaultIp, "ip of the domopool box")
-	serveUiCmd.Flags().Int("box-port", 80, "port of the domopool box")
-	serveUiCmd.Flags().String("box-scheme", "http", "port of the domopool box")
 }

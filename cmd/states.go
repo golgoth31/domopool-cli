@@ -17,13 +17,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package cmd
 
 import (
-	"fmt"
-	"time"
-
-	"github.com/go-resty/resty/v2"
-	domopool_proto "github.com/golgoth31/domopool-proto"
+	"github.com/golgoth31/domopool-cli/internal/domoConfig"
+	logger "github.com/golgoth31/domopool-cli/internal/log"
 	"github.com/spf13/cobra"
-	"google.golang.org/protobuf/proto"
 )
 
 // statesCmd represents the states command
@@ -37,24 +33,9 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		scheme := "http"
-		domoClient := resty.New()
-		states := &domopool_proto.Config{}
+		config := domoConfig.GetConfig()
 
-		domoClient.HostURL = scheme + "://192.168.11.183"
-		domoClient.SetHeader("Content-Type", "application/json")
-		domoClient.SetRetryCount(3)
-		domoClient.SetRetryWaitTime(5 * time.Second)
-		resp, err := domoClient.R().Get("/api/v1/config")
-		if err != nil {
-			fmt.Println(err)
-		}
-		err = proto.Unmarshal(resp.Body(), states)
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		fmt.Println(states.GetStates())
+		logger.StdLog.Info().Msgf("%v", config.GetStates())
 	},
 }
 
