@@ -1,44 +1,37 @@
 import {
-    Field,
-} from 'formik';
-import {
     TextField,
     Checkbox,
-} from 'formik-material-ui';
+} from '@material-ui/core';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 // export const ConfigForm: React.SFC = () => {
-const TwoutFields = (props: any) => {
+const TempFields = (props: any) => {
+    console.debug(props);
     return (
         <div>
-            <h3>Twin Values</h3>
+            <h3>{props.name} Values</h3>
             <FormControlLabel
-                control={<Field
-                    component={Checkbox}
-                    name="sensors.twout.enabled"
-                    type="checkbox"
+                control={<Checkbox
                     color="primary"
+                    checked={props.sensors[props.name].enabled}
                     disabled
                 />}
                 label="Enabled"
-                labelPlacement="start"
+            // labelPlacement="start"
             />
             <br />
             <FormControlLabel
-                control={<Field
-                    component={Checkbox}
-                    name="sensors.twout.init"
-                    type="checkbox"
+                control={<Checkbox
                     color="primary"
+                    checked={props.sensors[props.name].init}
                     disabled
                 />}
                 label="Init"
-                labelPlacement="start"
+            // labelPlacement="start"
             />
             <br />
-            <Field
-                component={TextField}
-                name="sensors.twout.addr"
+            <TextField
+                value={props.sensors[props.name].addr}
                 type="text"
                 label="Addr"
                 disabled
@@ -47,4 +40,4 @@ const TwoutFields = (props: any) => {
     )
 };
 
-export default TwoutFields;
+export default TempFields;

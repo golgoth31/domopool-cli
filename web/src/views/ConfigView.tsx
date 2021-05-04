@@ -33,7 +33,7 @@ export default class ConfigView extends React.Component {
             .then(res => {
                 const resp = res.data;
                 this.setState({ config: domopool_pb.Config.deserializeBinary(resp).toObject() });
-                console.log(this.state.config);
+                console.debug(this.state.config);
                 this.setState({ ipDisabled: this.state.config.network.dhcp });
             });
     }
