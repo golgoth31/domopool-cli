@@ -109,7 +109,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.domopool.Temp = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.domopool.Temp.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.domopool.Temp, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1167,13 +1167,6 @@ proto.domopool.Network.prototype.hasNtp = function() {
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.domopool.Temp.repeatedFields_ = [8];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1207,7 +1200,7 @@ proto.domopool.Temp.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     init: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    addrList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
+    addr: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1252,11 +1245,9 @@ proto.domopool.Temp.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setInit(value);
       break;
-    case 8:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addAddr(values[i]);
-      }
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAddr(value);
       break;
     default:
       reader.skipField();
@@ -1301,10 +1292,10 @@ proto.domopool.Temp.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAddrList();
+  f = message.getAddr();
   if (f.length > 0) {
-    writer.writePackedUint32(
-      8,
+    writer.writeString(
+      3,
       f
     );
   }
@@ -1348,39 +1339,20 @@ proto.domopool.Temp.prototype.setInit = function(value) {
 
 
 /**
- * repeated uint32 addr = 8;
- * @return {!Array<number>}
+ * optional string addr = 3;
+ * @return {string}
  */
-proto.domopool.Temp.prototype.getAddrList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+proto.domopool.Temp.prototype.getAddr = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {string} value
  * @return {!proto.domopool.Temp} returns this
  */
-proto.domopool.Temp.prototype.setAddrList = function(value) {
-  return jspb.Message.setField(this, 8, value || []);
-};
-
-
-/**
- * @param {number} value
- * @param {number=} opt_index
- * @return {!proto.domopool.Temp} returns this
- */
-proto.domopool.Temp.prototype.addAddr = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.domopool.Temp} returns this
- */
-proto.domopool.Temp.prototype.clearAddrList = function() {
-  return this.setAddrList([]);
+proto.domopool.Temp.prototype.setAddr = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

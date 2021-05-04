@@ -5,17 +5,14 @@ import {
     Form,
 } from 'formik';
 import SubmitButton from "../components/SubmitButton";
-import NetworkFields from '../components/NetworkForm';
+import NetworkFields from '../components/NetworkFields';
 import GlobalFields from '../components/GlobalForm';
-import TwoutFields from '../components/TwoutForm';
-import TwinFields from '../components/TwinForm';
-import TambFields from '../components/TambForm';
 import {
-    Grid,
     LinearProgress,
     Card,
     CardContent,
 } from "@material-ui/core";
+import TempForm from '../forms/Temp';
 
 var domopool_pb = require('../proto/domopool_pb');
 
@@ -110,46 +107,7 @@ export default class ConfigView extends React.Component {
 
                             )}
                         </Formik >
-                        <Formik
-                            enableReinitialize
-                            initialValues={{
-                                sensors: this.state.config.sensors,
-                            }
-                            }
-                            onSubmit={(values, actions) => {
-                                dataprovider.post(this.state.config.toArrayBuffer(),
-                                    {
-                                        responseType: 'arraybuffer',
-                                        headers: { 'Content-Type': 'application/octet-stream' }
-                                    }
-                                ).then(function (response) {
-                                    console.log(response)
-                                })
-                                    .catch(function (response) {
-                                        console.log(response)
-                                    })
-                            }}
-                        >
-                            {props => (
-
-                                <Form>
-                                    <Grid container spacing={2}>
-                                        <Grid item>
-                                            <TwoutFields {...props} />
-                                        </Grid>
-                                        <Grid item>
-                                            <TambFields {...props} />
-                                        </Grid>
-                                        <Grid item>
-                                            <TwinFields {...props} />
-                                        </Grid>
-                                    </Grid>
-                                    <br />
-                                    <SubmitButton />
-                                </Form>
-
-                            )}
-                        </Formik >
+                        <TempForm config={this.state.config.sensors} />
                     </CardContent>
                 </Card>
             )
