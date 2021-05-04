@@ -11,7 +11,7 @@ import isIp from 'is-ip';
 import { Grid } from "@material-ui/core";
 
 // export const ConfigForm: React.SFC = () => {
-export default class NetworkFields extends React.Component {
+export default class NetworkForm extends React.Component {
     constructor(
         private conf: any
     ) { super(conf); };

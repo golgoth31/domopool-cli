@@ -4,15 +4,15 @@ import {
     Formik,
     Form,
 } from 'formik';
-import SubmitButton from "../components/SubmitButton";
-import NetworkFields from '../components/NetworkFields';
-import GlobalFields from '../components/GlobalForm';
+import SubmitButton from "../forms/SubmitButton";
+import NetworkForm from '../forms/NetworkForm';
+import GlobalForm from '../forms/GlobalForm';
 import {
     LinearProgress,
     Card,
     CardContent,
 } from "@material-ui/core";
-import TempForm from '../forms/Temp';
+import TempForm from '../forms/TempForm';
 
 var domopool_pb = require('../proto/domopool_pb');
 
@@ -70,7 +70,7 @@ export default class ConfigView extends React.Component {
                             {props => (
 
                                 <Form>
-                                    <GlobalFields {...props} />
+                                    <GlobalForm {...props} />
                                     <br />
                                     <SubmitButton />
                                 </Form>
@@ -100,7 +100,7 @@ export default class ConfigView extends React.Component {
                             {props => (
 
                                 <Form>
-                                    <NetworkFields {...props} />
+                                    <NetworkForm {...props} />
                                     <br />
                                     <SubmitButton />
                                 </Form>
