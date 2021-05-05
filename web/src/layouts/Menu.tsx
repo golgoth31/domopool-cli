@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core/';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import HomeIcon from '@material-ui/icons/Home';
 
-const MainListItems = (props: any) => {
+const MenuLayout = (props: any) => {
     return (
-        <div>
+        <List>
             <ListItem button component={Link} to="/" onClick={props.handleDrawerClose}>
                 <ListItemIcon>
                     <HomeIcon />
@@ -37,8 +35,8 @@ const MainListItems = (props: any) => {
                 </ListItemIcon>
                 <ListItemText primary="Alarms" />
             </ListItem>
-        </div>
+        </List>
     )
 };
 
-export default MainListItems;
+export default MenuLayout;

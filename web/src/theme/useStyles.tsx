@@ -76,6 +76,10 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
         flexDirection: 'column',
     },
+    paperDashboard: {
+        height: 140,
+        width: 100,
+    },
     fixedHeight: {
         height: 240,
     },

@@ -4,12 +4,13 @@ import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Container from '@material-ui/core/Container';
-import List from '@material-ui/core/List';
+// import List from '@material-ui/core/List';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import MainListItems from './Menu';
+// import MainListItems from './Menu';
 import TopAppBar from './AppBar';
 import Routes from '../routes';
 import useStyles from '../theme/useStyles';
+import MenuLayout from "./Menu";
 
 // export default function Dashboard() {
 export default function Dashboard() {
@@ -38,9 +39,7 @@ export default function Dashboard() {
                     </IconButton>
                 </div>
                 <Divider />
-                <List>
-                    <MainListItems handleDrawerClose={handleDrawerClose} />
-                </List>
+                <MenuLayout handleDrawerClose={handleDrawerClose} />
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
