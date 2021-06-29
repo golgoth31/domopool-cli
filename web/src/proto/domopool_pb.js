@@ -6931,7 +6931,8 @@ proto.domopool.Relay_names = {
   FILTER: 0,
   CH: 1,
   PH: 2,
-  LIGHT: 3
+  ALL: 3,
+  LIGHT: 4
 };
 
 goog.object.extend(exports, proto.domopool);
