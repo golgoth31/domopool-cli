@@ -83,6 +83,13 @@ const useStyles = makeStyles((theme) => ({
     fixedHeight: {
         height: 240,
     },
+    cardDashboard: {
+        justifyContent: 'center',
+        alignContent: 'center',
+    },
+    paperTextDashboard: {
+        textAlign: 'center',
+    },
 }));
 
 export default useStyles;
