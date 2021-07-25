@@ -5544,7 +5544,8 @@ proto.domopool.Versions.toObject = function(includeInstance, msg) {
     dallastemp: jspb.Message.getFieldWithDefault(msg, 7, ""),
     ads1115: jspb.Message.getFieldWithDefault(msg, 8, ""),
     nanopb: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    mqtt: jspb.Message.getFieldWithDefault(msg, 10, "")
+    mqtt: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    arduinojson: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -5616,6 +5617,10 @@ proto.domopool.Versions.deserializeBinaryFromReader = function(msg, reader) {
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setMqtt(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setArduinojson(value);
       break;
     default:
       reader.skipField();
@@ -5706,6 +5711,13 @@ proto.domopool.Versions.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getArduinojson();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
       f
     );
   }
@@ -5871,6 +5883,24 @@ proto.domopool.Versions.prototype.getMqtt = function() {
  */
 proto.domopool.Versions.prototype.setMqtt = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string arduinojson = 11;
+ * @return {string}
+ */
+proto.domopool.Versions.prototype.getArduinojson = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.domopool.Versions} returns this
+ */
+proto.domopool.Versions.prototype.setArduinojson = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 

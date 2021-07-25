@@ -39,19 +39,9 @@ const defaultIp = "192.168.11.183"
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "ardipool-cli",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	Run: func(cmd *cobra.Command, args []string) {
-
-	},
+	Use:   "domopool",
+	Short: "The cli to manipulate a domopool box.",
+	Run:   func(cmd *cobra.Command, args []string) {},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
@@ -74,12 +64,19 @@ func init() {
 	rootCmd.PersistentFlags().String("box-scheme", "http", "port of the domopool box")
 	rootCmd.PersistentFlags().String("api-version", "v1", "api version")
 
-	err := viper.BindPFlag("boxHost", rootCmd.PersistentFlags().Lookup("box-host"))
-	err = viper.BindPFlag("boxPort", rootCmd.PersistentFlags().Lookup("box-port"))
-	err = viper.BindPFlag("boxScheme", rootCmd.PersistentFlags().Lookup("box-scheme"))
-	err = viper.BindPFlag("api.version", rootCmd.PersistentFlags().Lookup("api-version"))
-	err = viper.BindPFlag("api.path.config", rootCmd.PersistentFlags().Lookup("config"))
-	if err != nil {
+	if err := viper.BindPFlag("boxHost", rootCmd.PersistentFlags().Lookup("box-host")); err != nil {
+		log.Fatal().Err(err).Msg("Unable to set viper value")
+	}
+	if err := viper.BindPFlag("boxPort", rootCmd.PersistentFlags().Lookup("box-port")); err != nil {
+		log.Fatal().Err(err).Msg("Unable to set viper value")
+	}
+	if err := viper.BindPFlag("boxScheme", rootCmd.PersistentFlags().Lookup("box-scheme")); err != nil {
+		log.Fatal().Err(err).Msg("Unable to set viper value")
+	}
+	if err := viper.BindPFlag("api.version", rootCmd.PersistentFlags().Lookup("api-version")); err != nil {
+		log.Fatal().Err(err).Msg("Unable to set viper value")
+	}
+	if err := viper.BindPFlag("api.path.config", rootCmd.PersistentFlags().Lookup("config")); err != nil {
 		log.Fatal().Err(err).Msg("Unable to set viper value")
 	}
 }

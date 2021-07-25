@@ -26,13 +26,7 @@ import (
 // adcCmd represents the filter command
 var adcCmd = &cobra.Command{
 	Use:   "adc",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Configure the adc for anolog measurements.",
 	Run: func(cmd *cobra.Command, args []string) {
 		ADCMode, _ := cmd.Flags().GetUint32("mode")
 		ADCGain, _ := cmd.Flags().GetUint32("gain")

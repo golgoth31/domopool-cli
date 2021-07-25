@@ -27,13 +27,7 @@ import (
 // autoCmd represents the filter command
 var autoCmd = &cobra.Command{
 	Use:   "auto",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Set automatic or recover mode.",
 	Run: func(cmd *cobra.Command, args []string) {
 		client := domoClient.NewClient()
 		logger.StdLog.Info().Msg("Setting domopool in automatic mode")

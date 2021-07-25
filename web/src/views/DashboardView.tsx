@@ -10,14 +10,22 @@ import {
     Typography,
 } from "@material-ui/core";
 import useStyles from '../theme/useStyles';
+import { makeStyles } from '@material-ui/core/styles';
 import RelayButton from '../components/RelayButton';
 
 var domopool_pb = require('../proto/domopool_pb');
+
+const typographyStyles = makeStyles((theme) => ({
+    text: {
+        color: "#00ff00"
+    }
+}));
 
 export default function DashboardView() {
     const [config, setConfig] = useState(domopool_pb.Config);
     const props = { state: false, offColor: '' };
     const classes = useStyles(props);
+    const typoClasses = typographyStyles();
 
     useEffect(
         () => {
@@ -38,6 +46,14 @@ export default function DashboardView() {
             {
                 setZone: true,
             });
+        let hours = date.hour.toString()
+        if (date.hour < 10) {
+            hours = "0" + date.hour
+        }
+        let minutes = date.minute.toString()
+        if (date.minute < 10) {
+            minutes = "0" + date.minute
+        }
         return (
             <Grid container direction="row" spacing={2} justifyContent="center" alignItems="center">
                 <Grid item xs={6} >
@@ -49,7 +65,7 @@ export default function DashboardView() {
                         />
                         <CardContent>
                             <Typography
-                                component="h1"
+                                variant="h5"
                                 align="center"
                             >
                                 {config.metrics.twater + " °C"}
@@ -66,7 +82,7 @@ export default function DashboardView() {
                         />
                         <CardContent>
                             <Typography
-                                component="h1"
+                                variant="h5"
                                 align="center"
                             >
                                 {config.metrics.tamb + " °C"}
@@ -83,7 +99,7 @@ export default function DashboardView() {
                         />
                         <CardContent>
                             <Typography
-                                component="h1"
+                                variant="h5"
                                 align="center"
                             >
                                 {config.metrics.ph}
@@ -100,7 +116,7 @@ export default function DashboardView() {
                         />
                         <CardContent>
                             <Typography
-                                component="h1"
+                                variant="h5"
                                 align="center"
                             >
                                 {config.metrics.wp + " Bar"}
@@ -124,21 +140,21 @@ export default function DashboardView() {
                                     <Grid container direction="column" spacing={2} alignItems="flex-start">
                                         <Grid item  >
                                             <Typography
-                                                component="h1"
+                                                variant="h5"
                                             >
                                                 {date.day + " " + date.monthLong + " " + date.year}
                                             </Typography>
                                         </Grid>
                                         <Grid item  >
                                             <Typography
-                                                component="h1"
+                                                variant="h5"
                                             >
-                                                {date.hour + "h" + date.minute}
+                                                {hours + "h" + minutes}
                                             </Typography>
                                         </Grid>
                                         <Grid item  >
                                             <Typography
-                                                component="h1"
+                                                variant="h5"
                                             >
                                                 {config.network.ip}
                                             </Typography>
@@ -149,23 +165,27 @@ export default function DashboardView() {
                                     <Grid container direction="column" spacing={2} alignItems="flex-end">
                                         <Grid item  >
                                             <Typography
-                                                component="h1"
+                                                variant="h5"
+                                                className={typoClasses.text}
+                                            // color={net_color}
                                             >
-                                                {date.day + " " + date.monthLong + " " + date.year}
+                                                NET
                                             </Typography>
                                         </Grid>
                                         <Grid item  >
                                             <Typography
-                                                component="h1"
+                                                variant="h5"
+                                                className={typoClasses.text}
                                             >
-                                                {date.hour + "h" + date.minute}
+                                                MQTT
                                             </Typography>
                                         </Grid>
                                         <Grid item  >
                                             <Typography
-                                                component="h1"
+                                                variant="h5"
+                                                className={typoClasses.text}
                                             >
-                                                {config.network.ip}
+                                                TIME
                                             </Typography>
                                         </Grid>
                                     </Grid>
@@ -187,19 +207,19 @@ export default function DashboardView() {
                         >
                             <Grid container direction="row" spacing={2} justifyContent="center" alignItems="center">
                                 <Grid item xs={6} >
-                                    <RelayButton relay='auto' state={config.states.automatic} offColor='red' />
+                                    <RelayButton relay='auto' state={config.states.automatic} offColor='#ff0000' />
                                 </Grid>
                                 <Grid item xs={6} >
-                                    <RelayButton relay='recover' state={config.states.recover} offColor='blue' />
+                                    <RelayButton relay='recover' state={config.states.recover} offColor='#0000ff' />
                                 </Grid>
                                 <Grid item xs={4} >
-                                    <RelayButton relay='filter' state={config.states.filterOn} offColor='blue' />
+                                    <RelayButton relay='filter' state={config.states.filterOn} offColor='#0000ff' />
                                 </Grid>
                                 <Grid item xs={4} >
-                                    <RelayButton relay='ch' state={config.states.chOn} offColor='blue' />
+                                    <RelayButton relay='ch' state={config.states.chOn} offColor='#0000ff' />
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <RelayButton relay='ph' state={config.states.phOn} offColor='blue' />
+                                    <RelayButton relay='ph' state={config.states.phOn} offColor='#0000ff' />
                                 </Grid>
                             </Grid>
                         </CardContent>

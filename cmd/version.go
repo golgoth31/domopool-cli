@@ -28,9 +28,9 @@ import (
 // versionCmd represents the version command
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "A brief description of your command",
+	Short: "Show versions.",
 	Run: func(cmd *cobra.Command, args []string) {
-		logger.StdLog.Info().Msgf("Version: %v, build from: %v, on: %v\n", configs.Version, configs.GitCommit, configs.BuildDate)
+		logger.StdLog.Info().Msgf("CLI/Web UI version: %v, build from: %v, on: %v\n", configs.Version, configs.GitCommit, configs.BuildDate)
 
 		infos := &domopool_proto.Infos{}
 		client := domoClient.NewClient()

@@ -38,9 +38,13 @@ run:
 	go mod download
 	go run main.go
 
+build:
+	cd web && yarn build
+	go build -ldflags '${LDFLAGS}' -o ./domopool main.go
+
 build_local:
 	go build -ldflags '${LDFLAGS}' -o ./domopool main.go
-build:
+build_docker:
 	docker build $(DOCKER_BUILD_ARGS) -t localhost/domopool:$(APP_VERSION) -f ./build/Dockerfile .
 lint:
 ifndef GOLINTER

@@ -31,13 +31,7 @@ import (
 // serveUiCmd represents the serveUi command
 var serveUiCmd = &cobra.Command{
 	Use:   "serveUi",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Server mode to access web UI.",
 	Run: func(cmd *cobra.Command, args []string) {
 		port, _ := cmd.Flags().GetInt("port")
 		e := echo.New()
@@ -52,7 +46,7 @@ to quickly create a Cobra application.`,
 			DomopoolBoxScheme: viper.GetString("boxScheme"),
 		}
 		t := &Template{
-			templates: template.Must(template.New("index").Parse(fmt.Sprintf("%s", templateString))),
+			templates: template.Must(template.New("index").Parse(string(templateString))),
 		}
 		e.Renderer = t
 		web2root, err := fs.Sub(web, "web/build")

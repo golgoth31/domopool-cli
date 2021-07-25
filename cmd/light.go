@@ -28,13 +28,7 @@ import (
 // lightCmd represents the filter command
 var lightCmd = &cobra.Command{
 	Use:   "light",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "The command to turn on or off the pool lights.",
 	Run: func(cmd *cobra.Command, args []string) {
 		setState, _ := cmd.Flags().GetString("state")
 		scheme := "http"
@@ -64,5 +58,7 @@ func init() {
 	rootCmd.AddCommand(lightCmd)
 
 	lightCmd.Flags().StringP("state", "s", "", "Help message for toggle")
-	lightCmd.MarkFlagRequired("state")
+	if err := lightCmd.MarkFlagRequired("state"); err != nil {
+		fmt.Println("Unable to mark flag as required.")
+	}
 }

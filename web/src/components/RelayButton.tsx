@@ -9,6 +9,7 @@ import {
     DialogContent,
     DialogActions,
     Switch,
+    Typography,
 } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import dataprovider from '../dataprovider/dataprovider';
@@ -40,7 +41,7 @@ const relayButtonStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         width: '100%',
         alignContent: 'center',
-        backgroundColor: (props: RelayButtonProps) => props.state ? "green" : props.offColor,
+        backgroundColor: (props: RelayButtonProps) => props.state ? "#00ff00" : props.offColor,
     },
 }));
 
@@ -216,7 +217,11 @@ export default function RelayButton(props: RelayButtonProps) {
                 className={classes.relayButton}
                 onClick={handleClickOpen}
             >
-                {props.relay}
+                <Typography
+                    variant="h5"
+                >
+                    {props.relay}
+                </Typography>
             </Button>
             <SimpleDialog
                 duration={duration}
