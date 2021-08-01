@@ -45,7 +45,7 @@ build:
 build_local:
 	go build -ldflags '${LDFLAGS}' -o ./domopool main.go
 build_docker:
-	docker build $(DOCKER_BUILD_ARGS) -t localhost/domopool:$(APP_VERSION) -f ./build/Dockerfile .
+	docker build $(DOCKER_BUILD_ARGS) -t localhost/domopool:$(APP_VERSION) .
 lint:
 ifndef GOLINTER
 	GO111MODULE=on go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.15
