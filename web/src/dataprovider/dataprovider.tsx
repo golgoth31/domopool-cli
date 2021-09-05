@@ -14,6 +14,6 @@ const instance = axios.create({
 });
 
 // Alter defaults after instance has been created
-instance.defaults.headers.common['Access-Control-Allow-Origin'] = "*";
+// instance.defaults.headers.common['Access-Control-Allow-Origin'] = "*";
 
 export default instance;
