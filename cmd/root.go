@@ -19,7 +19,6 @@ package cmd
 import (
 	"embed"
 	"fmt"
-	"net"
 	"os"
 
 	logger "github.com/golgoth31/domopool-cli/internal/log"
@@ -59,7 +58,7 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file (default is $HOME/.domopool-cli.yaml)")
 	rootCmd.PersistentFlags().Bool("debug", false, "debug")
-	rootCmd.PersistentFlags().IP("box-host", net.ParseIP(defaultIp), "ip of the domopool box")
+	rootCmd.PersistentFlags().String("box-host", defaultIp, "ip or hostname of the domopool box")
 	rootCmd.PersistentFlags().Int("box-port", 80, "port of the domopool box")
 	rootCmd.PersistentFlags().String("box-scheme", "http", "port of the domopool box")
 	rootCmd.PersistentFlags().String("api-version", "v1", "api version")
