@@ -22,10 +22,12 @@ import (
 	"net/http"
 	"text/template"
 
+	"github.com/golgoth31/domopool-cli/internal/domoConfig"
 	logger "github.com/golgoth31/domopool-cli/internal/log"
 	"github.com/labstack/echo/v4"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"google.golang.org/protobuf/proto"
 )
 
 // serveUiCmd represents the serveUi command
@@ -54,9 +56,16 @@ var serveUiCmd = &cobra.Command{
 			logger.StdLog.Fatal().Err(err).Msg("Unable to read sub path")
 		}
 		e.GET(
+			"/api/*",
+			func(c echo.Context) error {
+				config := domoConfig.GetConfig()
+				body, _ := proto.Marshal(config)
+				return c.Blob(http.StatusOK, "text/plain", body)
+			},
+		)
+		e.GET(
 			"/*",
 			echo.WrapHandler(
-
 				http.StripPrefix(
 					"/",
 					http.FileServer(
