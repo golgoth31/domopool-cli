@@ -11,7 +11,6 @@ RUN yarn install && yarn build
 # build binary
 FROM golang:1.16 as golang-build
 ENV GOOS=linux
-ENV GOARCH=amd64
 ENV CGO_ENABLED=0
 ENV GO111MODULE=on
 ENV GOPROXY=https://proxy.golang.org
