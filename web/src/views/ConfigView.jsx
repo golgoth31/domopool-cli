@@ -18,13 +18,14 @@ var domopool_pb = require('../proto/domopool_pb');
 
 export default class ConfigView extends React.Component {
     constructor(
-        private conf: any
-    ) { super(conf); };
-
-    state = {
-        config: this.conf,
-        ipDisabled: false,
-    }
+        conf
+    ) {
+        super(conf);
+        this.state = {
+            config: this.conf,
+            ipDisabled: false,
+        }
+    };
 
     componentDidMount() {
         dataprovider.get(`/api/v1/config`, {
@@ -39,7 +40,7 @@ export default class ConfigView extends React.Component {
     }
 
     render() {
-        if (this.state.config.global !== undefined) {
+        if (this.state.config !== undefined) {
             if (this.state.config.global.displayStartup === undefined) {
                 this.setState({ config: { global: { displayStartup: false } } });
             }

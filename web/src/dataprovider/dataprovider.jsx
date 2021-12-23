@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let boxURL: string;
+let boxURL;
 
 // if (window.DOMOPOOL_HOST !== '{{ .DomopoolBoxHost }}') {
 //     boxURL = window.DOMOPOOL_SCHEME + '://' + window.DOMOPOOL_HOST + ':' + window.DOMOPOOL_PORT;

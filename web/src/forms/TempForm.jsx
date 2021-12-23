@@ -3,7 +3,7 @@ import {
     Grid,
 } from "@material-ui/core";
 
-const TempForm = (props: any) => {
+const TempForm = (props) => {
     return (
         <Grid container spacing={2}>
             <Grid item>

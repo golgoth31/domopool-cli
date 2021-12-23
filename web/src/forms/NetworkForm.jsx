@@ -13,13 +13,15 @@ import { Grid } from "@material-ui/core";
 // export const ConfigForm: React.SFC = () => {
 export default class NetworkForm extends React.Component {
     constructor(
-        private conf: any
-    ) { super(conf); };
-    state = {
-        ipDisabled: this.conf.values.network.dhcp,
-    }
+        props
+    ) {
+        super(props);
+        this.state = {
+            ipDisabled: this.props.values.network.dhcp,
+        }
+    };
 
-    private validateIP = (value: any) => {
+    validateIP = (value) => {
         let error;
         if (!this.state.ipDisabled) {
             if (!value) {
@@ -30,7 +32,7 @@ export default class NetworkForm extends React.Component {
         }
         return error;
     }
-    public handleDHCPClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+    handleDHCPClick = (event) => {
         this.setState({ ipDisabled: event.target.checked });
     }
 

@@ -6,7 +6,7 @@ import {
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 // export const ConfigForm: React.SFC = () => {
-const TempFields = (props: any) => {
+const TempFields = (props) => {
     console.debug(props);
     return (
         <div>

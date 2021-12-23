@@ -11,12 +11,13 @@ var domopool_pb = require('../proto/domopool_pb');
 
 export default class MetricsView extends React.Component {
     constructor(
-        private alarms: any
-    ) { super(alarms); };
-
-    state = {
-        alarms: this.alarms,
-    }
+        props
+    ) {
+        super(props);
+        this.state = {
+            alarms: this.props,
+        }
+    };
 
     componentDidMount() {
         dataprovider.get(`/api/v1/alarms`, {

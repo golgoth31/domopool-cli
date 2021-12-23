@@ -11,24 +11,27 @@ import {
     Switch,
     Typography,
 } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
+import {
+    makeStyles,
+    Theme
+} from '@material-ui/core/styles';
 import dataprovider from '../dataprovider/dataprovider';
 
 var domopool_pb = require('../proto/domopool_pb');
 
-type RelayButtonProps = {
-    relay: string;
-    state: boolean;
-    offColor: string;
-};
+// type RelayButtonProps = {
+//     relay: string;
+//     state: boolean;
+//     offColor: string;
+// };
 
-type SimpleDialogProps = {
-    open: boolean;
-    duration: number;
-    relay: string;
-    state: boolean;
-    onClose: (value: number) => void;
-}
+// type SimpleDialogProps = {
+//     open: boolean;
+//     duration: number;
+//     relay: string;
+//     state: boolean;
+//     onClose: (value: number) => void;
+// }
 
 const useStyles = makeStyles({
     input: {
@@ -41,11 +44,11 @@ const relayButtonStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         width: '100%',
         alignContent: 'center',
-        backgroundColor: (props: RelayButtonProps) => props.state ? "#00ff00" : props.offColor,
+        backgroundColor: (props) => props.state ? "#00ff00" : props.offColor,
     },
 }));
 
-function apiPath(relay: string) {
+function apiPath(relay) {
     // Set api path
     let apiPath = '/api/v1/';
     switch (relay) {
@@ -65,10 +68,10 @@ function apiPath(relay: string) {
     return apiPath
 }
 
-function SimpleDialog(props: SimpleDialogProps) {
+function SimpleDialog(props) {
     const classes = useStyles();
     // const { onClose, duration, relay, state, open } = props;
-    const [value, setValue] = React.useState<number | string | Array<number | string>>(0);
+    const [value, setValue] = React.useState(0);
     const [state, setState] = React.useState(props.state);
 
     const handleClose = () => {
@@ -103,11 +106,11 @@ function SimpleDialog(props: SimpleDialogProps) {
         props.onClose(props.duration);
     };
 
-    const handleSliderChange = (event: any, newValue: number | number[]) => {
+    const handleSliderChange = (event, newValue) => {
         setValue(newValue);
     };
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (event) => {
         setValue(event.target.value === '' ? '' : Number(event.target.value));
     };
 
@@ -119,7 +122,7 @@ function SimpleDialog(props: SimpleDialogProps) {
         }
     };
 
-    const handleSwitch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleSwitch = (event) => {
         setState(event.target.checked);
     };
 
@@ -182,7 +185,7 @@ function SimpleDialog(props: SimpleDialogProps) {
     );
 }
 
-export default function RelayButton(props: RelayButtonProps) {
+export default function RelayButton(props) {
     const [open, setOpen] = React.useState(false);
     const [duration, setDuration] = React.useState(0);
     const handleClickOpen = () => {
@@ -204,7 +207,7 @@ export default function RelayButton(props: RelayButtonProps) {
         }
     };
 
-    const handleClose = (value: number) => {
+    const handleClose = (value) => {
         setOpen(false);
         setDuration(value);
     };

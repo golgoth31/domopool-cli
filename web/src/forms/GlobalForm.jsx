@@ -11,9 +11,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 // export const ConfigForm: React.SFC = () => {
 export default class GlobalForm extends React.Component {
-
-
-    private validateNumber(value: any) {
+    validateNumber(value) {
         let error;
         if (!value) {
             error = 'Required';

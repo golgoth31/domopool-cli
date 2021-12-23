@@ -6,13 +6,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Dashboard from './layouts/Dashboard';
 import theme from './theme/theme';
 
-declare global {
-    interface Window {
-        DOMOPOOL_HOST: string;
-        DOMOPOOL_PORT: string;
-        DOMOPOOL_SCHEME: string;
-    }
-}
+// declare global {
+//     interface Window {
+//         DOMOPOOL_HOST: string;
+//         DOMOPOOL_PORT: string;
+//         DOMOPOOL_SCHEME: string;
+//     }
 
 ReactDOM.render(
     <BrowserRouter>
