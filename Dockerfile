@@ -5,10 +5,8 @@ RUN apk add -U --no-cache ca-certificates
 # build UI
 FROM node:12-alpine as react-build
 WORKDIR /usr/src/app
-COPY web/package.json web/yarn.lock ./
-RUN yarn install
 COPY ./web .
-RUN yarn build
+RUN yarn install && yarn build
 
 # build binary
 FROM golang:1.16 as golang-build
