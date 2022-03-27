@@ -1,26 +1,28 @@
 import * as React from "react";
 import dataprovider from '../dataprovider/dataprovider';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
+import {
+    LinearProgress,
+    Card,
+    CardContent,
+    Switch,
+    FormControlLabel,
+    FormGroup,
+} from "@material-ui/core";
 
 var domopool_pb = require('../proto/domopool_pb');
 
-export default class MetricsView extends React.Component {
+export default class AlarmsView extends React.Component {
     constructor(
-        props
+        alarms
     ) {
-        super(props);
+        super(alarms);
         this.state = {
-            alarms: this.props,
+            alarms: this.alarms,
         }
     };
 
     componentDidMount() {
-        dataprovider.get(`/api/v1/alarms`, {
+        dataprovider.get(`/api/v1/config`, {
             responseType: 'arraybuffer'
             // headers: {
             //   'Access-Control-Allow-Origin': '*',
@@ -30,7 +32,8 @@ export default class MetricsView extends React.Component {
         })
             .then(res => {
                 const resp = res.data;
-                this.setState({ alarms: domopool_pb.Alarms.deserializeBinary(resp).toObject() });
+                let config = domopool_pb.Config.deserializeBinary(resp).toObject();
+                this.setState({ alarms: config.alarms });
                 console.log(this.state.alarms);
             })
     }
@@ -46,7 +49,7 @@ export default class MetricsView extends React.Component {
     // }
 
     render() {
-        if (this.state.alarms.wpLow !== undefined) {
+        if (this.state.alarms !== undefined) {
             // if (this.state.config.global.displayStartup == undefined) {
             //   this.state.config.global.displayStartup = false;
             // }
@@ -83,7 +86,11 @@ export default class MetricsView extends React.Component {
             )
         } else {
             return (
-                <CircularProgress />
+                <Card>
+                    <CardContent>
+                        <LinearProgress />
+                    </CardContent>
+                </Card>
             )
         }
     };
