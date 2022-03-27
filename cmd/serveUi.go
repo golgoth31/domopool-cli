@@ -16,12 +16,14 @@ limitations under the License.
 package cmd
 
 import (
+	"errors"
 	"fmt"
 	"io"
 	"io/fs"
 	"net/http"
 	"text/template"
 
+	"github.com/golgoth31/domopool-cli/internal/domoClient"
 	"github.com/golgoth31/domopool-cli/internal/domoConfig"
 	logger "github.com/golgoth31/domopool-cli/internal/log"
 	"github.com/labstack/echo/v4"
@@ -61,6 +63,18 @@ var serveUiCmd = &cobra.Command{
 				config := domoConfig.GetConfig()
 				body, _ := proto.Marshal(config)
 				return c.Blob(http.StatusOK, "text/plain", body)
+			},
+		)
+		e.POST(
+			"/api/*",
+			func(c echo.Context) error {
+				client := domoClient.NewClient()
+				resp := client.Post(c.Request().URL.RequestURI(), c.Request().Body)
+				if resp.StatusCode() != 200 {
+					return errors.New(resp.Status())
+				}
+				// logger.StdLog.Error().Msgf("URI: %s", c.Request().URL.RequestURI())
+				return nil
 			},
 		)
 		e.GET(

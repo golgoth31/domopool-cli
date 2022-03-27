@@ -9,7 +9,7 @@ COPY ./web .
 RUN yarn install && yarn build
 
 # build binary
-FROM golang:1.16 as golang-build
+FROM golang:1.17 as golang-build
 ENV CGO_ENABLED=0
 ENV GO111MODULE=on
 ENV GOPROXY=https://proxy.golang.org
