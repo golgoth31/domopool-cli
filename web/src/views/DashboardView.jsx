@@ -60,17 +60,42 @@ export default function DashboardView() {
                     <Card
                         variant="outlined"
                     >
-                        <CardHeader
-                            title="Twater"
-                        />
-                        <CardContent>
-                            <Typography
-                                variant="h5"
-                                align="center"
-                            >
-                                {config.metrics.twater + " °C"}
-                            </Typography>
-                        </CardContent>
+                        <Grid container direction="row" spacing={0}>
+                            <Grid item xs={6}>
+                                <Card
+                                    variant="outlined"
+                                >
+                                    <CardHeader
+                                        title="Current Twater"
+                                    />
+                                    <CardContent>
+                                        <Typography
+                                            variant="h5"
+                                            align="center"
+                                        >
+                                            {config.metrics.twater + " °C"}
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <Card
+                                    variant="outlined"
+                                >
+                                    <CardHeader
+                                        title="Saved Twater"
+                                    />
+                                    <CardContent>
+                                        <Typography
+                                            variant="h5"
+                                            align="center"
+                                        >
+                                            {config.metrics.savedTwater + " °C"}
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        </Grid >
                     </Card>
                 </Grid>
                 <Grid item xs={6}>
