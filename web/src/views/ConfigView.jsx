@@ -11,7 +11,7 @@ import {
     LinearProgress,
     Card,
     CardContent,
-} from "@material-ui/core";
+} from "@mui/material";
 import TempForm from '../forms/TempForm';
 
 var domopool_pb = require('../proto/domopool_pb');

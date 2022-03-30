@@ -10,28 +10,13 @@ import {
     DialogActions,
     Switch,
     Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import {
-    makeStyles,
-    Theme
-} from '@material-ui/core/styles';
+    makeStyles
+} from '@mui/styles';
 import dataprovider from '../dataprovider/dataprovider';
 
 var domopool_pb = require('../proto/domopool_pb');
-
-// type RelayButtonProps = {
-//     relay: string;
-//     state: boolean;
-//     offColor: string;
-// };
-
-// type SimpleDialogProps = {
-//     open: boolean;
-//     duration: number;
-//     relay: string;
-//     state: boolean;
-//     onClose: (value: number) => void;
-// }
 
 const useStyles = makeStyles({
     input: {
@@ -44,7 +29,6 @@ const relayButtonStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         width: '100%',
         alignContent: 'center',
-        backgroundColor: (props) => props.state ? "#00ff00" : props.offColor,
     },
 }));
 
@@ -219,6 +203,7 @@ export default function RelayButton(props) {
                 variant="contained"
                 className={classes.relayButton}
                 onClick={handleClickOpen}
+                color={props.state ? "success" : props.offColor}
             >
                 <Typography
                     variant="h5"

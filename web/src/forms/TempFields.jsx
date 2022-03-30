@@ -2,7 +2,7 @@ import {
     TextField,
     Checkbox,
     FormControlLabel,
-} from '@material-ui/core';
+} from '@mui/material';
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 // export const ConfigForm: React.SFC = () => {

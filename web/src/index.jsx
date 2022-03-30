@@ -1,10 +1,11 @@
 // import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
 import Dashboard from './layouts/Dashboard';
-import theme from './theme/theme';
+import mytheme from './theme/theme';
 
 // declare global {
 //     interface Window {
@@ -15,9 +16,11 @@ import theme from './theme/theme';
 
 ReactDOM.render(
     <BrowserRouter>
-        <ThemeProvider theme={theme}>
-            < CssBaseline />
+        <ThemeProvider theme={mytheme}>
+            {/* <Box sx={{ display: 'flex' }}>
+                <CssBaseline /> */}
             <Dashboard />
+            {/* </Box> */}
         </ThemeProvider>
     </BrowserRouter>,
     document.querySelector('#root'),

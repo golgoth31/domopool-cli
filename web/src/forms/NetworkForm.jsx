@@ -5,10 +5,12 @@ import {
 import {
     TextField,
     Checkbox,
-} from 'formik-material-ui';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+} from 'formik-mui';
 import isIp from 'is-ip';
-import { Grid } from "@material-ui/core";
+import {
+    Grid,
+    FormControlLabel
+} from "@mui/material";
 
 // export const ConfigForm: React.SFC = () => {
 export default class NetworkForm extends React.Component {

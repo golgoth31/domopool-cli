@@ -3,11 +3,11 @@ import dataprovider from '../dataprovider/dataprovider';
 import {
     LinearProgress,
     Card,
-    CardContent,
-    Switch,
-    FormControlLabel,
-    FormGroup,
-} from "@material-ui/core";
+    CardContent
+} from "@mui/material";
+import Chip from '@mui/material/Chip';
+import AlarmOnIcon from '@mui/icons-material/AlarmOn';
+import AlarmOffIcon from '@mui/icons-material/AlarmOff';
 
 var domopool_pb = require('../proto/domopool_pb');
 
@@ -24,11 +24,6 @@ export default class AlarmsView extends React.Component {
     componentDidMount() {
         dataprovider.get(`/api/v1/config`, {
             responseType: 'arraybuffer'
-            // headers: {
-            //   'Access-Control-Allow-Origin': '*',
-            //   'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-            //   'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
-            // }
         })
             .then(res => {
                 const resp = res.data;
@@ -38,50 +33,22 @@ export default class AlarmsView extends React.Component {
             })
     }
 
-    // private validateEmail(value) {
-    //   let error;
-    //   if (!value) {
-    //     error = 'Required';
-    //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-    //     error = 'Invalid email address';
-    //   }
-    //   return error;
-    // }
-
     render() {
         if (this.state.alarms !== undefined) {
-            // if (this.state.config.global.displayStartup == undefined) {
-            //   this.state.config.global.displayStartup = false;
-            // }
-
             return (
                 <Card>
                     <CardContent>
-                        <FormGroup>
-                            <FormControlLabel
-                                control={<Switch
-                                    checked={this.state.alarms.wpLow}
-                                    name="wpLow"
-                                    inputProps={{ 'aria-label': 'secondary checkbox' }}
-                                />}
-                                label="Water pressure low"
-                                labelPlacement="end"
-                            />
-
-                            <FormControlLabel
-                                control={<Switch
-                                    checked={this.state.alarms.wpHigh}
-                                    name="wpHigh"
-                                    inputProps={{ 'aria-label': 'secondary checkbox' }}
-                                />}
-                                label="Water pressure high"
-                                labelPlacement="end"
-                            />
-                        </FormGroup>
+                        <Chip
+                            label="Water pressure low"
+                            color={this.state.alarms.wpLow ? "error" : "success"}
+                            icon={this.state.alarms.wpLow ? <AlarmOnIcon /> : <AlarmOffIcon />}
+                        />
+                        <Chip
+                            label="Water pressure high"
+                            color={this.state.alarms.wpHigh ? "error" : "success"}
+                            icon={this.state.alarms.wpHigh ? <AlarmOnIcon /> : <AlarmOffIcon />}
+                        />
                     </CardContent>
-                    {/* <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions> */}
                 </Card>
             )
         } else {

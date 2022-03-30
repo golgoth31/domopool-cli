@@ -8,24 +8,14 @@ import {
     Grid,
     CardHeader,
     Typography,
-} from "@material-ui/core";
-import useStyles from '../theme/useStyles';
-import { makeStyles } from '@material-ui/core/styles';
+} from "@mui/material";
+import { makeStyles } from '@mui/styles';
 import RelayButton from '../components/RelayButton';
 
 var domopool_pb = require('../proto/domopool_pb');
 
-const typographyStyles = makeStyles((theme) => ({
-    text: {
-        color: "#00ff00"
-    }
-}));
-
 export default function DashboardView() {
     const [config, setConfig] = useState(domopool_pb.Config);
-    const props = { state: false, offColor: '' };
-    const classes = useStyles(props);
-    const typoClasses = typographyStyles();
 
     useEffect(
         () => {
@@ -157,9 +147,7 @@ export default function DashboardView() {
                         <CardHeader
                             title="Infos"
                         />
-                        <CardContent
-                            className={classes.cardDashboard}
-                        >
+                        <CardContent>
                             <Grid container direction="row" spacing={2} justifyContent="center" alignItems="center">
                                 <Grid item xs={6} >
                                     <Grid container direction="column" spacing={2} alignItems="flex-start">
@@ -191,8 +179,7 @@ export default function DashboardView() {
                                         <Grid item  >
                                             <Typography
                                                 variant="h5"
-                                                className={typoClasses.text}
-                                            // color={net_color}
+                                                color={config.states.netActive ? "success.main" : "error"}
                                             >
                                                 NET
                                             </Typography>
@@ -200,7 +187,7 @@ export default function DashboardView() {
                                         <Grid item  >
                                             <Typography
                                                 variant="h5"
-                                                className={typoClasses.text}
+                                                color={config.states.mqttConnected ? "success.main" : "error"}
                                             >
                                                 MQTT
                                             </Typography>
@@ -208,7 +195,7 @@ export default function DashboardView() {
                                         <Grid item  >
                                             <Typography
                                                 variant="h5"
-                                                className={typoClasses.text}
+                                                color={config.states.ntp ? "success.main" : "error"}
                                             >
                                                 TIME
                                             </Typography>
@@ -227,24 +214,22 @@ export default function DashboardView() {
                         <CardHeader
                             title="Relay"
                         />
-                        <CardContent
-                            className={classes.cardDashboard}
-                        >
+                        <CardContent>
                             <Grid container direction="row" spacing={2} justifyContent="center" alignItems="center">
                                 <Grid item xs={6} >
-                                    <RelayButton relay='auto' state={config.states.automatic} offColor='#ff0000' />
+                                    <RelayButton relay='auto' state={config.states.automatic} offColor='error' />
                                 </Grid>
                                 <Grid item xs={6} >
-                                    <RelayButton relay='recover' state={config.states.recover} offColor='#0000ff' />
+                                    <RelayButton relay='recover' state={config.states.recover} offColor='primary' />
                                 </Grid>
                                 <Grid item xs={4} >
-                                    <RelayButton relay='filter' state={config.states.filterOn} offColor='#0000ff' />
+                                    <RelayButton relay='filter' state={config.states.filterOn} offColor='primary' />
                                 </Grid>
                                 <Grid item xs={4} >
-                                    <RelayButton relay='ch' state={config.states.chOn} offColor='#0000ff' />
+                                    <RelayButton relay='ch' state={config.states.chOn} offColor='primary' />
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <RelayButton relay='ph' state={config.states.phOn} offColor='#0000ff' />
+                                    <RelayButton relay='ph' state={config.states.phOn} offColor='primary' />
                                 </Grid>
                             </Grid>
                         </CardContent>

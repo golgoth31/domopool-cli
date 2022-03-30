@@ -5,9 +5,11 @@ import {
 import {
     TextField,
     Checkbox,
-} from 'formik-material-ui';
-import { Grid } from "@material-ui/core";
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+} from 'formik-mui';
+import {
+    Grid,
+    FormControlLabel
+} from "@mui/material";
 
 // export const ConfigForm: React.SFC = () => {
 export default class GlobalForm extends React.Component {

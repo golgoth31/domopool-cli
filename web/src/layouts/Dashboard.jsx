@@ -1,52 +1,71 @@
 import * as React from "react";
-import clsx from 'clsx';
-import Drawer from '@material-ui/core/Drawer';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import Container from '@material-ui/core/Container';
-// import List from '@material-ui/core/List';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-// import MainListItems from './Menu';
+import {
+    Container
+} from '@mui/material';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import CssBaseline from '@mui/material/CssBaseline';
 import TopAppBar from './AppBar';
 import Routes from '../routes';
-import useStyles from '../theme/useStyles';
-import MenuLayout from "./Menu";
+// import useStyles from '../theme/useStyles.jsx.old';
+import SideDrawer from "./Drawer";
 
 // export default function Dashboard() {
-export default function Dashboard() {
+//     const [open, setOpen] = React.useState(true);
+//     const classes = useStyles();
+//     const toggleDrawer = () => {
+//         setOpen(!open);
+//     };
+
+//     return (
+//         <div className={classes.root} >
+//             <TopAppBar toggleDrawer={toggleDrawer} open={open} />
+//             <SideDrawer toggleDrawer={toggleDrawer} open={open} />
+
+//             <main className={classes.content}>
+//                 <div className={classes.appBarSpacer} />
+//                 <Container maxWidth="lg" className={classes.container}>
+//                     <Routes />
+//                 </Container>
+//             </main>
+//         </div>
+//     );
+// }
+
+function DashboardContent() {
     const [open, setOpen] = React.useState(true);
-    const classes = useStyles();
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-    const handleDrawerClose = () => {
-        setOpen(false);
+    const toggleDrawer = () => {
+        setOpen(!open);
     };
 
     return (
-        <div className={classes.root} >
-            <TopAppBar handleDrawerOpen={handleDrawerOpen} open={open} />
-            <Drawer
-                variant="permanent"
-                classes={{
-                    paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+        <Box sx={{ display: 'flex' }}>
+            <CssBaseline />
+
+            <TopAppBar toggleDrawer={toggleDrawer} open={open} />
+            <SideDrawer toggleDrawer={toggleDrawer} open={open} />
+
+            <Box
+                component="main"
+                sx={{
+                    backgroundColor: (theme) =>
+                        theme.palette.mode === 'light'
+                            ? theme.palette.grey[100]
+                            : theme.palette.grey[900],
+                    flexGrow: 1,
+                    height: '100vh',
+                    overflow: 'auto',
                 }}
-                open={open}
             >
-                <div className={classes.toolbarIcon}>
-                    <IconButton onClick={handleDrawerClose}>
-                        <ChevronLeftIcon />
-                    </IconButton>
-                </div>
-                <Divider />
-                <MenuLayout handleDrawerClose={handleDrawerClose} />
-            </Drawer>
-            <main className={classes.content}>
-                <div className={classes.appBarSpacer} />
-                <Container maxWidth="lg" className={classes.container}>
+                <Toolbar />
+                <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                     <Routes />
                 </Container>
-            </main>
-        </div>
+            </Box>
+        </Box>
     );
+}
+
+export default function Dashboard() {
+    return <DashboardContent />;
 }

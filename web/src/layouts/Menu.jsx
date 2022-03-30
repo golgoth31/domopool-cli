@@ -1,42 +1,38 @@
 import { Link } from 'react-router-dom';
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core/';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import HomeIcon from '@material-ui/icons/Home';
+import * as React from 'react';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PeopleIcon from '@mui/icons-material/People';
+import HomeIcon from '@mui/icons-material/Home';
 
-const MenuLayout = (props: any) => {
-    return (
-        <List>
-            <ListItem button component={Link} to="/" onClick={props.handleDrawerClose}>
-                <ListItemIcon>
-                    <HomeIcon />
-                </ListItemIcon>
-                <ListItemText primary="Home" />
-            </ListItem>
-
-            <ListItem button component={Link} to="/config" onClick={props.handleDrawerClose}>
-                <ListItemIcon>
-                    <DashboardIcon />
-                </ListItemIcon>
-                <ListItemText primary="Config" />
-            </ListItem>
-
-            <ListItem button>
-                <ListItemIcon>
-                    <ShoppingCartIcon />
-                </ListItemIcon>
-                <ListItemText primary="Data" />
-            </ListItem>
-
-            <ListItem button component={Link} to="/alarms" onClick={props.handleDrawerClose}>
-                <ListItemIcon>
-                    <PeopleIcon />
-                </ListItemIcon>
-                <ListItemText primary="Alarms" />
-            </ListItem>
-        </List>
-    )
-};
-
-export default MenuLayout;
+export const mainListItems = (
+    <React.Fragment>
+        <ListItemButton component={Link} to="/">
+            <ListItemIcon>
+                <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+        </ListItemButton>
+        <ListItemButton component={Link} to="/config">
+            <ListItemIcon>
+                <DashboardIcon />
+            </ListItemIcon>
+            <ListItemText primary="Config" />
+        </ListItemButton>
+        <ListItemButton>
+            <ListItemIcon>
+                <ShoppingCartIcon />
+            </ListItemIcon>
+            <ListItemText primary="Data" />
+        </ListItemButton>
+        <ListItemButton component={Link} to="/alarms">
+            <ListItemIcon>
+                <PeopleIcon />
+            </ListItemIcon>
+            <ListItemText primary="Alarms" />
+        </ListItemButton>
+    </React.Fragment>
+);
