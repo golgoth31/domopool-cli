@@ -26,19 +26,13 @@ import (
 
 // autoCmd represents the filter command
 var autoCmd = &cobra.Command{
-	Use:   "auto",
+	Use:   "disable_auto",
 	Short: "Set automatic or recover mode.",
 	Run: func(cmd *cobra.Command, args []string) {
 		client := domoClient.NewClient()
 		logger.StdLog.Info().Msg("Setting domopool in automatic mode")
 
-		resp := client.Post("/api/v1/auto", nil)
-
-		recover, _ := cmd.Flags().GetBool("recover")
-		if recover {
-			resp = client.Post("/api/v1/recover", nil)
-			logger.StdLog.Info().Msg("Forcing recover mode")
-		}
+		resp := client.Post("/api/v1/auto/disable", nil)
 
 		if resp.StatusCode() == 200 {
 			time.Sleep(2 * time.Second)
@@ -52,5 +46,4 @@ var autoCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(autoCmd)
-	autoCmd.Flags().BoolP("recover", "r", false, "Put pool in recover mode (reopening before summer)")
 }

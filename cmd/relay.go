@@ -45,26 +45,26 @@ var relayCmd = &cobra.Command{
 			logger.StdLog.Info().Msgf("Setting ch relay: %s", setState)
 			relay.Relay = domopool_proto.RelayNames(domopool_proto.RelayNames_value["ch"])
 
-			makeRequest(relay)
+			makeRelayRequest(relay)
 			time.Sleep(2 * time.Second)
 		}
 		if setPh {
 			logger.StdLog.Info().Msgf("Setting ch relay: %s", setState)
 			relay.Relay = domopool_proto.RelayNames(domopool_proto.RelayNames_value["ph"])
 
-			makeRequest(relay)
+			makeRelayRequest(relay)
 		}
 
 		if !setCh && !setPh {
 			logger.StdLog.Info().Msgf("Setting filter relay: %s", setState)
 			relay.Relay = domopool_proto.RelayNames(domopool_proto.RelayNames_value["filter"])
 
-			makeRequest(relay)
+			makeRelayRequest(relay)
 		}
 	},
 }
 
-func makeRequest(relay *domopool_proto.Relay) {
+func makeRelayRequest(relay *domopool_proto.Relay) {
 	client := domoClient.NewClient()
 	body, _ := proto.Marshal(relay)
 	resp := client.Post(fmt.Sprintf("api/%s/%s", viper.GetString("api.version"), "relay"), body)

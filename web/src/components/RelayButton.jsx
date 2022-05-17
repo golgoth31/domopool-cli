@@ -36,11 +36,10 @@ function apiPath(relay) {
     // Set api path
     let apiPath = '/api/v1/';
     switch (relay) {
-        case 'auto':
-            apiPath = apiPath + 'auto';
-            break;
-        case 'recover':
-            apiPath = apiPath + 'recover';
+        case 'dyn':
+        case 'half':
+        case 'full':
+            apiPath = apiPath + 'pump/time';
             break;
         case 'filter':
         case 'ch':
@@ -179,8 +178,9 @@ export default function RelayButton(props) {
             case 'ph':
                 setOpen(true);
                 break;
-            case 'auto':
-            case 'recover':
+            case 'dyn':
+            case 'half':
+            case 'full':
                 dataprovider.post(
                     apiPath(props.relay)
                 ).then(function (response) {

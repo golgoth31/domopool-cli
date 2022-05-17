@@ -216,11 +216,14 @@ export default function DashboardView() {
                         />
                         <CardContent>
                             <Grid container direction="row" spacing={2} justifyContent="center" alignItems="center">
-                                <Grid item xs={6} >
-                                    <RelayButton relay='auto' state={config.states.automatic} offColor='error' />
+                                <Grid item xs={4} >
+                                    <RelayButton relay='dyn' state={config.states.dynamic} offColor='primary' />
                                 </Grid>
-                                <Grid item xs={6} >
-                                    <RelayButton relay='recover' state={config.states.recover} offColor='primary' />
+                                <Grid item xs={4} >
+                                    <RelayButton relay='half' state={config.states.halfDay} offColor='primary' />
+                                </Grid>
+                                <Grid item xs={4} >
+                                    <RelayButton relay='full' state={config.states.fullDay} offColor='primary' />
                                 </Grid>
                                 <Grid item xs={4} >
                                     <RelayButton relay='filter' state={config.states.filterOn} offColor='primary' />

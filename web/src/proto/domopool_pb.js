@@ -2,6 +2,7 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
@@ -27,6 +28,7 @@ goog.exportSymbol('proto.domopool.MqttAlarms', null, global);
 goog.exportSymbol('proto.domopool.NTP', null, global);
 goog.exportSymbol('proto.domopool.Network', null, global);
 goog.exportSymbol('proto.domopool.Pump', null, global);
+goog.exportSymbol('proto.domopool.Pump_timing', null, global);
 goog.exportSymbol('proto.domopool.Relay', null, global);
 goog.exportSymbol('proto.domopool.Relay_names', null, global);
 goog.exportSymbol('proto.domopool.Relay_states', null, global);
@@ -3151,7 +3153,8 @@ proto.domopool.Pump.toObject = function(includeInstance, msg) {
     recover: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     forceCheck: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     forceDuration: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    forceStartTime: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    forceStartTime: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    timing: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -3219,6 +3222,10 @@ proto.domopool.Pump.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setForceStartTime(value);
+      break;
+    case 9:
+      var value = /** @type {!proto.domopool.Pump_timing} */ (reader.readEnum());
+      msg.setTiming(value);
       break;
     default:
       reader.skipField();
@@ -3302,6 +3309,13 @@ proto.domopool.Pump.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeUint32(
       8,
+      f
+    );
+  }
+  f = message.getTiming();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      9,
       f
     );
   }
@@ -3449,6 +3463,24 @@ proto.domopool.Pump.prototype.getForceStartTime = function() {
  */
 proto.domopool.Pump.prototype.setForceStartTime = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional Pump_timing timing = 9;
+ * @return {!proto.domopool.Pump_timing}
+ */
+proto.domopool.Pump.prototype.getTiming = function() {
+  return /** @type {!proto.domopool.Pump_timing} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {!proto.domopool.Pump_timing} value
+ * @return {!proto.domopool.Pump} returns this
+ */
+proto.domopool.Pump.prototype.setTiming = function(value) {
+  return jspb.Message.setProto3EnumField(this, 9, value);
 };
 
 
@@ -5116,7 +5148,10 @@ proto.domopool.States.toObject = function(includeInstance, msg) {
     rtc: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     lightOn: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     mqttConnected: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    recover: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
+    recover: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    dynamic: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    halfDay: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    fullDay: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -5196,6 +5231,18 @@ proto.domopool.States.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRecover(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDynamic(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHalfDay(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFullDay(value);
       break;
     default:
       reader.skipField();
@@ -5300,6 +5347,27 @@ proto.domopool.States.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       11,
+      f
+    );
+  }
+  f = message.getDynamic();
+  if (f) {
+    writer.writeBool(
+      12,
+      f
+    );
+  }
+  f = message.getHalfDay();
+  if (f) {
+    writer.writeBool(
+      13,
+      f
+    );
+  }
+  f = message.getFullDay();
+  if (f) {
+    writer.writeBool(
+      14,
       f
     );
   }
@@ -5501,6 +5569,60 @@ proto.domopool.States.prototype.getRecover = function() {
  */
 proto.domopool.States.prototype.setRecover = function(value) {
   return jspb.Message.setProto3BooleanField(this, 11, value);
+};
+
+
+/**
+ * optional bool dynamic = 12;
+ * @return {boolean}
+ */
+proto.domopool.States.prototype.getDynamic = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.domopool.States} returns this
+ */
+proto.domopool.States.prototype.setDynamic = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
+};
+
+
+/**
+ * optional bool half_day = 13;
+ * @return {boolean}
+ */
+proto.domopool.States.prototype.getHalfDay = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.domopool.States} returns this
+ */
+proto.domopool.States.prototype.setHalfDay = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 13, value);
+};
+
+
+/**
+ * optional bool full_day = 14;
+ * @return {boolean}
+ */
+proto.domopool.States.prototype.getFullDay = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.domopool.States} returns this
+ */
+proto.domopool.States.prototype.setFullDay = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
@@ -6944,6 +7066,16 @@ proto.domopool.Relay.prototype.setStartTime = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.domopool.Pump_timing = {
+  NOTHING: 0,
+  DYNAMIC: 1,
+  HALF_DAY: 2,
+  FULL_DAY: 3
+};
 
 /**
  * @enum {number}
