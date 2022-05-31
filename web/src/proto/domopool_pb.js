@@ -1390,8 +1390,8 @@ proto.domopool.Limits.prototype.toObject = function(opt_includeInstance) {
  */
 proto.domopool.Limits.toObject = function(includeInstance, msg) {
   var f, obj = {
-    wpMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    wpMax: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    wpMin: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    wpMax: jspb.Message.getFieldWithDefault(msg, 2, 0),
     phMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     phMax: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
     chMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
@@ -1400,7 +1400,7 @@ proto.domopool.Limits.toObject = function(includeInstance, msg) {
     chWaitBeforeDeny: jspb.Message.getFieldWithDefault(msg, 8, 0),
     chTempThresholdHigh: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
     chTempThresholdLow: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
-    wp0Derive: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
+    wp0Derive: jspb.Message.getFieldWithDefault(msg, 11, 0),
     twMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
     twMax: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
     tambMin: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0)
@@ -1441,11 +1441,11 @@ proto.domopool.Limits.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setWpMin(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setWpMax(value);
       break;
     case 3:
@@ -1481,7 +1481,7 @@ proto.domopool.Limits.deserializeBinaryFromReader = function(msg, reader) {
       msg.setChTempThresholdLow(value);
       break;
     case 11:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setWp0Derive(value);
       break;
     case 12:
@@ -1526,15 +1526,15 @@ proto.domopool.Limits.prototype.serializeBinary = function() {
 proto.domopool.Limits.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getWpMin();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeUint32(
       1,
       f
     );
   }
   f = message.getWpMax();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeUint32(
       2,
       f
     );
@@ -1596,8 +1596,8 @@ proto.domopool.Limits.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getWp0Derive();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeUint32(
       11,
       f
     );
@@ -1627,11 +1627,11 @@ proto.domopool.Limits.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional float wp_min = 1;
+ * optional uint32 wp_min = 1;
  * @return {number}
  */
 proto.domopool.Limits.prototype.getWpMin = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -1640,16 +1640,16 @@ proto.domopool.Limits.prototype.getWpMin = function() {
  * @return {!proto.domopool.Limits} returns this
  */
 proto.domopool.Limits.prototype.setWpMin = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional float wp_max = 2;
+ * optional uint32 wp_max = 2;
  * @return {number}
  */
 proto.domopool.Limits.prototype.getWpMax = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -1658,7 +1658,7 @@ proto.domopool.Limits.prototype.getWpMax = function() {
  * @return {!proto.domopool.Limits} returns this
  */
 proto.domopool.Limits.prototype.setWpMax = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -1807,11 +1807,11 @@ proto.domopool.Limits.prototype.setChTempThresholdLow = function(value) {
 
 
 /**
- * optional float wp_0_derive = 11;
+ * optional uint32 wp_0_derive = 11;
  * @return {number}
  */
 proto.domopool.Limits.prototype.getWp0Derive = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
@@ -1820,7 +1820,7 @@ proto.domopool.Limits.prototype.getWp0Derive = function() {
  * @return {!proto.domopool.Limits} returns this
  */
 proto.domopool.Limits.prototype.setWp0Derive = function(value) {
-  return jspb.Message.setProto3FloatField(this, 11, value);
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -1912,12 +1912,13 @@ proto.domopool.AnalogSensor.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     adcPin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    threshold: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    threshold: jspb.Message.getFieldWithDefault(msg, 2, 0),
     thresholdAccuracy: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    vmin: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    vmax: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+    vmin: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    vmax: jspb.Message.getFieldWithDefault(msg, 6, 0),
     precisionFactor: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    autoCal: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    autoCal: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    vAccuracy: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -1963,7 +1964,7 @@ proto.domopool.AnalogSensor.deserializeBinaryFromReader = function(msg, reader) 
       msg.setAdcPin(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setThreshold(value);
       break;
     case 4:
@@ -1971,11 +1972,11 @@ proto.domopool.AnalogSensor.deserializeBinaryFromReader = function(msg, reader) 
       msg.setThresholdAccuracy(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setVmin(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setVmax(value);
       break;
     case 7:
@@ -1985,6 +1986,10 @@ proto.domopool.AnalogSensor.deserializeBinaryFromReader = function(msg, reader) 
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAutoCal(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setVAccuracy(value);
       break;
     default:
       reader.skipField();
@@ -2030,8 +2035,8 @@ proto.domopool.AnalogSensor.serializeBinaryToWriter = function(message, writer) 
     );
   }
   f = message.getThreshold();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeUint32(
       2,
       f
     );
@@ -2044,15 +2049,15 @@ proto.domopool.AnalogSensor.serializeBinaryToWriter = function(message, writer) 
     );
   }
   f = message.getVmin();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeUint32(
       5,
       f
     );
   }
   f = message.getVmax();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeUint32(
       6,
       f
     );
@@ -2068,6 +2073,13 @@ proto.domopool.AnalogSensor.serializeBinaryToWriter = function(message, writer) 
   if (f) {
     writer.writeBool(
       8,
+      f
+    );
+  }
+  f = message.getVAccuracy();
+  if (f !== 0) {
+    writer.writeUint32(
+      9,
       f
     );
   }
@@ -2111,11 +2123,11 @@ proto.domopool.AnalogSensor.prototype.setAdcPin = function(value) {
 
 
 /**
- * optional float threshold = 2;
+ * optional uint32 threshold = 2;
  * @return {number}
  */
 proto.domopool.AnalogSensor.prototype.getThreshold = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -2124,7 +2136,7 @@ proto.domopool.AnalogSensor.prototype.getThreshold = function() {
  * @return {!proto.domopool.AnalogSensor} returns this
  */
 proto.domopool.AnalogSensor.prototype.setThreshold = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -2147,11 +2159,11 @@ proto.domopool.AnalogSensor.prototype.setThresholdAccuracy = function(value) {
 
 
 /**
- * optional float vmin = 5;
+ * optional uint32 vmin = 5;
  * @return {number}
  */
 proto.domopool.AnalogSensor.prototype.getVmin = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -2160,16 +2172,16 @@ proto.domopool.AnalogSensor.prototype.getVmin = function() {
  * @return {!proto.domopool.AnalogSensor} returns this
  */
 proto.domopool.AnalogSensor.prototype.setVmin = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional float vmax = 6;
+ * optional uint32 vmax = 6;
  * @return {number}
  */
 proto.domopool.AnalogSensor.prototype.getVmax = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -2178,7 +2190,7 @@ proto.domopool.AnalogSensor.prototype.getVmax = function() {
  * @return {!proto.domopool.AnalogSensor} returns this
  */
 proto.domopool.AnalogSensor.prototype.setVmax = function(value) {
-  return jspb.Message.setProto3FloatField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -2215,6 +2227,24 @@ proto.domopool.AnalogSensor.prototype.getAutoCal = function() {
  */
 proto.domopool.AnalogSensor.prototype.setAutoCal = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional uint32 v_accuracy = 9;
+ * @return {number}
+ */
+proto.domopool.AnalogSensor.prototype.getVAccuracy = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.domopool.AnalogSensor} returns this
+ */
+proto.domopool.AnalogSensor.prototype.setVAccuracy = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
@@ -4713,8 +4743,8 @@ proto.domopool.Metrics.toObject = function(includeInstance, msg) {
     savedTwater: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     ph: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
     ch: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    wp: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    wpVolt: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+    wp: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    wpVolt: jspb.Message.getFieldWithDefault(msg, 7, 0),
     overChTHighDuration: jspb.Message.getFieldWithDefault(msg, 8, 0),
     underChTLowDuration: jspb.Message.getFieldWithDefault(msg, 9, 0),
     hour: jspb.Message.getFieldWithDefault(msg, 10, 0),
@@ -4776,11 +4806,11 @@ proto.domopool.Metrics.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCh(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setWp(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setWpVolt(value);
       break;
     case 8:
@@ -4864,15 +4894,15 @@ proto.domopool.Metrics.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getWp();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeUint32(
       6,
       f
     );
   }
   f = message.getWpVolt();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeUint32(
       7,
       f
     );
@@ -4999,11 +5029,11 @@ proto.domopool.Metrics.prototype.setCh = function(value) {
 
 
 /**
- * optional float wp = 6;
+ * optional uint32 wp = 6;
  * @return {number}
  */
 proto.domopool.Metrics.prototype.getWp = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -5012,16 +5042,16 @@ proto.domopool.Metrics.prototype.getWp = function() {
  * @return {!proto.domopool.Metrics} returns this
  */
 proto.domopool.Metrics.prototype.setWp = function(value) {
-  return jspb.Message.setProto3FloatField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional float wp_volt = 7;
+ * optional uint32 wp_volt = 7;
  * @return {number}
  */
 proto.domopool.Metrics.prototype.getWpVolt = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -5030,7 +5060,7 @@ proto.domopool.Metrics.prototype.getWpVolt = function() {
  * @return {!proto.domopool.Metrics} returns this
  */
 proto.domopool.Metrics.prototype.setWpVolt = function(value) {
-  return jspb.Message.setProto3FloatField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 

@@ -44,6 +44,8 @@ export default function DashboardView() {
         if (date.minute < 10) {
             minutes = "0" + date.minute
         }
+
+        let wp = config.metrics.wp / config.sensors.wp.vAccuracy;
         return (
             <Grid container direction="row" spacing={2} justifyContent="center" alignItems="center">
                 <Grid item xs={6} >
@@ -63,7 +65,7 @@ export default function DashboardView() {
                                             variant="h5"
                                             align="center"
                                         >
-                                            {config.metrics.twater + " °C"}
+                                            {config.metrics.twater.toFixed(2) + " °C"}
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -80,7 +82,7 @@ export default function DashboardView() {
                                             variant="h5"
                                             align="center"
                                         >
-                                            {config.metrics.savedTwater + " °C"}
+                                            {config.metrics.savedTwater.toFixed(2) + " °C"}
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -100,7 +102,7 @@ export default function DashboardView() {
                                 variant="h5"
                                 align="center"
                             >
-                                {config.metrics.tamb + " °C"}
+                                {config.metrics.tamb.toFixed(2) + " °C"}
                             </Typography>
                         </CardContent>
                     </Card>
@@ -134,7 +136,7 @@ export default function DashboardView() {
                                 variant="h5"
                                 align="center"
                             >
-                                {config.metrics.wp + " Bar"}
+                                {wp.toFixed(2) + " Bar"}
                             </Typography>
                         </CardContent>
                     </Card>

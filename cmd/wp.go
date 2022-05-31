@@ -37,11 +37,11 @@ var wpCmd = &cobra.Command{
 		"set",
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		wpThreshold, _ := cmd.Flags().GetFloat32("threshold")
+		wpThreshold, _ := cmd.Flags().GetUint32("threshold")
 		wpThresholdAccuracy, _ := cmd.Flags().GetUint32("accuracy")
 		wpAdcPin, _ := cmd.Flags().GetUint32("adc-pin")
-		wpVmin, _ := cmd.Flags().GetFloat32("vmin")
-		wpVmax, _ := cmd.Flags().GetFloat32("vmax")
+		wpVmin, _ := cmd.Flags().GetUint32("vmin")
+		wpVmax, _ := cmd.Flags().GetUint32("vmax")
 		wpAutoCal, _ := cmd.Flags().GetBool("auto-cal")
 
 		client := domoClient.NewClient()
@@ -80,8 +80,8 @@ func init() {
 
 	wpCmd.Flags().Uint32("accuracy", 8, "set wp threshold accuracy, in %")
 	wpCmd.Flags().Uint32("adc-pin", 3, "set wp adc pin")
-	wpCmd.Flags().Float32("vmin", 0.5, "set wp threshold accuracy")
-	wpCmd.Flags().Float32("vmax", 4.5, "set wp threshold accuracy")
-	wpCmd.Flags().Float32("threshold", 0.5, "set wp sensor threshold")
+	wpCmd.Flags().Uint32("vmin", 500000, "set wp threshold accuracy")
+	wpCmd.Flags().Uint32("vmax", 4500000, "set wp threshold accuracy")
+	wpCmd.Flags().Uint32("threshold", 500000, "set wp sensor threshold")
 	wpCmd.Flags().Bool("auto-cal", true, "set wp autocalibration")
 }
