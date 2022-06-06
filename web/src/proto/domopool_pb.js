@@ -3968,7 +3968,8 @@ proto.domopool.Alarms.toObject = function(includeInstance, msg) {
     twHigh: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     tambFrost: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     mqtt: (f = msg.getMqtt()) && proto.domopool.MqttAlarms.toObject(includeInstance, f),
-    reboot: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+    reboot: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    wpValue: jspb.Message.getFieldWithDefault(msg, 15, 0)
   };
 
   if (includeInstance) {
@@ -4058,6 +4059,10 @@ proto.domopool.Alarms.deserializeBinaryFromReader = function(msg, reader) {
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setReboot(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setWpValue(value);
       break;
     default:
       reader.skipField();
@@ -4178,6 +4183,13 @@ proto.domopool.Alarms.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       14,
+      f
+    );
+  }
+  f = message.getWpValue();
+  if (f !== 0) {
+    writer.writeUint32(
+      15,
       f
     );
   }
@@ -4453,6 +4465,24 @@ proto.domopool.Alarms.prototype.getReboot = function() {
  */
 proto.domopool.Alarms.prototype.setReboot = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+/**
+ * optional uint32 wp_value = 15;
+ * @return {number}
+ */
+proto.domopool.Alarms.prototype.getWpValue = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.domopool.Alarms} returns this
+ */
+proto.domopool.Alarms.prototype.setWpValue = function(value) {
+  return jspb.Message.setProto3IntField(this, 15, value);
 };
 
 

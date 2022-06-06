@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/go-resty/resty/v2 v2.7.0
-	github.com/golgoth31/domopool-proto v1.1.15
+	github.com/golgoth31/domopool-proto v1.1.16
 	github.com/labstack/echo/v4 v4.6.1
 	github.com/logrusorgru/aurora/v3 v3.0.0
 	github.com/mitchellh/go-homedir v1.1.0
