@@ -157,7 +157,7 @@ export default function DashboardView() {
                                             <Typography
                                                 variant="h5"
                                             >
-                                                {date.day + " " + date.monthLong + " " + date.year}
+                                                {date.day + " " + date.monthShort + " " + date.year}
                                             </Typography>
                                         </Grid>
                                         <Grid item  >
