@@ -2,11 +2,12 @@ import * as React from "react";
 import {
     Container
 } from '@mui/material';
+import { Outlet } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
 import TopAppBar from './AppBar';
-import Routes from '../routes';
+import AppRoutes from '../routes';
 // import useStyles from '../theme/useStyles.jsx.old';
 import SideDrawer from "./Drawer";
 
@@ -59,7 +60,8 @@ function DashboardContent() {
             >
                 <Toolbar />
                 <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                    <Routes />
+                    <AppRoutes />
+                    <Outlet />
                 </Container>
             </Box>
         </Box>

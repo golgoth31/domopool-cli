@@ -7,7 +7,7 @@ import {
 
 // export const ConfigForm: React.SFC = () => {
 const TempFields = (props) => {
-    console.debug(props);
+    console.debug({ tempFields: props });
     return (
         <div>
             <h3>{props.name} Values</h3>

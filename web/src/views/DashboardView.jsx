@@ -9,7 +9,6 @@ import {
     CardHeader,
     Typography,
 } from "@mui/material";
-import { makeStyles } from '@mui/styles';
 import RelayButton from '../components/RelayButton';
 
 var domopool_pb = require('../proto/domopool_pb');

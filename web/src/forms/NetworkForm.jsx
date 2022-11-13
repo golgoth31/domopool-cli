@@ -6,7 +6,7 @@ import {
     TextField,
     Checkbox,
 } from 'formik-mui';
-import isIp from 'is-ip';
+import { isIP } from 'is-ip';
 import {
     Grid,
     FormControlLabel
@@ -28,7 +28,7 @@ export default class NetworkForm extends React.Component {
         if (!this.state.ipDisabled) {
             if (!value) {
                 error = 'Required';
-            } else if (!isIp(value)) {
+            } else if (!isIP(value)) {
                 error = 'Invalid IP format';
             }
         }

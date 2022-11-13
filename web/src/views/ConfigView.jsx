@@ -4,13 +4,13 @@ import {
     Formik,
     Form,
 } from 'formik';
-import SubmitButton from "../forms/SubmitButton";
 import NetworkForm from '../forms/NetworkForm';
 import GlobalForm from '../forms/GlobalForm';
 import {
     LinearProgress,
     Card,
     CardContent,
+    Button
 } from "@mui/material";
 import TempForm from '../forms/TempForm';
 
@@ -34,7 +34,7 @@ export default class ConfigView extends React.Component {
             .then(res => {
                 const resp = res.data;
                 this.setState({ config: domopool_pb.Config.deserializeBinary(resp).toObject() });
-                console.debug(this.state.config);
+                console.debug({ configViewOut: this.state.config });
                 this.setState({ ipDisabled: this.state.config.network.dhcp });
             });
     }
@@ -55,16 +55,17 @@ export default class ConfigView extends React.Component {
                             }
                             }
                             onSubmit={(values, actions) => {
-                                dataprovider.post(this.state.config.toArrayBuffer(),
-                                    {
-                                        responseType: 'arraybuffer',
-                                        headers: { 'Content-Type': 'application/octet-stream' }
-                                    }
-                                ).then(function (response) {
-                                    console.log(response)
-                                }).catch(function (response) {
-                                    console.log(response)
-                                })
+                                // dataprovider.post(this.state.config.toArrayBuffer(),
+                                //     {
+                                //         responseType: 'arraybuffer',
+                                //         headers: { 'Content-Type': 'application/octet-stream' }
+                                //     }
+                                // ).then(function (response) {
+                                //     console.log(response)
+                                // }).catch(function (response) {
+                                //     console.log(response)
+                                // })
+                                alert(JSON.stringify(values, null, 2))
                             }}
                         >
                             {props => (
@@ -72,7 +73,9 @@ export default class ConfigView extends React.Component {
                                 <Form>
                                     <GlobalForm {...props} />
                                     <br />
-                                    <SubmitButton />
+                                    <Button variant="contained" color="primary" type="submit">
+                                        Submit
+                                    </Button>
                                 </Form>
 
                             )}
@@ -102,7 +105,9 @@ export default class ConfigView extends React.Component {
                                 <Form>
                                     <NetworkForm {...props} />
                                     <br />
-                                    <SubmitButton />
+                                    <Button variant="contained" color="primary" type="submit">
+                                        Submit
+                                    </Button>
                                 </Form>
 
                             )}
