@@ -3,7 +3,7 @@ FROM alpine:latest as certs
 RUN apk add -U --no-cache ca-certificates
 
 # build UI
-FROM node:12-alpine as react-build
+FROM node:18-alpine as react-build
 WORKDIR /usr/src/app
 COPY ./web .
 RUN yarn install && yarn build
