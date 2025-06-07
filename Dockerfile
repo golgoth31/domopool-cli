@@ -3,10 +3,10 @@
 # RUN apk add -U --no-cache ca-certificates
 
 # build UI
-FROM node:18-alpine as react-build
+FROM node:20-alpine as react-build
 WORKDIR /usr/src/app
 COPY ./web .
-RUN yarn install && yarn build
+RUN npm install -g corepack && corepack enable && yarn install && yarn build
 
 # build binary
 FROM golang:1.24 as golang-build
