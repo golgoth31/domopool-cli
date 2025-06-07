@@ -1,6 +1,6 @@
 module github.com/golgoth31/domopool-cli
 
-go 1.17
+go 1.24
 
 require (
 	github.com/go-resty/resty/v2 v2.7.0

@@ -1,15 +1,15 @@
 # Get certificates for https conexions
-FROM alpine:latest as certs
-RUN apk add -U --no-cache ca-certificates
+# FROM alpine:latest as certs
+# RUN apk add -U --no-cache ca-certificates
 
 # build UI
-FROM node:18-alpine as react-build
+FROM node:20-alpine as react-build
 WORKDIR /usr/src/app
 COPY ./web .
 RUN yarn install && yarn build
 
 # build binary
-FROM golang:1.17 as golang-build
+FROM golang:1.24 as golang-build
 ENV CGO_ENABLED=0
 ENV GO111MODULE=on
 ENV GOPROXY=https://proxy.golang.org
@@ -20,7 +20,7 @@ COPY . .
 COPY --from=react-build /usr/src/app/build ./web/build
 RUN make build_local
 
-FROM scratch
+FROM cgr.dev/chainguard/static:latest
 VOLUME /data /config
 ENV PATH=/bin
 COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
