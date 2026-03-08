@@ -45,7 +45,7 @@
         "@babel/core": "^7.16.5",
         "@babel/plugin-proposal-private-property-in-object": "^7.16.5",
         "@yarnpkg/pnpify": "^3.1.1-rc.8",
-        "clsx": "^1.2.1",
+        "clsx": "^2.0.0",
         "eslint": "^8.27.0",
         "prettier": "^2.7.1",
         "rewire": "^6.0.0",
