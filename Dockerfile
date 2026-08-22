@@ -9,7 +9,7 @@ COPY ./web .
 RUN npm install -g corepack && corepack enable && yarn install && yarn build
 
 # build binary
-FROM golang:1.24 as golang-build
+FROM golang:1.27 as golang-build
 ENV CGO_ENABLED=0
 ENV GO111MODULE=on
 ENV GOPROXY=https://proxy.golang.org
